@@ -39,8 +39,6 @@ func _physics_process(delta):
 	# 	var collision = get_slide_collision(i)
 	# 	agent.handle_collision(collision, self)
 
-
-
 #if spacebar is pressed while not on the ground, go upwards
 # func _input(event):
 # 	print("input")

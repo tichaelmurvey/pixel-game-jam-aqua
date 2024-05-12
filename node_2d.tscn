@@ -37,17 +37,6 @@ layer_0/tile_data = PackedInt32Array(1245184, 458752, 2, 1245185, 131072, 1, 124
 script = ExtResource("2_0ywu4")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("2_kdfr0")]
-visibility_layer = 4
-z_index = 5
-position = Vector2(532, 412)
-MAX_SPEED = 650
-ACCELERATION = 30
-JUMP_VELOCITY = -500
-DEATH_COLLISION = 1100
-
-[node name="wings" parent="Player" instance=ExtResource("5_py0m7")]
-
 [node name="dispenser (fire)" type="Area2D" parent="."]
 visibility_layer = 2
 z_index = 2
@@ -68,7 +57,7 @@ shape = SubResource("RectangleShape2D_0jdqo")
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(575, 324)
 script = ExtResource("5_n1tba")
-player = NodePath("../Player")
+player = NodePath("../player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -109,5 +98,10 @@ label_settings = SubResource("LabelSettings_i3ikx")
 position = Vector2(632, 288)
 scale = Vector2(3.33333, 3.33333)
 texture = ExtResource("8_ejuuh")
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("2_kdfr0")]
+
+[node name="wings" parent="player" instance=ExtResource("5_py0m7")]
 
 [connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]
