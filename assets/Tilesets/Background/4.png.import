@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxecfyowt3o1a"
-path="res://.godot/imported/WaterFountain.png-364ef45d2e13aee738bb8dd84880afcf.ctex"
+uid="uid://b0ckxodsk52ry"
+path="res://.godot/imported/4.png-fc03d5bb94d0f05150cfa36daebb5ec7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WaterFountain.png"
-dest_files=["res://.godot/imported/WaterFountain.png-364ef45d2e13aee738bb8dd84880afcf.ctex"]
+source_file="res://assets/Tilesets/Background/4.png"
+dest_files=["res://.godot/imported/4.png-fc03d5bb94d0f05150cfa36daebb5ec7.ctex"]
 
 [params]
 

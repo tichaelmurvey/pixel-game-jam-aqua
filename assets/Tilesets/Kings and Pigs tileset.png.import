@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8640fxvy0xy4"
-path="res://.godot/imported/castle_tileset_400p.png-cc25fe4be3b3046c8492716b03050d33.ctex"
+uid="uid://wrlqv4u2f5t2"
+path="res://.godot/imported/Kings and Pigs tileset.png-208faa548de55113c2ffb573ef2ea5fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/castle_tileset_400p.png"
-dest_files=["res://.godot/imported/castle_tileset_400p.png-cc25fe4be3b3046c8492716b03050d33.ctex"]
+source_file="res://assets/Tilesets/Kings and Pigs tileset.png"
+dest_files=["res://.godot/imported/Kings and Pigs tileset.png-208faa548de55113c2ffb573ef2ea5fd.ctex"]
 
 [params]
 
