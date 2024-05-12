@@ -36,6 +36,10 @@ func _physics_process(delta):
 	# check for collision speed
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
+		#check if the collision is with a deadly object
+		if collision.get_collider().deadly:
+			death()
+			break
 		#log velocity
 		if priorVelocity.y != 0 or priorVelocity.x != 0:
 			var angle = collision.get_angle()
