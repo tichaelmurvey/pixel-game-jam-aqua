@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqyyy6b8a3g2t"]
+
+[ext_resource type="Script" path="res://flight.gd" id="1_mj0un"]
+[ext_resource type="Texture2D" uid="uid://c5sq4iahby40f" path="res://assets/Objects/wing.png" id="2_okfm8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxdhq"]
+radius = 33.6329
+height = 138.935
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peqhl"]
+radius = 29.4541
+height = 138.852
+
+[node name="wings" type="Node2D"]
+z_index = 4
+z_as_relative = false
+script = ExtResource("1_mj0un")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(79, -39)
+scale = Vector2(5, 5)
+texture = ExtResource("2_okfm8")
+region_enabled = true
+region_rect = Rect2(0, 0, 34.3474, 32.7923)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-88, -42)
+rotation = 3.14159
+scale = Vector2(5, -5)
+texture = ExtResource("2_okfm8")
+region_enabled = true
+region_rect = Rect2(0, 0, 34.3474, 32.7923)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-90, -42)
+rotation = -0.745256
+shape = SubResource("CapsuleShape2D_uxdhq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(78, -35)
+rotation = 0.849975
+shape = SubResource("CapsuleShape2D_peqhl")
