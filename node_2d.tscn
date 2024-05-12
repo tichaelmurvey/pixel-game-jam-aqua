@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=8 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
 [ext_resource type="Texture2D" uid="uid://ut2j8b421byu" path="res://assets/fountain1.png" id="3_cjwqc"]
 [ext_resource type="Texture2D" uid="uid://dfja272k8vwvo" path="res://assets/fountain2.png" id="4_eehxk"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{
@@ -23,21 +24,27 @@ animations = [{
 size = Vector2(57, 36)
 
 [node name="game" type="Node2D"]
+position = Vector2(0, -1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_cd0p1")
 format = 2
 layer_0/tile_data = PackedInt32Array(1245184, 262145, 5, 1245185, 131072, 1, 1245186, 131072, 1, 1245187, 131072, 1, 1245188, 131072, 1, 1245189, 131072, 1, 1245190, 131072, 1, 1245191, 131072, 1, 1245192, 131072, 1, 1245193, 131072, 1, 1245194, 131072, 1, 1245195, 131072, 1, 1245196, 131072, 1, 1245197, 131072, 1, 1245198, 131072, 1, 1245199, 131072, 1, 1245200, 131072, 1, 1245201, 131072, 1, 1245202, 131072, 1, 1245203, 131072, 1, 1245204, 131072, 1, 1245205, 131072, 1, 1245206, 131072, 1, 1245207, 131072, 1, 1245208, 131072, 1, 1245209, 131072, 1, 1245210, 131072, 1, 1245211, 131072, 1, 1245212, 131072, 1, 1245213, 131072, 1, 1245214, 131072, 1, 1245215, 131072, 1, 1245216, 131072, 1, 1245217, 131072, 1, 1245218, 131072, 1, 1245219, 131072, 1, 1179648, 196609, 5, 1114112, 196609, 5, 1048576, 196609, 5, 983040, 196609, 5, 917504, 196609, 5, 851968, 196609, 5, 786432, 196609, 5, 720896, 196609, 5, 655360, 196609, 5, 589824, 196609, 5, 524288, 196609, 5, 458752, 196609, 5, 393216, 196609, 5, 327680, 196609, 5, 262144, 196609, 5, 196608, 196609, 5, 131072, 196609, 5, 65536, 196609, 5, 0, 196609, 5, 35, 196609, 5, 34, 196609, 5, 33, 196609, 5, 32, 196609, 5, 31, 196609, 5, 30, 196609, 5, 29, 196609, 5, 28, 196609, 5, 27, 196609, 5, 26, 196609, 5, 25, 196609, 5, 24, 196609, 5, 23, 196609, 5, 22, 196609, 5, 21, 196609, 5, 20, 196609, 5, 19, 196609, 5, 18, 196609, 5, 17, 196609, 5, 16, 196609, 5, 15, 196609, 5, 5, 196609, 5, 4, 196609, 5, 3, 196609, 5, 2, 196609, 5, 1, 196609, 5, 1245220, 131072, 1, 1179684, 196609, 5, 1114148, 196609, 5, 1048612, 196609, 5, 983076, 196609, 5, 917540, 196609, 5, 36, 196609, 5, 65572, 196609, 5, 131108, 196609, 5, 196644, 196609, 5, 262180, 196609, 5, 327716, 196609, 5, 393252, 196609, 5, 458788, 196609, 5, 1245221, 131072, 1, 1245224, 262145, 5, 1245225, 262145, 5, 1245226, 262145, 5, 1245227, 262145, 5, 1310727, 131072, 1, 1310728, 131072, 1, 1310729, 131072, 1, 1310730, 131072, 1, 1179662, 131072, 1, 1179663, 131072, 1, 1179678, 131072, 1, 1179679, 131072, 1, 1179680, 131072, 1, 1245222, 262145, 5, 1310758, 262145, 5, 1245223, 262145, 5, 1310759, 262145, 5)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_kdfr0")]
+
+[node name="Player" parent="." instance=ExtResource("2_kdfr0")]
 position = Vector2(343, 52)
 MAX_SPEED = 650
 ACCELERATION = 30
 JUMP_VELOCITY = -1000
 DEATH_COLLISION = 1100
+visibility_layer = 4
+z_index = 3
 
 [node name="dispenser" type="Area2D" parent="."]
-position = Vector2(802, 560)
+visibility_layer = 2
+z_index = 2
+position = Vector2(802, 559)
 scale = Vector2(1.815, 1.815)
 metadata/_edit_group_ = true
 
@@ -49,3 +56,7 @@ frame_progress = 0.139724
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dispenser"]
 position = Vector2(0.5, 13)
 shape = SubResource("RectangleShape2D_0jdqo")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("5_n1tba")
+player = NodePath("../Player")
