@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=10 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
 [ext_resource type="Texture2D" uid="uid://ut2j8b421byu" path="res://assets/fountain1.png" id="3_cjwqc"]
 [ext_resource type="Texture2D" uid="uid://dfja272k8vwvo" path="res://assets/fountain2.png" id="4_eehxk"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
+[ext_resource type="Script" path="res://craftingMenuButton.gd" id="6_qodb5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{
@@ -22,6 +23,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jdqo"]
 size = Vector2(57, 36)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3ikx"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="game" type="Node2D"]
 position = Vector2(0, -1)
@@ -53,5 +57,49 @@ position = Vector2(0.5, 13)
 shape = SubResource("RectangleShape2D_0jdqo")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(575, 324)
 script = ExtResource("5_n1tba")
 player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 308.0
+offset_top = 154.0
+offset_right = 739.0
+offset_bottom = 271.0
+text = "USER INTERFACE"
+
+[node name="craftingMenuButton" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("menu")]
+offset_left = 40.0
+offset_top = 41.0
+offset_right = 103.0
+offset_bottom = 104.0
+action_mode = 0
+script = ExtResource("6_qodb5")
+menu = NodePath("../craftingMenu")
+
+[node name="craftingMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+
+[node name="Crafting" type="ColorRect" parent="CanvasLayer/craftingMenu"]
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 1088.0
+offset_bottom = 580.0
+
+[node name="Label" type="Label" parent="CanvasLayer/craftingMenu/Crafting"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 50.0
+offset_right = 631.0
+offset_bottom = 73.0
+text = "CRAFTING MENU"
+label_settings = SubResource("LabelSettings_i3ikx")
+
+[connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]
