@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c24mx6mmff55r"
-path="res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"
+uid="uid://bjj15xx0wd8og"
+path="res://.godot/imported/Small Cloud 1.png-0e3bffccf3c2bdec45776f5688404485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wall.png"
-dest_files=["res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"]
+source_file="res://assets/Tilesets/Background/Small Cloud 1.png"
+dest_files=["res://.godot/imported/Small Cloud 1.png-0e3bffccf3c2bdec45776f5688404485.ctex"]
 
 [params]
 

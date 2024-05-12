@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wrlqv4u2f5t2"
-path="res://.godot/imported/Kings and Pigs tileset.png-7e6e1cd277d380de3299919ac9b416ec.ctex"
+uid="uid://bfeajqn4hlaye"
+path="res://.godot/imported/Big Clouds.png-c0a957321b727b41b80cade8ab6b30b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kings and Pigs tileset.png"
-dest_files=["res://.godot/imported/Kings and Pigs tileset.png-7e6e1cd277d380de3299919ac9b416ec.ctex"]
+source_file="res://assets/Tilesets/Background/Big Clouds.png"
+dest_files=["res://.godot/imported/Big Clouds.png-c0a957321b727b41b80cade8ab6b30b9.ctex"]
 
 [params]
 
