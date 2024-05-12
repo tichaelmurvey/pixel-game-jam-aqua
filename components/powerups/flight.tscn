@@ -17,26 +17,27 @@ z_as_relative = false
 script = ExtResource("1_mj0un")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(79, -39)
+position = Vector2(54, -35)
+rotation = -0.374171
 scale = Vector2(5, 5)
 texture = ExtResource("2_okfm8")
 region_enabled = true
 region_rect = Rect2(0, 0, 34.3474, 32.7923)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-88, -42)
-rotation = 3.14159
+position = Vector2(-50, -41)
+rotation = 3.6131
 scale = Vector2(5, -5)
 texture = ExtResource("2_okfm8")
 region_enabled = true
 region_rect = Rect2(0, 0, 34.3474, 32.7923)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-90, -42)
-rotation = -0.745256
+position = Vector2(-53, -39)
+rotation = -0.363734
 shape = SubResource("CapsuleShape2D_uxdhq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(78, -35)
-rotation = 0.849975
+position = Vector2(58, -35)
+rotation = 0.381812
 shape = SubResource("CapsuleShape2D_peqhl")

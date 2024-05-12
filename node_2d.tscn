@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=12 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cqyyy6b8a3g2t" path="res://components/powerups/flight.tscn" id="5_py0m7"]
 [ext_resource type="Script" path="res://craftingMenuButton.gd" id="6_qodb5"]
 [ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Tilesets/Background/1.png" id="8_ejuuh"]
-[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/spike.tscn" id="9_uav3d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{
@@ -40,12 +39,14 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_kdfr0")]
 visibility_layer = 4
-z_index = 3
+z_index = 5
 position = Vector2(532, 412)
 MAX_SPEED = 650
 ACCELERATION = 30
-JUMP_VELOCITY = -1000
+JUMP_VELOCITY = -500
 DEATH_COLLISION = 1100
+
+[node name="wings" parent="Player" instance=ExtResource("5_py0m7")]
 
 [node name="dispenser (fire)" type="Area2D" parent="."]
 visibility_layer = 2
