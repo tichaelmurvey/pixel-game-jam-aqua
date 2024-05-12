@@ -92,6 +92,7 @@ offset_right = 40.0
 offset_bottom = 39.0
 
 [node name="Crafting" type="ColorRect" parent="CanvasLayer/craftingMenu"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 55.0
 offset_right = 1088.0
