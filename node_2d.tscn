@@ -30,7 +30,7 @@ font_color = Color(0, 0, 0, 1)
 position = Vector2(0, -1)
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(987, 478)
+position = Vector2(861, 444)
 scale = Vector2(9.44792, 13.4321)
 texture = ExtResource("8_ejuuh")
 
