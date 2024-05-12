@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://wrlqv4u2f5t2" path="res://assets/Tilesets/Kings and Pigs tileset.png" id="1_qcsq6"]
 [ext_resource type="Texture2D" uid="uid://8640fxvy0xy4" path="res://assets/Tilesets/castle_tileset_400p.png" id="2_0nile"]
 [ext_resource type="Texture2D" uid="uid://dtqk6yaf6clu" path="res://assets/Tilesets/Grassland tileset.png" id="3_yl3aa"]
-[ext_resource type="Texture2D" uid="uid://clw4kkj2hjmoo" path="res://assets/Tilesets/stairs_tile_1.png" id="4_544is"]
-[ext_resource type="Texture2D" uid="uid://chmujg2cx7jvd" path="res://assets/Tilesets/stairs_tile_2.png" id="5_aiyuc"]
+[ext_resource type="Texture2D" uid="uid://ccaxnugc53n02" path="res://assets/Tilesets/stairs_tile_1.png" id="4_544is"]
+[ext_resource type="Texture2D" uid="uid://dwxm7wmpe5oyt" path="res://assets/Tilesets/stairs_tile_2.png" id="5_aiyuc"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_rnp2l"]
 tile_data = PackedInt32Array(0, 917504, 8, 65536, 917504, 9, 131072, 917504, 10, 196608, 917504, 11, 1, 983040, 8, 65537, 983040, 9, 131073, 983040, 10, 196609, 983040, 11, 2, 1048576, 8, 65538, 1048576, 9, 131074, 1048576, 10, 196610, 1048576, 11, 3, 1114112, 8, 65539, 1114112, 9, 131075, 1114112, 10, 196611, 1114112, 11)
