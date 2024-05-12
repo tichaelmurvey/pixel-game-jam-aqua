@@ -1,6 +1,6 @@
-extends Camera2D
+extends Button
 
-@export var player = CharacterBody2D
+@export var menu = Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,5 +9,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#follow the player
-	position = player.position
+	pass
+
+
+func _on_pressed():
+	#make menu visible
+	print("Button pressed")
+	menu.visible = true
