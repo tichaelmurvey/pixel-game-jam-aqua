@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfeajqn4hlaye"
-path="res://.godot/imported/Big Clouds.png-c0a957321b727b41b80cade8ab6b30b9.ctex"
+uid="uid://dama0wr7f6668"
+path="res://.godot/imported/candelabrum_tall_3.png-e2294207312dd27560551f866f5c9f3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/Background/Big Clouds.png"
-dest_files=["res://.godot/imported/Big Clouds.png-c0a957321b727b41b80cade8ab6b30b9.ctex"]
+source_file="res://assets/Decorations/Candelabrum animation/candelabrum_tall_3.png"
+dest_files=["res://.godot/imported/candelabrum_tall_3.png-e2294207312dd27560551f866f5c9f3d.ctex"]
 
 [params]
 

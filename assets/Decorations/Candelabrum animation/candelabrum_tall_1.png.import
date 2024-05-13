@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cam61umfq3rm4"
-path="res://.godot/imported/2.png-adce43e8c34bc2edf1a948a066773962.ctex"
+uid="uid://jtmrala4v5xg"
+path="res://.godot/imported/candelabrum_tall_1.png-0177263151813a087ff146318edd7345.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/Background/2.png"
-dest_files=["res://.godot/imported/2.png-adce43e8c34bc2edf1a948a066773962.ctex"]
+source_file="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png"
+dest_files=["res://.godot/imported/candelabrum_tall_1.png-0177263151813a087ff146318edd7345.ctex"]
 
 [params]
 

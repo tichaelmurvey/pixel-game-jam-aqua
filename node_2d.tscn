@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=33 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -7,7 +7,26 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
 [ext_resource type="PackedScene" uid="uid://cqyyy6b8a3g2t" path="res://components/powerups/flight.tscn" id="5_py0m7"]
 [ext_resource type="Script" path="res://craftingMenuButton.gd" id="6_qodb5"]
-[ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Tilesets/Background/1.png" id="8_ejuuh"]
+[ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Background/1.png" id="8_ejuuh"]
+[ext_resource type="Texture2D" uid="uid://jtmrala4v5xg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png" id="9_nudbm"]
+[ext_resource type="Texture2D" uid="uid://d3qp0sqnem1vl" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_2.png" id="10_co87l"]
+[ext_resource type="Texture2D" uid="uid://dama0wr7f6668" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_3.png" id="11_h5d0u"]
+[ext_resource type="Texture2D" uid="uid://b7e25gqf7o418" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_4.png" id="12_p0cq2"]
+[ext_resource type="Texture2D" uid="uid://b61last7pbkg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_5.png" id="13_d0rb3"]
+[ext_resource type="Texture2D" uid="uid://dmnphkb5f7dkv" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_6.png" id="14_8wggn"]
+[ext_resource type="Texture2D" uid="uid://brmsr5gpcmkjs" path="res://assets/Decorations/bookshelf_1.png" id="15_btjwb"]
+[ext_resource type="Texture2D" uid="uid://ba4pu3jcxpn4q" path="res://assets/Decorations/table_noshadow.png" id="16_ctv5g"]
+[ext_resource type="Texture2D" uid="uid://dyx4s5y07reh0" path="res://assets/Decorations/chair_1.png" id="17_cehgd"]
+[ext_resource type="Texture2D" uid="uid://d35dms3nu21wd" path="res://assets/Decorations/scroll_1.png" id="18_wcm5r"]
+[ext_resource type="Texture2D" uid="uid://cm570n0v2ehfn" path="res://assets/Decorations/Light animation/light-01.png" id="19_3sppm"]
+[ext_resource type="Texture2D" uid="uid://qqd7cr27vtl2" path="res://assets/Decorations/Light animation/light-02.png" id="20_3cll1"]
+[ext_resource type="Texture2D" uid="uid://eb3vlsbkurqm" path="res://assets/Decorations/Light animation/light-03.png" id="21_ylikq"]
+[ext_resource type="Texture2D" uid="uid://dcvf2xqx55a3q" path="res://assets/Decorations/Light animation/light-04.png" id="22_rfp28"]
+[ext_resource type="Texture2D" uid="uid://b12g1qpciuv2d" path="res://assets/Decorations/books.png" id="23_3f5fe"]
+[ext_resource type="Texture2D" uid="uid://d2vdipsehvxvs" path="res://assets/Decorations/crate_3.png" id="24_xic87"]
+[ext_resource type="Texture2D" uid="uid://lvn7vkimt1ym" path="res://assets/Decorations/curtain_blue_2.png" id="25_t3q3v"]
+[ext_resource type="Texture2D" uid="uid://dft6aposs14rv" path="res://assets/Decorations/flag_blue.png" id="26_htc1l"]
+[ext_resource type="Texture2D" uid="uid://d4nu0qdqwi2sm" path="res://assets/Decorations/door.png" id="27_gm1cv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{
@@ -26,11 +45,57 @@ size = Vector2(47.3829, 56.1983)
 [sub_resource type="LabelSettings" id="LabelSettings_i3ikx"]
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_nudbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_co87l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h5d0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p0cq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d0rb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8wggn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjqbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_3sppm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3cll1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ylikq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rfp28")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="game" type="Node2D"]
 position = Vector2(0, -1)
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(901, -142)
+position = Vector2(1094, -83)
 scale = Vector2(14.8056, 25.9938)
 texture = ExtResource("8_ejuuh")
 
@@ -106,7 +171,77 @@ texture = ExtResource("8_ejuuh")
 metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
+position = Vector2(843, 537)
 
 [node name="wings" parent="player" instance=ExtResource("5_py0m7")]
+
+[node name="Candelabrum" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(57, 516)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_3kb44")
+autoplay = "default"
+frame = 1
+frame_progress = 0.931913
+
+[node name="Bookshelf1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(679, 513)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("15_btjwb")
+
+[node name="TableNoshadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(408, 585)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("16_ctv5g")
+
+[node name="Chair1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(518, 569)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("17_cehgd")
+
+[node name="Scroll1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(399, 555)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("18_wcm5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(879, 103)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mjqbc")
+autoplay = "default"
+
+[node name="Books" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(287, 591)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("23_3f5fe")
+
+[node name="Crate3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(958, 581)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("24_xic87")
+
+[node name="CurtainBlue2" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1169, 485)
+texture = ExtResource("25_t3q3v")
+
+[node name="FlagBlue" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(111, 160)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("26_htc1l")
+
+[node name="Door" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(151, 535)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("27_gm1cv")
 
 [connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]

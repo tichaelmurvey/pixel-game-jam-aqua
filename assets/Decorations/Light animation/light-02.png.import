@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db5hmhe454i1v"
-path="res://.godot/imported/1.png-4ebadc5f6db1c4111a3011f5c77ce979.ctex"
+uid="uid://qqd7cr27vtl2"
+path="res://.godot/imported/light-02.png-a2c42ed35bf1e4cfce8d99978f485a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/Background/1.png"
-dest_files=["res://.godot/imported/1.png-4ebadc5f6db1c4111a3011f5c77ce979.ctex"]
+source_file="res://assets/Decorations/Light animation/light-02.png"
+dest_files=["res://.godot/imported/light-02.png-a2c42ed35bf1e4cfce8d99978f485a7e.ctex"]
 
 [params]
 
