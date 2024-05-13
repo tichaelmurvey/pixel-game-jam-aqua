@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://onuh5u7m6k21"]
+
+[ext_resource type="Script" path="res://craftingMenu.gd" id="1_lvucr"]
+[ext_resource type="Script" path="res://elementsContainer.gd" id="2_m64c8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3ikx"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="craftingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+script = ExtResource("1_lvucr")
+
+[node name="Crafting" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 55.0
+offset_right = 1088.0
+offset_bottom = 580.0
+
+[node name="Label" type="Label" parent="Crafting"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 50.0
+offset_right = 631.0
+offset_bottom = 73.0
+text = "CRAFTING MENU"
+label_settings = SubResource("LabelSettings_i3ikx")
+
+[node name="ColorRect" type="ColorRect" parent="Crafting"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 173.0
+offset_right = 190.0
+offset_bottom = 226.0
+color = Color(0.937255, 0.721569, 0.372549, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Crafting"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 236.0
+offset_right = 190.0
+offset_bottom = 291.0
+color = Color(0.937255, 0.721569, 0.372549, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Crafting"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 343.0
+offset_right = 192.0
+offset_bottom = 396.0
+color = Color(0.937255, 0.721569, 0.372549, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Crafting"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 406.0
+offset_right = 193.0
+offset_bottom = 461.0
+color = Color(0.937255, 0.721569, 0.372549, 1)
+
+[node name="elementsContainer" type="GridContainer" parent="Crafting"]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 206.0
+offset_right = 983.0
+offset_bottom = 352.0
+columns = 2
+script = ExtResource("2_m64c8")
