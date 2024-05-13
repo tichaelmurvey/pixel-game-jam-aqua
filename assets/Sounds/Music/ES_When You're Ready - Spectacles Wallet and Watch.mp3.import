@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cob1k1h33xsdq"
+path="res://.godot/imported/ES_When You're Ready - Spectacles Wallet and Watch.mp3-c38fcf509d6807606b2424ba0a80bc21.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Music/ES_When You're Ready - Spectacles Wallet and Watch.mp3"
+dest_files=["res://.godot/imported/ES_When You're Ready - Spectacles Wallet and Watch.mp3-c38fcf509d6807606b2424ba0a80bc21.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
