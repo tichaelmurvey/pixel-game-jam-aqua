@@ -37,6 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://bem8fx6bk2x0k" path="res://assets/Decorations/Candle animation 1/candle_blue_3_6.png" id="35_48ee2"]
 [ext_resource type="Texture2D" uid="uid://b0ckxodsk52ry" path="res://assets/Background/4.png" id="36_a3dge"]
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="37_a7vpk"]
+[ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Tilesets/Background/1.png" id="8_ejuuh"]
+[ext_resource type="PackedScene" uid="uid://onuh5u7m6k21" path="res://crafting_menu.tscn" id="10_q7fmt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{
@@ -214,6 +216,11 @@ offset_right = 631.0
 offset_bottom = 73.0
 text = "CRAFTING MENU"
 label_settings = SubResource("LabelSettings_i3ikx")
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(-7626, -142)
+scale = Vector2(14.8056, 25.9938)
+texture = ExtResource("8_ejuuh")
+metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
 position = Vector2(843, 537)
@@ -317,5 +324,17 @@ texture = ExtResource("36_a3dge")
 position = Vector2(-740, -2374)
 scale = Vector2(3, 3)
 texture = ExtResource("37_a7vpk")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="craftingMenuButton" type="Button" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 41.0
+offset_right = 103.0
+offset_bottom = 104.0
+action_mode = 0
+script = ExtResource("6_qodb5")
+
+[node name="craftingMenu" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]
