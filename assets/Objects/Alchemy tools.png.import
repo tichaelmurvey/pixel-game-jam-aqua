@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4kejqwu8uotp"
-<<<<<<<< HEAD:assets/Decorations/Alchemy tools.png.import
-path="res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"
-========
+uid="uid://vyqe7plklo85"
 path="res://.godot/imported/Alchemy tools.png-fd1329eded2f7c53165640ac86b1056b.ctex"
->>>>>>>> crafting_ui:assets/Objects/Alchemy tools.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/Decorations/Alchemy tools.png.import
-source_file="res://assets/Decorations/Alchemy tools.png"
-dest_files=["res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"]
-========
 source_file="res://assets/Objects/Alchemy tools.png"
 dest_files=["res://.godot/imported/Alchemy tools.png-fd1329eded2f7c53165640ac86b1056b.ctex"]
->>>>>>>> crafting_ui:assets/Objects/Alchemy tools.png.import
 
 [params]
 

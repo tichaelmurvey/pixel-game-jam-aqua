@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://onuh5u7m6k21"]
+[gd_scene load_steps=4 format=3 uid="uid://na2fte52arl7"]
 
 [ext_resource type="Script" path="res://craftingMenu.gd" id="1_lvucr"]
 [ext_resource type="Script" path="res://elementsContainer.gd" id="2_m64c8"]

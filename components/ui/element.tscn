@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1y1x862wstcp"]
+[gd_scene load_steps=7 format=3 uid="uid://c1y1x862wstcp"]
 
-[ext_resource type="Texture2D" uid="uid://dgxi8phli4u5g" path="res://assets/Tilesets/Background/BG Image.png" id="1_46dd0"]
 [ext_resource type="Script" path="res://components/ui/element.gd" id="2_vq285"]
 [ext_resource type="Texture2D" uid="uid://evxpu3dcqqii" path="res://assets/symbols/air.svg" id="3_8lt3g"]
 [ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="4_mj0ia"]
@@ -8,7 +7,6 @@
 [sub_resource type="Theme" id="Theme_arr1b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1uct"]
-texture = ExtResource("1_46dd0")
 
 [sub_resource type="LabelSettings" id="LabelSettings_658u6"]
 font = ExtResource("4_mj0ia")
