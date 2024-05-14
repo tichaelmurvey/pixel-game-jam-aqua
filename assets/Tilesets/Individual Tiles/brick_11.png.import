@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccaxnugc53n02"
-path="res://.godot/imported/stairs_tile_1.png-6587a05c7cd4dedc634ebf91f7c418dc.ctex"
+uid="uid://dngvphqqolb2m"
+path="res://.godot/imported/brick_11.png-6327af0d81c77b4520eb592e3b0e1763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/stairs_tile_1.png"
-dest_files=["res://.godot/imported/stairs_tile_1.png-6587a05c7cd4dedc634ebf91f7c418dc.ctex"]
+source_file="res://assets/Tilesets/Individual Tiles/brick_11.png"
+dest_files=["res://.godot/imported/brick_11.png-6327af0d81c77b4520eb592e3b0e1763.ctex"]
 
 [params]
 
