@@ -246,19 +246,19 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(438, 520)
+position = Vector2(440, 523)
 collision_layer = 2
 script = ExtResource("1_5rrfp")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.375, 28)
-scale = Vector2(2.5, 2.5)
+position = Vector2(0, 24)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_dwu3h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.45314, 21.9219)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Idle"
 autoplay = "Idle"
