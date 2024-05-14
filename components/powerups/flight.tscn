@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c5sq4iahby40f" path="res://assets/Objects/wing.png" id="2_okfm8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxdhq"]
-radius = 21.8067
-height = 109.618
+radius = 10.9034
+height = 78.7661
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peqhl"]
-radius = 20.7392
-height = 108.945
+radius = 12.6896
+height = 78.598
 
 [node name="wings" type="Node2D"]
 z_index = 4
