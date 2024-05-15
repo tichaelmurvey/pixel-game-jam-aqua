@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckjlfeis4v0m1"]
+
+[ext_resource type="Texture2D" uid="uid://evxpu3dcqqii" path="res://assets/symbols/air.svg" id="1_v2kcq"]
+[ext_resource type="Script" path="res://element_source.gd" id="2_ytdjr"]
+[ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="3_yvu7k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfen2"]
+font = ExtResource("3_yvu7k")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ybjld"]
+font = ExtResource("3_yvu7k")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="element" type="TextureRect"]
+offset_left = 53.0
+offset_top = 64.0
+offset_right = 125.0
+offset_bottom = 136.0
+texture = ExtResource("1_v2kcq")
+script = ExtResource("2_ytdjr")
+element = "air"
+count = null
+
+[node name="count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 70.0
+offset_bottom = 35.0
+text = "2"
+label_settings = SubResource("LabelSettings_bfen2")
+horizontal_alignment = 2
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 51.0
+offset_right = 72.0
+offset_bottom = 76.0
+text = "2"
+label_settings = SubResource("LabelSettings_ybjld")
+horizontal_alignment = 1

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://doxcw6flobojy"]
+
+[ext_resource type="Script" path="res://components/ui/element_grid.gd" id="1_ptjjy"]
+[ext_resource type="Texture2D" uid="uid://evxpu3dcqqii" path="res://assets/symbols/air.svg" id="2_0csio"]
+[ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="3_oerjj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_658u6"]
+font = ExtResource("3_oerjj")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="element_grid" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 108.0
+offset_right = 64.0
+offset_bottom = 108.0
+script = ExtResource("1_ptjjy")
+
+[node name="grid" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="elementSymbol" type="TextureRect" parent="grid"]
+layout_mode = 2
+texture = ExtResource("2_0csio")
+stretch_mode = 3
+
+[node name="elementLabel" type="Label" parent="grid"]
+layout_mode = 2
+text = "AIR"
+label_settings = SubResource("LabelSettings_658u6")
+horizontal_alignment = 1

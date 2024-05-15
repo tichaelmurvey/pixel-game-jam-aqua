@@ -1,11 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=43 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
 [ext_resource type="Texture2D" uid="uid://c8k1lg0r2cth1" path="res://assets/Objects/Fire reagent.png" id="5_bepus"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
-[ext_resource type="PackedScene" uid="uid://cqyyy6b8a3g2t" path="res://components/powerups/flight.tscn" id="5_py0m7"]
 [ext_resource type="Script" path="res://craftingMenuButton.gd" id="6_qodb5"]
 [ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Background/1.png" id="8_ejuuh"]
 [ext_resource type="Texture2D" uid="uid://jtmrala4v5xg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png" id="9_nudbm"]
@@ -52,9 +51,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jdqo"]
 size = Vector2(47.3829, 56.1983)
-
-[sub_resource type="LabelSettings" id="LabelSettings_i3ikx"]
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -183,40 +179,7 @@ player = NodePath("../player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="craftingMenuButton" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("menu")]
-offset_left = 40.0
-offset_top = 41.0
-offset_right = 103.0
-offset_bottom = 104.0
-action_mode = 0
-script = ExtResource("6_qodb5")
-menu = NodePath("../craftingMenu")
-
-[node name="craftingMenu" type="Control" parent="CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_top = -1.0
-offset_right = 40.0
-offset_bottom = 39.0
-
-[node name="Crafting" type="ColorRect" parent="CanvasLayer/craftingMenu"]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 55.0
-offset_right = 1088.0
-offset_bottom = 580.0
-
-[node name="Label" type="Label" parent="CanvasLayer/craftingMenu/Crafting"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 50.0
-offset_right = 631.0
-offset_bottom = 73.0
-text = "CRAFTING MENU"
-label_settings = SubResource("LabelSettings_i3ikx")
-
-[node name="craftingMenuButton2" type="Button" parent="CanvasLayer"]
+[node name="craftingMenuButton" type="Button" parent="CanvasLayer"]
 offset_left = 40.0
 offset_top = 41.0
 offset_right = 103.0
@@ -225,6 +188,7 @@ action_mode = 0
 script = ExtResource("6_qodb5")
 
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
+visible = false
 
 [node name="background3" type="Sprite2D" parent="."]
 position = Vector2(-7626, -142)
@@ -234,8 +198,6 @@ metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
 position = Vector2(843, 537)
-
-[node name="wings" parent="player" instance=ExtResource("5_py0m7")]
 
 [node name="Candelabrum" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -338,4 +300,4 @@ texture = ExtResource("37_a7vpk")
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
 
-[connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenu2" method="_show"]

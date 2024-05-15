@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://o48i58fxk8xg"]
+
+[ext_resource type="Script" path="res://potion_slot.gd" id="1_vnxr6"]
+
+[sub_resource type="Theme" id="Theme_twrsk"]
+
+[node name="brewSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 56.0
+offset_top = 169.0
+offset_right = 106.0
+offset_bottom = 219.0
+theme = SubResource("Theme_twrsk")
+script = ExtResource("1_vnxr6")
+metadata/_edit_group_ = true

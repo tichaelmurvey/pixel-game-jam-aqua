@@ -16,6 +16,11 @@ var dead = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	#connect to power signal
+	PlayerInfo.power_updated.connect(change_powers)
+
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -88,3 +93,24 @@ func _change_size(scaleFactor):
 func get_height():
 	# return the height of the player
 	return HEIGHT
+
+func change_powers():
+	print("changing powers on player")
+	# change the powers of the player
+	# get the new powers
+	var powers = PlayerInfo.powers
+	
+	#iterate over powers
+	for power in powers:
+		#if power is not active, check if there is a child node that matches its name and remove it
+		if not power.active:
+			var power_node = get_node(power.name)
+			if power_node and power_node.enabled:
+				power_node.disable()
+		else:
+			#if power is active, check if there is a child node that matches its name and add it
+			var power_node = get_node(power.name)
+			if power_node and not power_node.enabled:
+				print("enabling power", power.name)
+				power_node.enable()
+		
