@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://tvx1u0uxdeo"]
+
+[ext_resource type="Texture2D" uid="uid://nsg4k33f8mx0" path="res://assets/Objects/Box.png" id="1_6rvdc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqc2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6rvdc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6puy"]
+size = Vector2(40.5, 33)
+
+[node name="Small box" type="CharacterBody2D"]
+z_index = 2
+position = Vector2(537, -212)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(579, -314)
+scale = Vector2(2.09091, 2.25)
+sprite_frames = SubResource("SpriteFrames_gqc2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(578.75, -314.5)
+shape = SubResource("RectangleShape2D_e6puy")

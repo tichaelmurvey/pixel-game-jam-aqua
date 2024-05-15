@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1y1x862wstcp"]
+
+[ext_resource type="Texture2D" uid="uid://dw8g6opjix1us" path="res://assets/UI elements/Scroll preset (large).png" id="1_mni0g"]
+[ext_resource type="Script" path="res://components/ui/element.gd" id="2_vq285"]
+[ext_resource type="PackedScene" uid="uid://doxcw6flobojy" path="res://components/ui/element_grid.tscn" id="3_5myjj"]
+
+[sub_resource type="Theme" id="Theme_arr1b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1uct"]
+texture = ExtResource("1_mni0g")
+
+[node name="element" type="PanelContainer" groups=["element_slot"]]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 100.0
+offset_bottom = 104.0
+theme = SubResource("Theme_arr1b")
+theme_override_styles/panel = SubResource("StyleBoxTexture_g1uct")
+script = ExtResource("2_vq285")
+
+[node name="element_grid" parent="." instance=ExtResource("3_5myjj")]
+layout_mode = 2

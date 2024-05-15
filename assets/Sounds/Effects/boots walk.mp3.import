@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ue27nlhm0ult"
+path="res://.godot/imported/boots walk.mp3-8a484c404300a75a96b05914dba4a808.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Effects/boots walk.mp3"
+dest_files=["res://.godot/imported/boots walk.mp3-8a484c404300a75a96b05914dba4a808.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgk1nnu46hdn6"]
+
+[ext_resource type="Texture2D" uid="uid://c24mx6mmff55r" path="res://assets/Tilesets/wall.png" id="1_mqsq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rh1k"]
+size = Vector2(32, 32)
+
+[node name="destructable_wall" type="StaticBody2D"]
+position = Vector2(2, 4)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mqsq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6rh1k")
