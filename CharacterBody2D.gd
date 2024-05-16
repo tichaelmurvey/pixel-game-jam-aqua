@@ -85,6 +85,8 @@ func death():
 	# restart the game
 	if !dead:
 		dead = true
+		#reset inventory
+		Inventory.reset()
 		print("parent", get_parent())
 		print("tree", get_tree())
 		get_tree().reload_current_scene()
