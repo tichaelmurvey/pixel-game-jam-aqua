@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-var MAX_SPEED = 1000
-var MAX_RUN_SPEED = 500
+var MAX_SPEED = 1500
+var MAX_RUN_SPEED = 250
 var SPEED = 0
-var ACCELERATION = 100
-var JUMP_VELOCITY = -400
-var DEATH_COLLISION = 1500
+var ACCELERATION = 25
+var JUMP_VELOCITY = -450
+var DEATH_COLLISION = 1300
 var WEIGHT = 50
 var HEIGHT = 50
 var priorVelocity = Vector2(0, 0)
