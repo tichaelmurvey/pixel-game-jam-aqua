@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwxm7wmpe5oyt"
-path="res://.godot/imported/stairs_tile_2.png-928888750a7c670d9fae92b0809e5bf2.ctex"
+uid="uid://j8wtn1ibsw55"
+path="res://.godot/imported/Spike.png-1a19d995cdb84b98558571bd577f50b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/stairs_tile_2.png"
-dest_files=["res://.godot/imported/stairs_tile_2.png-928888750a7c670d9fae92b0809e5bf2.ctex"]
+source_file="res://assets/Objects/Spike.png"
+dest_files=["res://.godot/imported/Spike.png-1a19d995cdb84b98558571bd577f50b6.ctex"]
 
 [params]
 
