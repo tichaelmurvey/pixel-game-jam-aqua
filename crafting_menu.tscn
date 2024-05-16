@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://na2fte52arl7"]
+[gd_scene load_steps=10 format=3 uid="uid://na2fte52arl7"]
 
 [ext_resource type="Script" path="res://craftingMenu.gd" id="1_lvucr"]
-[ext_resource type="Script" path="res://elementsContainer.gd" id="2_m64c8"]
+[ext_resource type="Texture2D" uid="uid://c5ovw8lsvvugs" path="res://components/ui/elements.png" id="2_dym76"]
+[ext_resource type="PackedScene" uid="uid://ckjlfeis4v0m1" path="res://element_source.tscn" id="3_1vmjx"]
+[ext_resource type="Texture2D" uid="uid://dv0je5agif1f1" path="res://assets/UI elements/aqua regia.png" id="8_bg3up"]
+[ext_resource type="Texture2D" uid="uid://dmg4al4pf7xbq" path="res://components/ui/bottle.png" id="8_wt5ru"]
+[ext_resource type="Script" path="res://bottle.gd" id="10_ppfq8"]
+[ext_resource type="Texture2D" uid="uid://cq372pv2f1ifo" path="res://assets/UI elements/alchemize.png" id="11_3qfdm"]
+[ext_resource type="PackedScene" uid="uid://yr58sjkja6u3" path="res://bottle_slot.tscn" id="12_p4u2h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i3ikx"]
 font_color = Color(0, 0, 0, 1)
@@ -16,57 +22,136 @@ script = ExtResource("1_lvucr")
 
 [node name="Crafting" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 55.0
-offset_right = 1088.0
-offset_bottom = 580.0
+offset_left = 58.0
+offset_top = 425.0
+offset_right = 1072.0
+offset_bottom = 637.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Crafting"]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 50.0
-offset_right = 631.0
-offset_bottom = 73.0
+offset_left = 506.0
+offset_top = 31.0
+offset_right = 761.0
+offset_bottom = 54.0
 text = "CRAFTING MENU"
 label_settings = SubResource("LabelSettings_i3ikx")
 
-[node name="ColorRect" type="ColorRect" parent="Crafting"]
+[node name="element_box" type="TextureRect" parent="Crafting"]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 173.0
-offset_right = 190.0
-offset_bottom = 226.0
-color = Color(0.937255, 0.721569, 0.372549, 1)
+offset_left = 783.0
+offset_top = 7.0
+offset_right = 984.0
+offset_bottom = 202.0
+mouse_filter = 2
+texture = ExtResource("2_dym76")
+expand_mode = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Crafting"]
+[node name="element2" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 236.0
-offset_right = 190.0
-offset_bottom = 291.0
-color = Color(0.937255, 0.721569, 0.372549, 1)
+offset_left = 107.0
+offset_top = 105.0
+offset_right = 179.0
+offset_bottom = 177.0
+element = "water"
 
-[node name="ColorRect3" type="ColorRect" parent="Crafting"]
+[node name="element3" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 343.0
-offset_right = 192.0
-offset_bottom = 396.0
-color = Color(0.937255, 0.721569, 0.372549, 1)
+offset_left = 27.0
+offset_top = 108.0
+offset_right = 99.0
+offset_bottom = 180.0
+element = "earth"
 
-[node name="ColorRect4" type="ColorRect" parent="Crafting"]
+[node name="element4" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 406.0
-offset_right = 193.0
-offset_bottom = 461.0
-color = Color(0.937255, 0.721569, 0.372549, 1)
+offset_left = 104.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 111.0
+element = "fire"
 
-[node name="elementsContainer" type="GridContainer" parent="Crafting"]
+[node name="element" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.96
+anchor_bottom = 0.964
+offset_left = 28.0
+offset_top = 37.0
+offset_right = -100.96
+offset_bottom = -86.98
+
+[node name="bottle" type="TextureRect" parent="Crafting" node_paths=PackedStringArray("slot1", "slot2")]
 layout_mode = 0
-offset_left = 631.0
-offset_top = 206.0
-offset_right = 983.0
-offset_bottom = 352.0
-columns = 2
-script = ExtResource("2_m64c8")
+offset_left = 452.0
+offset_top = -155.0
+offset_right = 1048.0
+offset_bottom = 292.0
+rotation = 1.56702
+texture = ExtResource("8_wt5ru")
+expand_mode = 5
+script = ExtResource("10_ppfq8")
+slot1 = NodePath("bottleslot")
+slot2 = NodePath("bottleslot2")
+
+[node name="alchemize" type="Button" parent="Crafting/bottle"]
+layout_mode = 0
+offset_left = 164.093
+offset_top = -24.3813
+offset_right = 348.093
+offset_bottom = 67.6187
+rotation = -1.57431
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Crafting/bottle/alchemize"]
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 94.0
+mouse_filter = 2
+texture = ExtResource("11_3qfdm")
+expand_mode = 3
+
+[node name="bottleslot" parent="Crafting/bottle" instance=ExtResource("12_p4u2h")]
+layout_mode = 0
+offset_left = 205.323
+offset_top = 179.776
+offset_right = 310.323
+offset_bottom = 277.776
+rotation = -1.56076
+
+[node name="bottleslot2" parent="Crafting/bottle" instance=ExtResource("12_p4u2h")]
+layout_mode = 0
+offset_left = 215.667
+offset_top = 353.816
+offset_right = 320.667
+offset_bottom = 451.816
+rotation = -1.56013
+
+[node name="aqua regia" type="Button" parent="Crafting/bottle"]
+layout_mode = 0
+offset_left = 265.092
+offset_top = -24.0004
+offset_right = 449.092
+offset_bottom = 67.9996
+rotation = -1.57431
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Crafting/bottle/aqua regia"]
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 94.0
+mouse_filter = 2
+texture = ExtResource("8_bg3up")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 69.0
+offset_right = 1065.0
+offset_bottom = 116.0
+text = "X"
+
+[connection signal="pressed" from="Crafting/bottle/alchemize" to="Crafting/bottle" method="_on_button_pressed"]
+[connection signal="pressed" from="Crafting/bottle/aqua regia" to="Crafting/bottle" method="_aqua_regia"]
+[connection signal="pressed" from="Button" to="." method="_hide"]

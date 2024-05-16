@@ -13,8 +13,19 @@ var priorVelocity = Vector2(0, 0)
 var protectedAngles = []
 var dead = false
 
+var power_scenes = {
+	"boots": preload("res://components/powerups/boots.tscn"),
+	"wings": preload("res://components/powerups/flight.tscn")
+
+}
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	#connect to power signal
+	PlayerInfo.power_updated.connect(change_powers)
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -88,3 +99,28 @@ func _change_size(scaleFactor):
 func get_height():
 	# return the height of the player
 	return HEIGHT
+
+func change_powers():
+	print("changing powers on player")
+	# change the powers of the player
+	# get the new powers
+	var powers = PlayerInfo.powers
+	
+	#iterate over powers
+	for power in powers:
+		#if power is not active, check if there is a child node that matches its name and remove it
+		if not power.active:
+			var power_node = get_node(power.name)
+			if power_node:
+				print("disabling power", power.name)
+				power_node.remove()
+		else:
+			#if power is active, check if there is a scene that matches its name and add it
+			if power.name in power_scenes:
+				print("enabling power", power.name)
+				#check if the power is already added
+				if not get_node(power.name):
+					#instantiate the power scene
+					var power_scene = power_scenes[power.name].instantiate()
+					add_child(power_scene)
+		

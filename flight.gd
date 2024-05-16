@@ -1,25 +1,36 @@
 extends Node2D
 
 var agent = null
-@export var FLIGHT_VELOCITY = 2000
-@export var MAX_FLIGHT_TIME = 0.5
+var FLIGHT_VELOCITY = 2000
+var MAX_FLIGHT_TIME = 0.5
+var wings = []
+@export var enabled = false
 var flight_time = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#get parent characterbody
 	agent = get_parent()
+	#deferred function
+	#set collision shape to parent
+	pass_up_collision_shapes.call_deferred()
 	
 
-func _process(delta):
+func pass_up_collision_shapes():
 	for i in get_children():
 		if i is CollisionShape2D:
 			print(agent)
 			i.reparent(agent)
 			#scale
 			i.scale = scale
-			# #set position
-			# i.position = Vector2(0,0)
-			# print(i.position)
+			wings.append(i)
+
+func remove_wings():
+	for i in wings:
+		i.queue_free()
+
+func remove():
+	remove_wings()
+	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -32,16 +43,3 @@ func _physics_process(delta):
 	#reset flight time if on the ground
 	elif agent.is_on_floor():
 		flight_time = 0.0
-	#pass collisions to parent
-	# move_and_slide()
-	# check for collision speed
-	# for i in get_slide_collision_count():
-	# 	var collision = get_slide_collision(i)
-	# 	agent.handle_collision(collision, self)
-
-#if spacebar is pressed while not on the ground, go upwards
-# func _input(event):
-# 	print("input")
-# 	#print key pressed
-# 	if event is InputEventKey:
-# 		if event.pressed and event.keycode == KEY_SPACE:

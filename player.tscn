@@ -246,7 +246,8 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(440, 523)
+position = Vector2(430, 486)
+
 collision_layer = 2
 script = ExtResource("1_5rrfp")
 metadata/_edit_group_ = true
