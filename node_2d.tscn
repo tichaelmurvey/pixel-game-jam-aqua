@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://b4yym01tnsbfy" path="res://assets/Decorations/Torch animation/torch-B-02.png" id="52_nkdau"]
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
 [ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/spike.tscn" id="54_pawd6"]
-[ext_resource type="PackedScene" uid="uid://qxo60frvq6xw" path="res://dispensor.tscn" id="55_rr148"]
+[ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://dispensor.tscn" id="55_rr148"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
 animations = [{

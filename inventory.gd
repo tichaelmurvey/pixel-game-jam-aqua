@@ -34,3 +34,8 @@ func add_element(element):
 
 func get_element_count(element):
 	return inventory[element]
+
+func reset():
+	for element in elements:
+		inventory[element] = 0
+	inventory_changed.emit()
