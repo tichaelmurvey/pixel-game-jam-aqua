@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcik6hk0milfk"
-path="res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"
+uid="uid://b1ugj0b5l21l0"
+path="res://.godot/imported/vitriolum-vitriol.svg-c6a21f35df0ecac86d864512633cbd53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Decorations/Alchemy tools.png"
-dest_files=["res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"]
+source_file="res://assets/symbols/vitriolum-vitriol.svg"
+dest_files=["res://.godot/imported/vitriolum-vitriol.svg-c6a21f35df0ecac86d864512633cbd53.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

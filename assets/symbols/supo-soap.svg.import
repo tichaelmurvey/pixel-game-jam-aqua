@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcik6hk0milfk"
-path="res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"
+uid="uid://nyq16ynyir8s"
+path="res://.godot/imported/supo-soap.svg-323bfe0f98ca633fe46231b9a77a5e36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Decorations/Alchemy tools.png"
-dest_files=["res://.godot/imported/Alchemy tools.png-ff0e50ef145346417fa6b6611a565f63.ctex"]
+source_file="res://assets/symbols/supo-soap.svg"
+dest_files=["res://.godot/imported/supo-soap.svg-323bfe0f98ca633fe46231b9a77a5e36.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

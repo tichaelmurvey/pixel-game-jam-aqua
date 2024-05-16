@@ -1,5 +1,4 @@
 [gd_scene load_steps=63 format=3 uid="uid://bn22lue3utaew"]
-
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Background/1.png" id="8_ejuuh"]
 [ext_resource type="Texture2D" uid="uid://jtmrala4v5xg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png" id="9_nudbm"]
 [ext_resource type="Texture2D" uid="uid://d3qp0sqnem1vl" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_2.png" id="10_co87l"]
+[ext_resource type="PackedScene" uid="uid://na2fte52arl7" path="res://crafting_menu.tscn" id="10_q7fmt"]
 [ext_resource type="Texture2D" uid="uid://dama0wr7f6668" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_3.png" id="11_h5d0u"]
 [ext_resource type="Texture2D" uid="uid://b7e25gqf7o418" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_4.png" id="12_p0cq2"]
 [ext_resource type="Texture2D" uid="uid://b61last7pbkg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_5.png" id="13_d0rb3"]
@@ -295,6 +295,22 @@ offset_right = 631.0
 offset_bottom = 73.0
 text = "CRAFTING MENU"
 label_settings = SubResource("LabelSettings_i3ikx")
+
+[node name="craftingMenuButton2" type="Button" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 41.0
+offset_right = 103.0
+offset_bottom = 104.0
+action_mode = 0
+script = ExtResource("6_qodb5")
+
+[node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
+
+[node name="background3" type="Sprite2D" parent="."]
+position = Vector2(-7626, -142)
+scale = Vector2(14.8056, 25.9938)
+texture = ExtResource("8_ejuuh")
+metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
 position = Vector2(-3507, -676)
@@ -875,5 +891,8 @@ scale = Vector2(1.165, 1)
 [node name="spike98" parent="." instance=ExtResource("54_pawd6")]
 position = Vector2(-2298, -1088)
 scale = Vector2(0.955, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 
 [connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenuButton" method="_on_pressed"]
