@@ -4,10 +4,10 @@ var elements = ["earth", "fire", "water", "air"]
 signal inventory_changed
 
 var inventory = {
-	"earth": 1,
-	"fire": 1,
-	"water": 1,
-	"air": 5
+	"earth": 0,
+	"fire": 0,
+	"water": 0,
+	"air": 0
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +25,11 @@ func remove_element(element):
 		inventory_changed.emit()
 
 func add_element(element):
-	inventory[element] += 1
+	print('adding element ', element)
+	if inventory[element] != null:
+		inventory[element] += 1
+	else:
+		print('element not found ', element)
 	inventory_changed.emit()
 
 func get_element_count(element):
