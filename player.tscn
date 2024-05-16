@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
-size = Vector2(12.5, 28)
+size = Vector2(12.5, 26.6667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wks7n"]
 atlas = ExtResource("2_330ma")
@@ -247,18 +247,19 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
 position = Vector2(430, 486)
+
 collision_layer = 2
 script = ExtResource("1_5rrfp")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.375, 28)
-scale = Vector2(2.5, 2.5)
+position = Vector2(0, 25)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_dwu3h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.45314, 21.9219)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Idle"
 autoplay = "Idle"
