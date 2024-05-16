@@ -1,8 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=35 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
-[ext_resource type="PackedScene" uid="uid://d1kt0lfklhlqq" path="res://components/powerups/boots.tscn" id="3_fwjba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(12.5, 28)
@@ -247,7 +246,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(438, 520)
+position = Vector2(430, 486)
 collision_layer = 2
 script = ExtResource("1_5rrfp")
 metadata/_edit_group_ = true
@@ -263,6 +262,3 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="boots" parent="." instance=ExtResource("3_fwjba")]
-visible = false

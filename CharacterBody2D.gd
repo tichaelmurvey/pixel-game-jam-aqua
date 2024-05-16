@@ -6,12 +6,18 @@ var MAX_RUN_SPEED = 500
 var SPEED = 0
 var ACCELERATION = 100
 var JUMP_VELOCITY = -400
-var DEATH_COLLISION = 1500
+var DEATH_COLLISION = 800
 var WEIGHT = 50
 var HEIGHT = 50
 var priorVelocity = Vector2(0, 0)
 var protectedAngles = []
 var dead = false
+
+var power_scenes = {
+	"boots": preload("res://components/powerups/boots.tscn"),
+	"wings": preload("res://components/powerups/flight.tscn")
+
+}
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -105,12 +111,16 @@ func change_powers():
 		#if power is not active, check if there is a child node that matches its name and remove it
 		if not power.active:
 			var power_node = get_node(power.name)
-			if power_node and power_node.enabled:
-				power_node.disable()
+			if power_node:
+				print("disabling power", power.name)
+				power_node.remove()
 		else:
-			#if power is active, check if there is a child node that matches its name and add it
-			var power_node = get_node(power.name)
-			if power_node and not power_node.enabled:
+			#if power is active, check if there is a scene that matches its name and add it
+			if power.name in power_scenes:
 				print("enabling power", power.name)
-				power_node.enable()
+				#check if the power is already added
+				if not get_node(power.name):
+					#instantiate the power scene
+					var power_scene = power_scenes[power.name].instantiate()
+					add_child(power_scene)
 		
