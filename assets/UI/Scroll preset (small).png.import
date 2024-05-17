@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv0je5agif1f1"
-path="res://.godot/imported/aqua regia.png-3b836759b80657ef1c7327bac284a6b3.ctex"
+uid="uid://bn52ikhcagx62"
+path="res://.godot/imported/Scroll preset (small).png-9f9afe165dbb4bf9957e27958abb5ff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI elements/aqua regia.png"
-dest_files=["res://.godot/imported/aqua regia.png-3b836759b80657ef1c7327bac284a6b3.ctex"]
+source_file="res://assets/UI/Scroll preset (small).png"
+dest_files=["res://.godot/imported/Scroll preset (small).png-9f9afe165dbb4bf9957e27958abb5ff2.ctex"]
 
 [params]
 

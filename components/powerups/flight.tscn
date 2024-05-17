@@ -15,7 +15,6 @@ height = 78.598
 z_index = 4
 z_as_relative = false
 script = ExtResource("1_mj0un")
-enabled = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(30, -12)

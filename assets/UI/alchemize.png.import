@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq372pv2f1ifo"
-path="res://.godot/imported/alchemize.png-22ec973a1e8ead9843156cb9954585a1.ctex"
+path="res://.godot/imported/alchemize.png-e91b89ee94a90a472c82917292cc5c9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI elements/alchemize.png"
-dest_files=["res://.godot/imported/alchemize.png-22ec973a1e8ead9843156cb9954585a1.ctex"]
+source_file="res://assets/UI/alchemize.png"
+dest_files=["res://.godot/imported/alchemize.png-e91b89ee94a90a472c82917292cc5c9b.ctex"]
 
 [params]
 

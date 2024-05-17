@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn52ikhcagx62"
-path="res://.godot/imported/Scroll preset (small).png-46fd8ddc313e0793f177c93e08c097e0.ctex"
+uid="uid://bjat2527bckg2"
+path="res://.godot/imported/Single bottle.png-b73ebecd4866ff9cccd085219c72f9c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI elements/Scroll preset (small).png"
-dest_files=["res://.godot/imported/Scroll preset (small).png-46fd8ddc313e0793f177c93e08c097e0.ctex"]
+source_file="res://assets/UI/Single bottle.png"
+dest_files=["res://.godot/imported/Single bottle.png-b73ebecd4866ff9cccd085219c72f9c3.ctex"]
 
 [params]
 
