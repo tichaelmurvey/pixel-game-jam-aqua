@@ -5,22 +5,20 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ybjld"]
 font = ExtResource("2_xacmn")
-font_size = 20
+font_size = 15
 font_color = Color(0, 0, 0, 1)
 
 [node name="bottleslot" type="TextureRect"]
-offset_left = 169.0
-offset_top = 62.0
-offset_right = 274.0
-offset_bottom = 160.0
+offset_right = 40.0
+offset_bottom = 41.0
 script = ExtResource("1_u0lil")
 
 [node name="name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 76.0
-offset_right = 83.0
-offset_bottom = 101.0
+offset_top = 17.0
+offset_right = 40.0
+offset_bottom = 42.0
 text = "2"
 label_settings = SubResource("LabelSettings_ybjld")
 horizontal_alignment = 1
+vertical_alignment = 2

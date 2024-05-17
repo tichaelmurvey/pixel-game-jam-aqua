@@ -1,11 +1,9 @@
 [gd_scene load_steps=64 format=3 uid="uid://bn22lue3utaew"]
-
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
 [ext_resource type="Texture2D" uid="uid://c8k1lg0r2cth1" path="res://assets/Objects/Fire reagent.png" id="5_bepus"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
-[ext_resource type="Script" path="res://craftingMenuButton.gd" id="6_qodb5"]
 [ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Background/1.png" id="8_ejuuh"]
 [ext_resource type="Texture2D" uid="uid://jtmrala4v5xg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png" id="9_nudbm"]
 [ext_resource type="Texture2D" uid="uid://d3qp0sqnem1vl" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_2.png" id="10_co87l"]
@@ -242,25 +240,15 @@ position = Vector2(-20.9366, 24.2424)
 shape = SubResource("RectangleShape2D_0jdqo")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(575, 324)
-offset = Vector2(0, -40)
-zoom = Vector2(1.8, 1.8)
+position = Vector2(486, 432)
+offset = Vector2(80, -40)
+zoom = Vector2(1.2, 1.2)
 script = ExtResource("5_n1tba")
 player = NodePath("../player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="craftingMenuButton" type="Button" parent="CanvasLayer"]
-offset_left = 40.0
-offset_top = 41.0
-offset_right = 103.0
-offset_bottom = 104.0
-action_mode = 0
-script = ExtResource("6_qodb5")
-metadata/_edit_use_anchors_ = true
-
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
-visible = false
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
 position = Vector2(-1960, -1523)
@@ -890,4 +878,16 @@ scale = Vector2(1.165, 1)
 position = Vector2(-3210, 609)
 scale = Vector2(1.165, 1)
 
-[connection signal="pressed" from="CanvasLayer/craftingMenuButton" to="CanvasLayer/craftingMenu2" method="_show"]
+[node name="spike98" parent="." instance=ExtResource("54_pawd6")]
+position = Vector2(-2298, -1088)
+scale = Vector2(0.955, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="dispensor2" parent="." instance=ExtResource("55_rr148")]
+position = Vector2(278, 590)
+
+[node name="dispensor" parent="." instance=ExtResource("55_rr148")]
+position = Vector2(502, 584)
+element = "air"
