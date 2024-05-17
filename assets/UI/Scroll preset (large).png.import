@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0uy0igjk3dvs"
-path="res://.godot/imported/Yellow Paper (guide).png-938eb3d24dfebcbdb18d92a7696d1340.ctex"
+uid="uid://dw8g6opjix1us"
+path="res://.godot/imported/Scroll preset (large).png-fa3fa4161b778d29d48c7357424ff5ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI elements/Yellow Paper (guide).png"
-dest_files=["res://.godot/imported/Yellow Paper (guide).png-938eb3d24dfebcbdb18d92a7696d1340.ctex"]
+source_file="res://assets/UI/Scroll preset (large).png"
+dest_files=["res://.godot/imported/Scroll preset (large).png-fa3fa4161b778d29d48c7357424ff5ae.ctex"]
 
 [params]
 

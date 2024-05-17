@@ -1,7 +1,7 @@
 extends Node2D
 
 var agent = null
-var FLIGHT_VELOCITY = 2000
+var FLIGHT_VELOCITY = 1200
 var MAX_FLIGHT_TIME = 0.5
 var wings = []
 @export var enabled = false
