@@ -4,7 +4,7 @@ var elements = ["earth", "fire", "water", "air"]
 signal inventory_changed
 
 var inventory = {
-	"earth": 0,
+	"earth": 5,
 	"fire": 0,
 	"water": 0,
 	"air": 0

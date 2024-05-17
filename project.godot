@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Inventory="*res://inventory.gd"
 PlayerInfo="*res://player_info.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

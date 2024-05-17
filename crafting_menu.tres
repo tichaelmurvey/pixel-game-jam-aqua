@@ -1,7 +1,7 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b8eo3lvn75eca"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://boc335gbi2k65"]
 
 [ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="1_8nf5u"]
 
 [resource]
 default_font = ExtResource("1_8nf5u")
-default_font_size = 50
+default_font_size = 20
