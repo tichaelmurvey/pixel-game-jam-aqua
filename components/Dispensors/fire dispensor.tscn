@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://3wriuykdidee"]
+[gd_scene load_steps=10 format=3 uid="uid://3wriuykdidee"]
 
 [ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_y5dqu"]
 [ext_resource type="Texture2D" uid="uid://c8k1lg0r2cth1" path="res://assets/Objects/Fire reagent.png" id="2_w3lfd"]
+[ext_resource type="Texture2D" uid="uid://8jgdqai4jjpo" path="res://assets/Objects/Fire animation/fire.png" id="3_ftvb8"]
+[ext_resource type="Texture2D" uid="uid://cwxur877pcosj" path="res://assets/Objects/Fire animation/fire 2.png" id="4_7lujv"]
+[ext_resource type="Texture2D" uid="uid://dnaxmkbekdpap" path="res://assets/Objects/Fire animation/fire 3.png" id="5_ierem"]
 [ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="14_qvco5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
@@ -16,6 +19,26 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khnqg"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("3_ftvb8")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_7lujv")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_ierem")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_7lujv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
 }]
 
 [node name="dispensor" type="Area2D"]
@@ -36,12 +59,19 @@ scale = Vector2(0.515625, 0.521591)
 sprite_frames = SubResource("SpriteFrames_2gpea")
 autoplay = "default"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -46)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_khnqg")
+autoplay = "default"
+frame_progress = 0.435861
+
 [node name="hint" type="TextureRect" parent="."]
 visible = false
 offset_left = -49.0
-offset_top = -149.0
+offset_top = -167.0
 offset_right = 48.0
-offset_bottom = -38.0
+offset_bottom = -56.0
 texture = ExtResource("14_qvco5")
 expand_mode = 1
 

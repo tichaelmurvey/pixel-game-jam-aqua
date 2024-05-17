@@ -110,7 +110,7 @@ position = Vector2(1, -40)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_s1vd8")
 autoplay = "default"
-frame_progress = 0.286509
+frame_progress = 0.174889
 
 [node name="hint" type="TextureRect" parent="."]
 visible = false

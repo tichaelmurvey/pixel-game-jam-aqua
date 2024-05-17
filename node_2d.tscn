@@ -224,24 +224,12 @@ player = NodePath("../player")
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
-position = Vector2(459, 557)
+position = Vector2(367, 509)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="Background" type="Node2D" parent="."]
-
-[node name="4" type="Sprite2D" parent="Background"]
-position = Vector2(-1138, -1032.5)
-scale = Vector2(3, 3)
-texture = ExtResource("36_a3dge")
-metadata/_edit_lock_ = true
-
-[node name="SmallCloud3" type="Sprite2D" parent="Background"]
-position = Vector2(-545, -1526.5)
-scale = Vector2(3, 3)
-texture = ExtResource("37_a7vpk")
-metadata/_edit_lock_ = true
 
 [node name="background" type="Sprite2D" parent="Background"]
 position = Vector2(902, -142)
@@ -253,6 +241,18 @@ metadata/_edit_lock_ = true
 position = Vector2(-7626, -142)
 scale = Vector2(14.8056, 25.9938)
 texture = ExtResource("8_ejuuh")
+metadata/_edit_lock_ = true
+
+[node name="4" type="Sprite2D" parent="Background"]
+position = Vector2(-1138, -1032.5)
+scale = Vector2(3, 3)
+texture = ExtResource("36_a3dge")
+metadata/_edit_lock_ = true
+
+[node name="SmallCloud3" type="Sprite2D" parent="Background"]
+position = Vector2(-545, -1526.5)
+scale = Vector2(3, 3)
+texture = ExtResource("37_a7vpk")
 metadata/_edit_lock_ = true
 
 [node name="Room 1" type="Node2D" parent="."]
@@ -393,10 +393,12 @@ autoplay = "default"
 frame_progress = 0.197858
 
 [node name="Earth dispensor 1" parent="Room 1" instance=ExtResource("55_rr148")]
-position = Vector2(229, 596)
+position = Vector2(219, 583)
+scale = Vector2(2, 2)
 
 [node name="air dispensor 1" parent="Room 1" instance=ExtResource("56_rrcjo")]
-position = Vector2(667, 594)
+position = Vector2(667, 582)
+scale = Vector2(2, 2)
 
 [node name="Room 2" type="Node2D" parent="."]
 
@@ -652,7 +654,7 @@ position = Vector2(408.998, 640.001)
 scale = Vector2(0.835, 1)
 
 [node name="water dispensor 1" parent="Room 3 upper" instance=ExtResource("56_u4wj3")]
-position = Vector2(-2053, -1585.01)
+position = Vector2(-1555, 77.9961)
 rotation = -3.14159
 
 [node name="Room 3 lower" type="Node2D" parent="."]

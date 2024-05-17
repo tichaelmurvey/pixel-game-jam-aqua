@@ -1,11 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgj5vvpllwvw7"]
+[gd_scene load_steps=9 format=3 uid="uid://bgj5vvpllwvw7"]
 
 [ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_nxlvc"]
 [ext_resource type="Texture2D" uid="uid://chlhb2yrw2uej" path="res://assets/Objects/Berrybush single.png" id="2_ih3yo"]
 [ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="3_fnqc2"]
+[ext_resource type="Texture2D" uid="uid://jqfttvjo5w3b" path="res://assets/Objects/Earth animation/earth.png" id="3_gs01q"]
+[ext_resource type="Texture2D" uid="uid://dxucypo6m7ys6" path="res://assets/Objects/Earth animation/earth 2.png" id="4_8aqnt"]
+[ext_resource type="Texture2D" uid="uid://cdfo4keev2ytu" path="res://assets/Objects/Earth animation/earth 3.png" id="5_m38pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
 size = Vector2(71.25, 30.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph140"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("3_gs01q")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_8aqnt")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_m38pp")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_8aqnt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="dispensor" type="Area2D"]
 z_index = 4
@@ -23,12 +46,19 @@ position = Vector2(0.5, 0.5)
 scale = Vector2(1.34375, 1.36667)
 texture = ExtResource("2_ih3yo")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -25)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ph140")
+autoplay = "default"
+frame_progress = 0.504882
+
 [node name="hint" type="TextureRect" parent="."]
 visible = false
 offset_left = -48.0
-offset_top = -127.0
+offset_top = -145.0
 offset_right = 49.0
-offset_bottom = -16.0
+offset_bottom = -34.0
 texture = ExtResource("3_fnqc2")
 expand_mode = 1
 
