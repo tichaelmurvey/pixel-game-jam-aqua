@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr1f1f3huexo2"]
+
+[ext_resource type="Script" path="res://fireball-power.gd" id="1_vdnpt"]
+
+[node name="fireball" type="Node2D"]
+script = ExtResource("1_vdnpt")

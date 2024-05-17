@@ -5,9 +5,9 @@ signal inventory_changed
 
 var inventory = {
 	"earth": 5,
-	"fire": 0,
-	"water": 0,
-	"air": 0
+	"fire": 5,
+	"water": 5,
+	"air": 5
 }
 
 # Called when the node enters the scene tree for the first time.

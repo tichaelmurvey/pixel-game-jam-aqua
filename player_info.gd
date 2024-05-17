@@ -9,20 +9,20 @@ var power_combo_table = {
 	},
 	"water": {
 		"fire": "explode",
-		"water": "big",
-		"earth": "heavy",
+		"water": "big", #done
+		"earth": "heavy", 
 		"air": "intangible"
 	},
 	"earth": {
 		"fire": "bright",
 		"water": "small",
 		"earth": "stone",
-		"air": "wings"
+		"air": "wings" #done
 	},
 	"air": {
 		"fire": "rocket",
 		"water": "ice",
-		"earth": "boots",
+		"earth": "boots", #done
 		"air": "cloud"
 	}
 }
@@ -99,14 +99,16 @@ var powers = [
 #power update signal
 signal power_updated
 
+var player = null
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if player == null:
+		var root = get_tree().get_root()
+		print(root.get_children())
+		player = root.get_node("game/player")
+		print("player found")
+		print(player)
 
 
 func add_power(element1, element2):
