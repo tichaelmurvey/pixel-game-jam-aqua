@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://3wriuykdidee"]
+
+[ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_y5dqu"]
+[ext_resource type="Texture2D" uid="uid://c8k1lg0r2cth1" path="res://assets/Objects/Fire reagent.png" id="2_w3lfd"]
+[ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="14_qvco5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
+size = Vector2(65, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gpea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w3lfd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dispensor" type="Area2D"]
+z_index = 4
+position = Vector2(485, 586)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_y5dqu")
+element = "fire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -12)
+shape = SubResource("RectangleShape2D_npgcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -13)
+scale = Vector2(0.515625, 0.521591)
+sprite_frames = SubResource("SpriteFrames_2gpea")
+autoplay = "default"
+
+[node name="hint" type="TextureRect" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = -149.0
+offset_right = 48.0
+offset_bottom = -38.0
+texture = ExtResource("14_qvco5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="hint"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 74.0
+text = "Press F
+to collect
+element"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,31 +1,34 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgj5vvpllwvw7"]
 
-[ext_resource type="Script" path="res://dispensor.gd" id="1_nxlvc"]
-[ext_resource type="Texture2D" uid="uid://b8gsm2k144vv6" path="res://assets/Decorations/barrel.png" id="2_sscxs"]
+[ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_nxlvc"]
+[ext_resource type="Texture2D" uid="uid://chlhb2yrw2uej" path="res://assets/Objects/Berrybush single.png" id="2_ih3yo"]
 [ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="3_fnqc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
-size = Vector2(71.25, 39)
+size = Vector2(71.25, 30.5)
 
 [node name="dispensor" type="Area2D"]
-z_index = 6
+z_index = 4
 position = Vector2(485, 586)
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_nxlvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
+position = Vector2(-1, -2.25)
 shape = SubResource("RectangleShape2D_npgcd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_sscxs")
+position = Vector2(0.5, 0.5)
+scale = Vector2(1.34375, 1.36667)
+texture = ExtResource("2_ih3yo")
 
 [node name="hint" type="TextureRect" parent="."]
 visible = false
-offset_left = -46.0
-offset_top = -111.0
-offset_right = 51.0
+offset_left = -48.0
+offset_top = -127.0
+offset_right = 49.0
+offset_bottom = -16.0
 texture = ExtResource("3_fnqc2")
 expand_mode = 1
 

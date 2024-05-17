@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
 [ext_resource type="PackedScene" uid="uid://mtlbj4fmit64" path="res://player.tscn" id="2_kdfr0"]
-[ext_resource type="Texture2D" uid="uid://c8k1lg0r2cth1" path="res://assets/Objects/Fire reagent.png" id="5_bepus"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_n1tba"]
 [ext_resource type="Texture2D" uid="uid://db5hmhe454i1v" path="res://assets/Background/1.png" id="8_ejuuh"]
 [ext_resource type="Texture2D" uid="uid://jtmrala4v5xg" path="res://assets/Decorations/Candelabrum animation/candelabrum_tall_1.png" id="9_nudbm"]
@@ -53,22 +52,11 @@
 [ext_resource type="Texture2D" uid="uid://b4yym01tnsbfy" path="res://assets/Decorations/Torch animation/torch-B-02.png" id="52_nkdau"]
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
 [ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/spike.tscn" id="54_pawd6"]
-[ext_resource type="PackedScene" uid="uid://dafrrm01dbs7j" path="res://moving_platform.tscn" id="55_8ulrd"]
-[ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://dispensor.tscn" id="55_rr148"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_213ho"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_bepus")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jdqo"]
-size = Vector2(47.3829, 56.1983)
+[ext_resource type="PackedScene" uid="uid://dj1d28of202ho" path="res://moving_platform.tscn" id="55_8ulrd"]
+[ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://components/Dispensors/earth dispensor.tscn" id="55_rr148"]
+[ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
+[ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
+[ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -224,23 +212,6 @@ layer_0/tile_data = PackedInt32Array(720921, 65540, 1, 786457, 65540, 2, 851993,
 script = ExtResource("2_0ywu4")
 metadata/_edit_lock_ = true
 
-[node name="dispenser (fire)" type="Area2D" parent="."]
-visibility_layer = 2
-z_index = 2
-position = Vector2(951, -446)
-scale = Vector2(1.815, 1.815)
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dispenser (fire)"]
-position = Vector2(-22.3678, 23.4565)
-scale = Vector2(0.577967, 0.566728)
-sprite_frames = SubResource("SpriteFrames_213ho")
-frame_progress = 0.139724
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dispenser (fire)"]
-position = Vector2(-20.9366, 24.2424)
-shape = SubResource("RectangleShape2D_0jdqo")
-
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(486, 432)
 offset = Vector2(80, -40)
@@ -253,7 +224,7 @@ player = NodePath("../player")
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
-position = Vector2(299, 394)
+position = Vector2(459, 557)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -421,12 +392,11 @@ sprite_frames = SubResource("SpriteFrames_0dx4w")
 autoplay = "default"
 frame_progress = 0.197858
 
-[node name="dispensor2" parent="Room 1" instance=ExtResource("55_rr148")]
-position = Vector2(278, 590)
+[node name="Earth dispensor 1" parent="Room 1" instance=ExtResource("55_rr148")]
+position = Vector2(229, 596)
 
-[node name="dispensor" parent="Room 1" instance=ExtResource("55_rr148")]
-position = Vector2(502, 584)
-element = "air"
+[node name="air dispensor 1" parent="Room 1" instance=ExtResource("56_rrcjo")]
+position = Vector2(667, 594)
 
 [node name="Room 2" type="Node2D" parent="."]
 
@@ -449,6 +419,9 @@ rotation = 3.14159
 [node name="spike3" parent="Room 2" instance=ExtResource("54_pawd6")]
 position = Vector2(497, -736)
 rotation = 3.14159
+
+[node name="fire dispensor 1" parent="Room 2" instance=ExtResource("57_8rv8o")]
+position = Vector2(913, -365)
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Room 2"]
 z_index = 1
@@ -678,6 +651,10 @@ scale = Vector2(0.905, 1)
 position = Vector2(408.998, 640.001)
 scale = Vector2(0.835, 1)
 
+[node name="water dispensor 1" parent="Room 3 upper" instance=ExtResource("56_u4wj3")]
+position = Vector2(-2053, -1585.01)
+rotation = -3.14159
+
 [node name="Room 3 lower" type="Node2D" parent="."]
 
 [node name="spike49" parent="Room 3 lower" instance=ExtResource("54_pawd6")]
@@ -886,13 +863,6 @@ scale = Vector2(0.955, 1)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
-
-[node name="dispensor2" parent="." instance=ExtResource("55_rr148")]
-position = Vector2(278, 590)
-
-[node name="dispensor" parent="." instance=ExtResource("55_rr148")]
-position = Vector2(502, 584)
-element = "air"
 
 [node name="movingPlatform" parent="." instance=ExtResource("55_8ulrd")]
 position = Vector2(404, 467)

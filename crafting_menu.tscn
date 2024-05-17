@@ -84,9 +84,9 @@ offset_bottom = 462.0
 [node name="Bottle 1" type="TextureRect" parent="Crafting/craftingBottle" node_paths=PackedStringArray("slot1", "slot2")]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 17.0
+offset_top = 10.0
 offset_right = 179.0
-offset_bottom = 178.0
+offset_bottom = 189.0
 texture = ExtResource("11_3x23j")
 script = ExtResource("10_ppfq8")
 slot1 = NodePath("bottleslot")
@@ -94,25 +94,25 @@ slot2 = NodePath("bottleslot2")
 
 [node name="bottleslot" parent="Crafting/craftingBottle/Bottle 1" instance=ExtResource("12_p4u2h")]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 59.0
-offset_right = 95.0
-offset_bottom = 102.0
+offset_left = 37.0
+offset_top = 50.0
+offset_right = 90.0
+offset_bottom = 93.0
 
 [node name="bottleslot2" parent="Crafting/craftingBottle/Bottle 1" instance=ExtResource("12_p4u2h")]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 111.0
-offset_right = 96.0
-offset_bottom = 150.0
+offset_left = 37.0
+offset_top = 109.0
+offset_right = 90.0
+offset_bottom = 148.0
 
 [node name="alchemize 1" type="Button" parent="Crafting/craftingBottle"]
 z_index = 1
 layout_mode = 0
 offset_left = 13.0
-offset_top = 176.0
+offset_top = 185.0
 offset_right = 107.0
-offset_bottom = 220.0
+offset_bottom = 229.0
 theme = ExtResource("8_h87b2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Alchemize"
@@ -135,9 +135,9 @@ expand_mode = 1
 z_index = 1
 layout_mode = 0
 offset_left = 113.0
-offset_top = 178.0
+offset_top = 187.0
 offset_right = 215.0
-offset_bottom = 222.0
+offset_bottom = 231.0
 theme = ExtResource("8_h87b2")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Aqua Regia"

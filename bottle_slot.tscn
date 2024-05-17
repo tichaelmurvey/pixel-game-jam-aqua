@@ -15,9 +15,10 @@ script = ExtResource("1_u0lil")
 
 [node name="name" type="Label" parent="."]
 layout_mode = 0
-offset_top = 17.0
-offset_right = 40.0
-offset_bottom = 42.0
+offset_left = 11.0
+offset_top = 38.0
+offset_right = 51.0
+offset_bottom = 63.0
 text = "2"
 label_settings = SubResource("LabelSettings_ybjld")
 horizontal_alignment = 1

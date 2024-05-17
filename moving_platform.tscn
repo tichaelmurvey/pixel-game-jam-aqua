@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dafrrm01dbs7j"]
+[gd_scene load_steps=5 format=3 uid="uid://dj1d28of202ho"]
 
 [ext_resource type="Script" path="res://PathFollow2D.gd" id="1_pqnv0"]
 [ext_resource type="Texture2D" uid="uid://nsg4k33f8mx0" path="res://assets/Objects/Box.png" id="2_enfgm"]

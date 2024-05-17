@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn1mtfxt06h45"]
+
+[ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_3yes0"]
+[ext_resource type="Texture2D" uid="uid://ctv4oke7ife8f" path="res://assets/Objects/Fountain animation/fountain 1.png" id="2_8xjh8"]
+[ext_resource type="Texture2D" uid="uid://ccd0d22h6hmgj" path="res://assets/Objects/Fountain animation/fountain 2.png" id="3_a1k2q"]
+[ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="14_5qmrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
+size = Vector2(56, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p423y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8xjh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a1k2q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="dispensor" type="Area2D"]
+z_index = 4
+position = Vector2(485, 586)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_3yes0")
+element = "water"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_npgcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_p423y")
+autoplay = "default"
+frame = 1
+frame_progress = 0.424872
+
+[node name="hint" type="TextureRect" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -145.0
+offset_right = 49.0
+offset_bottom = -34.0
+texture = ExtResource("14_5qmrq")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="hint"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 74.0
+text = "Press F
+to collect
+element"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

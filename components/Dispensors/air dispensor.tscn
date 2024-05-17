@@ -1,0 +1,135 @@
+[gd_scene load_steps=21 format=3 uid="uid://b04kawr4fftu1"]
+
+[ext_resource type="Script" path="res://components/Dispensors/dispensor.gd" id="1_2bpir"]
+[ext_resource type="Texture2D" uid="uid://rolu275kpqgr" path="res://assets/Objects/Balloon animation/Idle_1_F_1.png" id="2_txy70"]
+[ext_resource type="Texture2D" uid="uid://cbp1hprc8077b" path="res://assets/Objects/Balloon animation/Idle_1_F_2.png" id="3_0gths"]
+[ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="3_bl1e8"]
+[ext_resource type="Texture2D" uid="uid://crwv0lxoy742h" path="res://assets/Objects/Balloon animation/Idle_1_F_3.png" id="4_7eyfs"]
+[ext_resource type="Texture2D" uid="uid://hv3lhfb0yyjx" path="res://assets/Objects/Balloon animation/Idle_1_F_4.png" id="5_yqi5n"]
+[ext_resource type="Texture2D" uid="uid://gwkpwq7m436t" path="res://assets/Objects/Balloon animation/Idle_1_L_1.png" id="6_w83dx"]
+[ext_resource type="Texture2D" uid="uid://comon0hsn0dsh" path="res://assets/Objects/Balloon animation/Idle_1_L_2.png" id="7_5cthb"]
+[ext_resource type="Texture2D" uid="uid://3qwtucx88jba" path="res://assets/Objects/Balloon animation/Idle_1_L_3.png" id="8_lee44"]
+[ext_resource type="Texture2D" uid="uid://dti1ddt4xehli" path="res://assets/Objects/Balloon animation/Idle_1_L_4.png" id="9_ecrot"]
+[ext_resource type="Texture2D" uid="uid://dm8b47k05yddm" path="res://assets/Objects/Balloon animation/Idle_1_R_1.png" id="10_ip4n6"]
+[ext_resource type="Texture2D" uid="uid://dw64dauk5665o" path="res://assets/Objects/Balloon animation/Idle_1_R_2.png" id="11_0307u"]
+[ext_resource type="Texture2D" uid="uid://4t7ecq25mtca" path="res://assets/Objects/Balloon animation/Idle_1_R_3.png" id="12_nvfoe"]
+[ext_resource type="Texture2D" uid="uid://dhvpmhxumx65d" path="res://assets/Objects/Balloon animation/Idle_1_R_4.png" id="13_ha7yl"]
+[ext_resource type="Texture2D" uid="uid://b6v4pr5aclma3" path="res://assets/Objects/Air animation/air.png" id="14_82gdi"]
+[ext_resource type="Texture2D" uid="uid://brb08wxmtgff3" path="res://assets/Objects/Air animation/air 2.png" id="15_28myw"]
+[ext_resource type="Texture2D" uid="uid://dxjkhrjncfji1" path="res://assets/Objects/Air animation/air 3.png" id="16_fgbfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
+size = Vector2(48, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp51f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_txy70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0gths")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7eyfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yqi5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w83dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5cthb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lee44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ecrot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ip4n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0307u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nvfoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ha7yl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1vd8"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("14_82gdi")
+}, {
+"duration": 0.8,
+"texture": ExtResource("15_28myw")
+}, {
+"duration": 1.5,
+"texture": ExtResource("16_fgbfv")
+}, {
+"duration": 0.8,
+"texture": ExtResource("15_28myw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="dispensor" type="Area2D"]
+z_index = 4
+position = Vector2(485, 586)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_2bpir")
+element = "air"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_npgcd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, -10)
+scale = Vector2(1.53125, 1.625)
+sprite_frames = SubResource("SpriteFrames_xp51f")
+autoplay = "default"
+frame = 2
+frame_progress = 0.302166
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -40)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_s1vd8")
+autoplay = "default"
+frame_progress = 0.286509
+
+[node name="hint" type="TextureRect" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -162.0
+offset_right = 49.0
+offset_bottom = -51.0
+texture = ExtResource("3_bl1e8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="hint"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 74.0
+text = "Press F
+to collect
+element"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
