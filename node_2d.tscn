@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://eb3vlsbkurqm" path="res://assets/Decorations/Light animation/light-03.png" id="21_ylikq"]
 [ext_resource type="Texture2D" uid="uid://dcvf2xqx55a3q" path="res://assets/Decorations/Light animation/light-04.png" id="22_rfp28"]
 [ext_resource type="Texture2D" uid="uid://b12g1qpciuv2d" path="res://assets/Decorations/books.png" id="23_3f5fe"]
-[ext_resource type="Texture2D" uid="uid://d2vdipsehvxvs" path="res://assets/Decorations/crate_3.png" id="24_xic87"]
+[ext_resource type="Texture2D" uid="uid://d2vdipsehvxvs" path="res://assets/Objects/crate_3.png" id="24_xic87"]
 [ext_resource type="Texture2D" uid="uid://lvn7vkimt1ym" path="res://assets/Decorations/curtain_blue_2.png" id="25_t3q3v"]
 [ext_resource type="Texture2D" uid="uid://dft6aposs14rv" path="res://assets/Decorations/flag_blue.png" id="26_htc1l"]
 [ext_resource type="Texture2D" uid="uid://d4nu0qdqwi2sm" path="res://assets/Decorations/door.png" id="27_gm1cv"]
