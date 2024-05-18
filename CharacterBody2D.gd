@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 var MAX_SPEED = 1500
 var MAX_RUN_SPEED = 250
-var SPEED = 0
+var SPEED = 100
 var ACCELERATION = 25
+var DECELERATION = ACCELERATION
 var JUMP_VELOCITY = -450
 var DEATH_COLLISION = 1150
 var WEIGHT = 50
@@ -12,17 +13,29 @@ var HEIGHT = 50
 var priorVelocity = Vector2(0, 0)
 var protectedAngles = []
 var dead = false
-
+var drift_mode = false
+var facing_left = false
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
 	"wings": preload("res://components/powerups/flight.tscn"),
 	"big": preload("res://components/powerups/big.tscn"),
-	"fireball": preload("res://components/powerups/fireball.tscn")
-
+	"fireball": preload("res://components/powerups/fireball.tscn"),
+	"block": preload("res://components/powerups/block.tscn"),
+	"spout": preload("res://components/powerups/spout.tscn"),
+	"cloud": preload("res://components/powerups/cloud.tscn"),
+	"explode": preload("res://components/powerups/explode.tscn"),
+	"heavy": preload("res://components/powerups/heavy.tscn"),
+	"intangible": preload("res://components/powerups/intangible.tscn"),
+	"bright": preload("res://components/powerups/bright.tscn"),
+	"small": preload("res://components/powerups/small.tscn"),
+	"puff": preload("res://components/powerups/puff.tscn"),
+	"ice": preload("res://components/powerups/ice.tscn"),
+	"rocket": preload("res://components/powerups/rocket.tscn"),
 }
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*1.5
+signal touched_floor
 
 func _ready():
 	#connect to power signal
@@ -30,21 +43,43 @@ func _ready():
 
 
 func _physics_process(delta):
+	#handle drift mode
+	if drift_mode:
+		var x_direction = Input.get_axis("move_left", "move_right")
+		var y_direction = Input.get_axis("move_up", "move_down")
+		if x_direction:
+			print("x direction", x_direction)
+			position.x += x_direction * SPEED * delta
+		if y_direction:
+			print("y direction", y_direction)
+			position.y += y_direction * SPEED * delta
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * MAX_RUN_SPEED, ACCELERATION)
+		if direction < 0:
+			facing_left = true
+			#flip the sprite
+			if not $Sprite.flip_h:
+				$Sprite.flip_h = true
+		else:
+			facing_left = false
+			#flip the sprite
+			if $Sprite.flip_h:
+				$Sprite.flip_h = false
 	else:
-		velocity.x = move_toward(velocity.x, 0, ACCELERATION)
+		velocity.x = move_toward(velocity.x, 0, DECELERATION)
 	
 	priorVelocity = velocity
 
@@ -56,13 +91,24 @@ func _physics_process(delta):
 		handle_collision(collision, self)
 	#reset speed to max speed if it is greater than max speed
 	if velocity.length() > MAX_SPEED:
-		velocity = velocity.normalized() * MAX_SPEED	
+		velocity = velocity.normalized() * MAX_SPEED
 
+
+func jump():
+	# Jump with the jump velocity.
+	velocity.y = JUMP_VELOCITY
 
 func handle_collision(collision, origin_collider):
 	#check if the collision is with a deadly object
 	if "deadly" in collision.get_collider() and collision.get_collider().deadly:
 		death()
+	#check if collision is with floor
+
+	#check if type of collider is tilemap
+	if collision.get_collider() is TileMap:
+		#check if the angle of the collision is between 90 and -90
+		if collision.get_angle() < PI/2 and collision.get_angle() > -PI/2:
+			touched_floor.emit()
 	#log velocity
 	if priorVelocity.y != 0 or priorVelocity.x != 0:
 		var angle = collision.get_angle()
@@ -101,8 +147,9 @@ func _change_size(scaleFactor):
 	scale *= scaleFactor
 
 func get_height():
-	# return the height of the player
-	return HEIGHT
+	# get the collision shape
+	print($CollisionShape2D.shape.size.y)
+	return $CollisionShape2D.shape.size.y
 
 func change_powers():
 	print("changing powers on player")

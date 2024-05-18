@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dec75ajgeklwk"]
+
+[ext_resource type="Script" path="res://rocket.gd" id="1_1822s"]
+[ext_resource type="Texture2D" uid="uid://dnaxmkbekdpap" path="res://assets/Objects/Fire animation/fire 3.png" id="2_b63w5"]
+
+[node name="rocket" type="Node2D"]
+script = ExtResource("1_1822s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 26)
+rotation = 3.13563
+scale = Vector2(0.255453, 0.255453)
+texture = ExtResource("2_b63w5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(4, 26)
+rotation = 3.13563
+scale = Vector2(0.255453, 0.255453)
+texture = ExtResource("2_b63w5")

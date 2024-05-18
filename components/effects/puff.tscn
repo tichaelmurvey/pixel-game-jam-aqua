@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0syjw5dkx6ac"]
+
+[ext_resource type="Script" path="res://puff.gd" id="1_a0h6r"]
+[ext_resource type="Texture2D" uid="uid://bjj15xx0wd8og" path="res://assets/Background/Small Cloud 1.png" id="2_6smid"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjqh8"]
+radius = 7.0
+height = 46.0
+
+[node name="puff2" type="Area2D"]
+position = Vector2(25, 4)
+script = ExtResource("1_a0h6r")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yjqh8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.52084, 1.79054)
+scale = Vector2(0.607545, 0.607545)
+texture = ExtResource("2_6smid")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

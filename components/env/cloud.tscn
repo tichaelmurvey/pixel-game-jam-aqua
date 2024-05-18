@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://drylqbn6ly8nf"]
+
+[ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="1_ribsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib22u"]
+size = Vector2(142, 19)
+
+[node name="cloud" type="StaticBody2D"]
+z_index = 5
+position = Vector2(-2, 54)
+rotation = 3.14159
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ribsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9.5)
+rotation = 3.14339
+shape = SubResource("RectangleShape2D_ib22u")
+one_way_collision = true

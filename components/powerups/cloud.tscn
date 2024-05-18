@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://r11x5xq67bw"]
+
+[ext_resource type="Script" path="res://cloud.gd" id="1_7ib2j"]
+[ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="2_cucik"]
+
+[node name="cloud" type="Node2D"]
+position = Vector2(-2, 25)
+script = ExtResource("1_7ib2j")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.568627, 0.94902, 1, 1)
+rotation = 3.14159
+scale = Vector2(0.261309, 0.288438)
+texture = ExtResource("2_cucik")

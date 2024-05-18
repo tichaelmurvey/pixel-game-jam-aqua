@@ -18,3 +18,6 @@ func _input(event):
 		if blocks.size() > max_blocks:
 			var block_to_remove = blocks.pop_front()
 			block_to_remove.queue_free()
+
+func remove():
+	queue_free()

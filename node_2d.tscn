@@ -1,4 +1,5 @@
-[gd_scene load_steps=63 format=3 uid="uid://bn22lue3utaew"]
+
+[gd_scene load_steps=64 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -56,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -878,6 +880,7 @@ position = Vector2(-304, 1382)
 [node name="spike80" parent="Room 4" instance=ExtResource("54_pawd6")]
 position = Vector2(262, 2817)
 scale = Vector2(1.165, 1)
+
 
 [node name="spike82" parent="Room 4" instance=ExtResource("54_pawd6")]
 position = Vector2(-85, 2817)
