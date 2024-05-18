@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch1dt7lrlfufb"]
 
-[ext_resource type="Texture2D" uid="uid://cdfo4keev2ytu" path="res://assets/Objects/Earth animation/earth 3.png" id="1_fgujo"]
+[ext_resource type="Texture2D" uid="uid://b3t2bxgig5k8" path="res://assets/Decorations/rock_1.png" id="1_y6oyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wgwk"]
-size = Vector2(23, 24.75)
+size = Vector2(41, 22)
 
 [node name="block" type="RigidBody2D"]
 z_index = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.74999, -1.25001)
-scale = Vector2(0.539062, 0.539062)
-texture = ExtResource("1_fgujo")
+position = Vector2(1.5, -3)
+scale = Vector2(2, 2)
+texture = ExtResource("1_y6oyw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -3)
+position = Vector2(1.5, -3)
 shape = SubResource("RectangleShape2D_6wgwk")

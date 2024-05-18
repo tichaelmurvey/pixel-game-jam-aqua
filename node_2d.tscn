@@ -225,7 +225,7 @@ player = NodePath("../player")
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
-position = Vector2(951, 1825)
+position = Vector2(427, 541)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -399,7 +399,6 @@ scale = Vector2(2, 2)
 
 [node name="air dispensor 1" parent="Room 1" instance=ExtResource("56_rrcjo")]
 position = Vector2(667, 582)
-scale = Vector2(2, 2)
 
 [node name="Room 2" type="Node2D" parent="."]
 
@@ -880,7 +879,6 @@ position = Vector2(821, 883)
 
 [node name="air dispensor 2" parent="Room 4" instance=ExtResource("56_rrcjo")]
 position = Vector2(-304, 1382)
-scale = Vector2(2, 2)
 
 [node name="spike80" parent="Room 4" instance=ExtResource("54_pawd6")]
 position = Vector2(262, 2817)
@@ -935,5 +933,6 @@ scale = Vector2(1.165, 1)
 visible = false
 
 [node name="Fire" parent="." instance=ExtResource("57_atovp")]
+position = Vector2(502, 582)
 
 [node name="block" parent="." instance=ExtResource("58_n01e6")]
