@@ -42,7 +42,9 @@ signal touched_floor
 func _ready():
 	#connect to power signal
 	PlayerInfo.power_updated.connect(change_powers)
-
+	#go to spawn point
+	if PlayerInfo.spawn_point:
+		position = PlayerInfo.spawn_point
 
 func _physics_process(delta):
 	#handle drift mode
@@ -172,7 +174,6 @@ func _final_death():
 	print("parent", get_parent())
 	print("tree", get_tree())
 	get_tree().reload_current_scene()
-
 func _change_size(scaleFactor):
 	# scale to the scale factor
 	scale *= scaleFactor

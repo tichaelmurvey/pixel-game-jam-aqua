@@ -58,7 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
-[ext_resource type="PackedScene" uid="uid://bx7qoy6rwrerv" path="res://components/env/trophy.tscn" id="59_s1n26"]
+[ext_resource type="PackedScene" uid="uid://0kwulhbu8bg1" path="res://components/env/checkpoint.tscn" id="59_mekbw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjth"]
 font = ExtResource("6_a6ijt")
@@ -267,6 +267,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="winScreen" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -988,5 +989,5 @@ scale = Vector2(1.165, 1)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="trophy" parent="." instance=ExtResource("59_s1n26")]
-position = Vector2(534, 526)
+[node name="checkpoint" parent="." instance=ExtResource("59_mekbw")]
+position = Vector2(507, 571)

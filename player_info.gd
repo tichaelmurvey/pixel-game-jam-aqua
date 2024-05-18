@@ -98,7 +98,7 @@ var powers = [
 
 #power update signal
 signal power_updated
-
+var spawn_point = null
 var player = null
 var player_height = 0
 # Called when the node enters the scene tree for the first time.
