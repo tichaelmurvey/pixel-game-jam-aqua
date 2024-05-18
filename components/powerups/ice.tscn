@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvi0nvn5nspnd"]
+
+[ext_resource type="Script" path="res://ice.gd" id="1_oi0jg"]
+[ext_resource type="Texture2D" uid="uid://cpn6gc7atc000" path="res://assets/Objects/airboots.png" id="2_l1m8q"]
+
+[node name="ice" type="Node2D"]
+script = ExtResource("1_oi0jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 17)
+scale = Vector2(1, 0.528571)
+texture = ExtResource("2_l1m8q")
