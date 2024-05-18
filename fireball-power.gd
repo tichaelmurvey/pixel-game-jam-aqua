@@ -14,3 +14,6 @@ func _input(event):
 		get_tree().get_root().add_child(fireball)
 		fireball.global_position = agent.global_position + Vector2(20*agent.facing_left, 0)
 		fireball.velocity = Vector2(agent.facing_left, 0)
+
+func remove():
+	queue_free()

@@ -1,14 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://by5i2edpnrs83"]
+[gd_scene load_steps=8 format=3 uid="uid://by5i2edpnrs83"]
 
 [ext_resource type="Script" path="res://explosion.gd" id="1_7h0kf"]
-[ext_resource type="Texture2D" uid="uid://dxecfyowt3o1a" path="res://assets/Objects/WaterFountain.png" id="2_jpgue"]
 [ext_resource type="Texture2D" uid="uid://chcfic6agyklh" path="res://assets/Effects animations/Explosion/explosion 1.png" id="3_2fhnf"]
 [ext_resource type="Texture2D" uid="uid://65dfs50gat5u" path="res://assets/Effects animations/Explosion/explosion 2.png" id="4_jwark"]
 [ext_resource type="Texture2D" uid="uid://dmv2kkom7eu0y" path="res://assets/Effects animations/Explosion/explosion 3.png" id="5_wfea2"]
 [ext_resource type="Texture2D" uid="uid://be7lu6ktjl6q4" path="res://assets/Effects animations/Explosion/explosion 4.png" id="6_foyou"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2uxtr"]
-radius = 66.0984
+radius = 57.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d7klp"]
 animations = [{
@@ -32,12 +31,8 @@ animations = [{
 
 [node name="explosion" type="Area2D"]
 z_index = 5
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_7h0kf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_jpgue")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2uxtr")
@@ -47,11 +42,13 @@ position = Vector2(1.90735e-06, 4.76837e-06)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_d7klp")
 autoplay = "default"
-frame = 1
-frame_progress = 0.676729
+frame = 2
+frame_progress = 0.177084
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

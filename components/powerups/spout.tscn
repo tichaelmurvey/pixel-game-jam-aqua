@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cya1rrnofdvsu"]
+[gd_scene load_steps=4 format=3 uid="uid://cya1rrnofdvsu"]
 
 [ext_resource type="Script" path="res://spout.gd" id="1_s8kdv"]
 [ext_resource type="Texture2D" uid="uid://bu0mbspwm2isx" path="res://assets/Objects/Water animation/water 3.png" id="2_37p8i"]
+[ext_resource type="PackedScene" uid="uid://bvy65thdg7ve0" path="res://components/effects/drizzle.tscn" id="3_cq0x3"]
 
 [node name="spout" type="Node2D"]
 script = ExtResource("1_s8kdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 28)
 rotation = 0.857302
 scale = Vector2(0.234375, 0.234375)
 texture = ExtResource("2_37p8i")
+
+[node name="drizzle" parent="." instance=ExtResource("3_cq0x3")]
