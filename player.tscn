@@ -1,8 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=35 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
-[ext_resource type="PackedScene" uid="uid://dec75ajgeklwk" path="res://components/powerups/rocket.tscn" id="3_w3oid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(10.6667, 28)
@@ -260,5 +259,3 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Jump"
 autoplay = "Idle"
-
-[node name="rocket" parent="." instance=ExtResource("3_w3oid")]

@@ -1,25 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxfw1yvmnewge"]
+[gd_scene load_steps=4 format=3 uid="uid://dvvyn6bei83dt"]
 
 [ext_resource type="Script" path="res://PathFollow2D.gd" id="1_kl3mb"]
 [ext_resource type="Texture2D" uid="uid://nsg4k33f8mx0" path="res://assets/Objects/Box.png" id="2_ghmh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1t63"]
-size = Vector2(54.2974, 16)
+size = Vector2(93, 28)
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[node name="Moving platform" type="PathFollow2D"]
+z_index = 1
 position = Vector2(-15.0948, 0.000701904)
 rotates = false
 script = ExtResource("1_kl3mb")
+speed = 150.0
 
 [node name="platform" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-position = Vector2(17.0474, 0)
-scale = Vector2(2.54976, 1)
+position = Vector2(15.0474, 0.99965)
+scale = Vector2(4.36794, 1.74996)
 texture = ExtResource("2_ghmh0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
-position = Vector2(15.9461, -0.000701904)
+position = Vector2(13.5948, -0.000701904)
 shape = SubResource("RectangleShape2D_h1t63")
 
 [node name="_Timer_34774" type="Timer" parent="."]

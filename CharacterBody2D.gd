@@ -6,7 +6,7 @@ var MAX_RUN_SPEED = 250
 var SPEED = 100
 var ACCELERATION = 25
 var DECELERATION = ACCELERATION
-var JUMP_VELOCITY = -450
+var JUMP_VELOCITY = -495
 var DEATH_COLLISION = 1150
 var WEIGHT = 50
 var HEIGHT = 50
@@ -34,7 +34,7 @@ var power_scenes = {
 }
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*1.5
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*1.3
 signal touched_floor
 
 func _ready():
