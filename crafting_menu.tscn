@@ -1,18 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://na2fte52arl7"]
+[gd_scene load_steps=8 format=3 uid="uid://na2fte52arl7"]
 
 [ext_resource type="Script" path="res://craftingMenu.gd" id="1_lvucr"]
 [ext_resource type="PackedScene" uid="uid://ckjlfeis4v0m1" path="res://element_source.tscn" id="3_1vmjx"]
-[ext_resource type="Texture2D" uid="uid://dv0je5agif1f1" path="res://assets/UI/aqua regia.png" id="4_7roun"]
 [ext_resource type="Texture2D" uid="uid://dw8g6opjix1us" path="res://assets/UI/Scroll preset (large).png" id="5_cgmq1"]
 [ext_resource type="Texture2D" uid="uid://cm6yc024a4s7i" path="res://assets/symbols/water.svg" id="6_83vep"]
+[ext_resource type="PackedScene" uid="uid://dtbboy0l7rtom" path="res://crafting_bottle.tscn" id="7_1dcqv"]
 [ext_resource type="Texture2D" uid="uid://cd6uqxhfvdw26" path="res://assets/symbols/earth.svg" id="7_47eda"]
-[ext_resource type="Theme" uid="uid://boc335gbi2k65" path="res://crafting_menu.tres" id="8_h87b2"]
 [ext_resource type="Texture2D" uid="uid://c0ac7bbetw64p" path="res://assets/symbols/fire.svg" id="8_q705e"]
-[ext_resource type="Texture2D" uid="uid://bn52ikhcagx62" path="res://assets/UI/Scroll preset (small).png" id="9_hsf7a"]
-[ext_resource type="Texture2D" uid="uid://crjtnbp13gsj1" path="res://assets/UI/Single bottle remove.png" id="10_ijeuf"]
-[ext_resource type="Script" path="res://bottle.gd" id="10_ppfq8"]
-[ext_resource type="Texture2D" uid="uid://bjat2527bckg2" path="res://assets/UI/Single bottle.png" id="11_3x23j"]
-[ext_resource type="PackedScene" uid="uid://yr58sjkja6u3" path="res://bottle_slot.tscn" id="12_p4u2h"]
 
 [node name="craftingMenu" type="Control"]
 layout_mode = 3
@@ -74,96 +68,10 @@ offset_top = 39.0
 offset_right = 103.0
 offset_bottom = 111.0
 
-[node name="craftingBottle" type="Control" parent="Crafting"]
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 173.0
-offset_right = 227.0
-offset_bottom = 462.0
+[node name="craftingBottle" parent="Crafting" instance=ExtResource("7_1dcqv")]
 
-[node name="Bottle 1" type="TextureRect" parent="Crafting/craftingBottle" node_paths=PackedStringArray("slot1", "slot2")]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 10.0
-offset_right = 179.0
-offset_bottom = 189.0
-texture = ExtResource("11_3x23j")
-script = ExtResource("10_ppfq8")
-slot1 = NodePath("bottleslot")
-slot2 = NodePath("bottleslot2")
-
-[node name="bottleslot" parent="Crafting/craftingBottle/Bottle 1" instance=ExtResource("12_p4u2h")]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 50.0
-offset_right = 90.0
-offset_bottom = 93.0
-
-[node name="bottleslot2" parent="Crafting/craftingBottle/Bottle 1" instance=ExtResource("12_p4u2h")]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 109.0
-offset_right = 90.0
-offset_bottom = 148.0
-
-[node name="alchemize 1" type="Button" parent="Crafting/craftingBottle"]
-z_index = 1
-layout_mode = 0
-offset_left = 13.0
-offset_top = 185.0
-offset_right = 107.0
-offset_bottom = 229.0
-theme = ExtResource("8_h87b2")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Alchemize"
-flat = true
-icon_alignment = 1
-metadata/_edit_group_ = true
-
-[node name="Background" type="TextureRect" parent="Crafting/craftingBottle/alchemize 1"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -6.0
-offset_right = 113.0
-offset_bottom = 50.0
-mouse_filter = 2
-texture = ExtResource("9_hsf7a")
-expand_mode = 1
-
-[node name="aqua regia 1" type="Button" parent="Crafting/craftingBottle"]
-z_index = 1
-layout_mode = 0
-offset_left = 113.0
-offset_top = 187.0
-offset_right = 215.0
-offset_bottom = 231.0
-theme = ExtResource("8_h87b2")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Aqua Regia"
-icon = ExtResource("10_ijeuf")
-flat = true
-expand_icon = true
-metadata/_edit_group_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Crafting/craftingBottle/aqua regia 1"]
-visible = false
-layout_mode = 0
-offset_right = 187.0
-offset_bottom = 94.0
-mouse_filter = 2
-texture = ExtResource("4_7roun")
-expand_mode = 3
-
-[node name="Background" type="TextureRect" parent="Crafting/craftingBottle/aqua regia 1"]
-z_index = -1
-layout_mode = 0
-offset_left = -36.0
-offset_top = -10.0
-offset_right = 142.0
-offset_bottom = 54.0
-mouse_filter = 2
-texture = ExtResource("9_hsf7a")
-
-[connection signal="pressed" from="Crafting/craftingBottle/alchemize 1" to="Crafting/craftingBottle/Bottle 1" method="_on_button_pressed"]
-[connection signal="pressed" from="Crafting/craftingBottle/aqua regia 1" to="Crafting/craftingBottle/Bottle 1" method="_aqua_regia"]
+[node name="craftingBottle2" parent="Crafting" instance=ExtResource("7_1dcqv")]
+offset_left = -3.0
+offset_top = 413.0
+offset_right = 223.0
+offset_bottom = 702.0

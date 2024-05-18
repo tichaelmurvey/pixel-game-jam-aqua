@@ -233,7 +233,6 @@ player = NodePath("../player")
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [node name="deathPanel" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -27.0

@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtbboy0l7rtom"]
+
+[ext_resource type="Texture2D" uid="uid://bjat2527bckg2" path="res://assets/UI/Single bottle.png" id="1_bw1iy"]
+[ext_resource type="Script" path="res://bottle.gd" id="2_f26sk"]
+[ext_resource type="PackedScene" uid="uid://yr58sjkja6u3" path="res://bottle_slot.tscn" id="3_o4epv"]
+[ext_resource type="Theme" uid="uid://boc335gbi2k65" path="res://crafting_menu.tres" id="4_2jsv7"]
+[ext_resource type="Texture2D" uid="uid://bn52ikhcagx62" path="res://assets/UI/Scroll preset (small).png" id="5_1chhm"]
+[ext_resource type="Texture2D" uid="uid://crjtnbp13gsj1" path="res://assets/UI/Single bottle remove.png" id="6_lgqir"]
+[ext_resource type="Texture2D" uid="uid://dv0je5agif1f1" path="res://assets/UI/aqua regia.png" id="7_fbxmr"]
+
+[node name="craftingBottle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 173.0
+offset_right = 227.0
+offset_bottom = 462.0
+
+[node name="Bottle" type="TextureRect" parent="." node_paths=PackedStringArray("slot1", "slot2")]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 10.0
+offset_right = 179.0
+offset_bottom = 189.0
+texture = ExtResource("1_bw1iy")
+script = ExtResource("2_f26sk")
+slot1 = NodePath("bottleslot")
+slot2 = NodePath("bottleslot2")
+
+[node name="bottleslot" parent="Bottle" instance=ExtResource("3_o4epv")]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 50.0
+offset_right = 101.0
+offset_bottom = 116.0
+
+[node name="bottleslot2" parent="Bottle" instance=ExtResource("3_o4epv")]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 108.0
+offset_right = 101.0
+offset_bottom = 175.0
+
+[node name="alchemize 1" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 185.0
+offset_right = 107.0
+offset_bottom = 229.0
+theme = ExtResource("4_2jsv7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Alchemize"
+flat = true
+icon_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Background" type="TextureRect" parent="alchemize 1"]
+z_index = -1
+layout_mode = 0
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 113.0
+offset_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource("5_1chhm")
+expand_mode = 1
+
+[node name="aqua regia 1" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 113.0
+offset_top = 187.0
+offset_right = 215.0
+offset_bottom = 231.0
+theme = ExtResource("4_2jsv7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Aqua Regia"
+icon = ExtResource("6_lgqir")
+flat = true
+expand_icon = true
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="aqua regia 1"]
+visible = false
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 94.0
+mouse_filter = 2
+texture = ExtResource("7_fbxmr")
+expand_mode = 3
+
+[node name="Background" type="TextureRect" parent="aqua regia 1"]
+z_index = -1
+layout_mode = 0
+offset_left = -36.0
+offset_top = -10.0
+offset_right = 142.0
+offset_bottom = 54.0
+mouse_filter = 2
+texture = ExtResource("5_1chhm")
+
+[connection signal="pressed" from="alchemize 1" to="Bottle" method="_on_button_pressed"]
+[connection signal="pressed" from="aqua regia 1" to="Bottle" method="_aqua_regia"]

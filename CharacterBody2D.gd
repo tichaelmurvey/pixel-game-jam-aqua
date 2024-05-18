@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var death_panel : Control
 var MAX_SPEED = 1500
 var MAX_RUN_SPEED = 250
 var SPEED = 100
@@ -85,7 +85,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
 		#play idle animation
-		if is_on_floor():
+		if is_on_floor() and sprite.animation  != "Death":
 			sprite.animation = "Idle"
 		# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -129,8 +129,6 @@ func handle_collision(collision, origin_collider):
 		var angle = collision.get_angle()
 		# check speed of collision in angle direction
 		var collision_speed = priorVelocity.project(Vector2(sin(angle), cos(angle))).length()
-		if collision_speed != 0:
-			print('collision speed is ', collision_speed)
 		if collision_speed > DEATH_COLLISION:
 			#check if the angle is in the protected angles
 			print("angle", rad_to_deg(angle))
@@ -146,17 +144,33 @@ func handle_collision(collision, origin_collider):
 func death():
 	# Handle the death of the player.
 	# restart the game
+	print("death")
 	if !dead:
+		print("dying")
 		sprite.animation = "Death"
-		dead = true
-		#reset inventory
-		Inventory.reset()
-		print("parent", get_parent())
-		print("tree", get_tree())
-		get_tree().reload_current_scene()
-		#pause the physics process
-	
-
+		#increase animation speed
+		sprite.speed_scale = 2
+		#create timer
+		var timer = Timer.new()
+		var message_timer = Timer.new()
+		timer.one_shot = true
+		message_timer.one_shot = true
+		#add timer to scene
+		add_child(timer)
+		add_child(message_timer)
+		#connect timeout signal to function
+		timer.timeout.connect(_final_death)
+		message_timer.timeout.connect(func(): death_panel.show())
+		#start timer
+		timer.start(3)
+		message_timer.start(1)
+		dead = true	
+func _final_death():
+	print("final death")
+	Inventory.reset()
+	print("parent", get_parent())
+	print("tree", get_tree())
+	get_tree().reload_current_scene()
 
 func _change_size(scaleFactor):
 	# scale to the scale factor
