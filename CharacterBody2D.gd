@@ -90,6 +90,11 @@ func _physics_process(delta):
 		# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
+	#check if falling faster than the death speed
+	if velocity.y > DEATH_COLLISION*0.9:
+		$falling.show()
+	else:
+		$falling.hide()
 	priorVelocity = velocity
 
 	move_and_slide()

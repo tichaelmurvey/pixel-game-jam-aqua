@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
-[ext_resource type="PackedScene" uid="uid://cya1rrnofdvsu" path="res://components/powerups/spout.tscn" id="17_qf3ga"]
+[ext_resource type="Texture2D" uid="uid://bgcsumxgvuqm8" path="res://assets/Player/falling.png" id="3_kp73t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(10.6667, 28)
@@ -261,4 +261,6 @@ sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Jump"
 autoplay = "Idle"
 
-[node name="spout" parent="." instance=ExtResource("17_qf3ga")]
+[node name="falling" type="Sprite2D" parent="."]
+position = Vector2(-3, -63)
+texture = ExtResource("3_kp73t")
