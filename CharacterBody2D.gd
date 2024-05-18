@@ -14,7 +14,8 @@ var priorVelocity = Vector2(0, 0)
 var protectedAngles = []
 var dead = false
 var drift_mode = false
-var facing_left = false
+var facing_left = 1
+@onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
 	"wings": preload("res://components/powerups/flight.tscn"),
@@ -59,28 +60,36 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump()
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		#play walking animation
+		if is_on_floor():
+			sprite.animation = "Run"
 		velocity.x = move_toward(velocity.x, direction * MAX_RUN_SPEED, ACCELERATION)
 		if direction < 0:
-			facing_left = true
+			facing_left = -1
+			scale.x = scale.y * -1
 			#flip the sprite
-			if not $Sprite.flip_h:
-				$Sprite.flip_h = true
+			# if not $Sprite.flip_h:
+			# 	$Sprite.flip_h = true
 		else:
-			facing_left = false
+			facing_left = 1
+			scale.x = scale.y * 1
 			#flip the sprite
-			if $Sprite.flip_h:
-				$Sprite.flip_h = false
+			# if $Sprite.flip_h:
+			# 	$Sprite.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
-	
+		#play idle animation
+		if is_on_floor():
+			sprite.animation = "Idle"
+		# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump()
 	priorVelocity = velocity
 
 	move_and_slide()
@@ -95,6 +104,7 @@ func _physics_process(delta):
 
 
 func jump():
+	sprite.animation = "Jump"
 	# Jump with the jump velocity.
 	velocity.y = JUMP_VELOCITY
 
@@ -132,6 +142,7 @@ func death():
 	# Handle the death of the player.
 	# restart the game
 	if !dead:
+		sprite.animation = "Death"
 		dead = true
 		#reset inventory
 		Inventory.reset()

@@ -13,8 +13,8 @@ func _input(event):
 		var block = block_scene.instantiate()
 		blocks.append(block)
 		get_tree().get_root().add_child(block)
-		block.global_position = global_position + Vector2(+20, 0)
-		block.apply_impulse(Vector2(100, 0))
+		block.global_position = global_position + Vector2(20*agent.facing_left, 0)
+		block.apply_impulse(Vector2(100*agent.facing_left, 0))
 		if blocks.size() > max_blocks:
 			var block_to_remove = blocks.pop_front()
 			block_to_remove.queue_free()

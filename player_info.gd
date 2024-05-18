@@ -42,7 +42,7 @@ var powers = [
 		"active": false
 	},
 	{
-		"name": "cloud",
+		"name": "puff",
 		"active": false
 	},
 	{
