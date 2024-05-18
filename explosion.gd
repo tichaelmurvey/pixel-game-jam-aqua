@@ -15,7 +15,7 @@ func _on_body_entered(body:Node2D):
 	print("body entered")
 	print(PlayerInfo.player)
 	if body == PlayerInfo.player:
-		body.death()
+		body.death(" Have Become Particles")
 	elif body is RigidBody2D:
 		body.queue_free()
 	elif body is TileMap:

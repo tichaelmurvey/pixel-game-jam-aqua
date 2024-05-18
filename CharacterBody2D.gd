@@ -45,6 +45,8 @@ func _ready():
 	#go to spawn point
 	if PlayerInfo.spawn_point:
 		position = PlayerInfo.spawn_point
+	if Inventory.saved_inventory:
+		Inventory.inventory = Inventory.saved_inventory
 
 func _physics_process(delta):
 	#handle drift mode
@@ -119,7 +121,7 @@ func jump():
 func handle_collision(collision, origin_collider):
 	#check if the collision is with a deadly object
 	if "deadly" in collision.get_collider() and collision.get_collider().deadly:
-		death()
+		death(" Touched Something Horrible")
 	#check if collision is with floor
 
 	#check if type of collider is tilemap
@@ -140,15 +142,16 @@ func handle_collision(collision, origin_collider):
 				#say oof
 				print('oof')
 			else:
-				death()
+				death("Have Perhished by Falling")
 		
 		
 
-func death():
+func death(type = "Have Perished"):
 	# Handle the death of the player.
 	# restart the game
 	print("death")
 	if !dead:
+		death_panel.get_node("Label").text += type
 		print("dying")
 		sprite.animation = "Death"
 		#increase animation speed
@@ -168,12 +171,14 @@ func death():
 		timer.start(3)
 		message_timer.start(1)
 		dead = true	
+
 func _final_death():
 	print("final death")
 	Inventory.reset()
 	print("parent", get_parent())
 	print("tree", get_tree())
 	get_tree().reload_current_scene()
+
 func _change_size(scaleFactor):
 	# scale to the scale factor
 	scale *= scaleFactor

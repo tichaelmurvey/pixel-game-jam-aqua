@@ -22,3 +22,4 @@ func _on_body_exited(body):
 func _input(event):
 	if event.is_action_pressed("pick_up") and accessible:
 		PlayerInfo.spawn_point = self.global_position
+		Inventory.saved_inventory = Inventory.inventory
