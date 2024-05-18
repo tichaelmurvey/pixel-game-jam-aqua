@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=64 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://eb3vlsbkurqm" path="res://assets/Decorations/Light animation/light-03.png" id="21_ylikq"]
 [ext_resource type="Texture2D" uid="uid://dcvf2xqx55a3q" path="res://assets/Decorations/Light animation/light-04.png" id="22_rfp28"]
 [ext_resource type="Texture2D" uid="uid://b12g1qpciuv2d" path="res://assets/Decorations/books.png" id="23_3f5fe"]
-[ext_resource type="Texture2D" uid="uid://d2vdipsehvxvs" path="res://assets/Objects/crate_3.png" id="24_xic87"]
 [ext_resource type="Texture2D" uid="uid://lvn7vkimt1ym" path="res://assets/Decorations/curtain_blue_2.png" id="25_t3q3v"]
 [ext_resource type="Texture2D" uid="uid://dft6aposs14rv" path="res://assets/Decorations/flag_blue.png" id="26_htc1l"]
 [ext_resource type="Texture2D" uid="uid://d4nu0qdqwi2sm" path="res://assets/Decorations/door.png" id="27_gm1cv"]
@@ -36,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ckxodsk52ry" path="res://assets/Background/4.png" id="36_a3dge"]
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="37_a7vpk"]
 [ext_resource type="Texture2D" uid="uid://by8yawn8x868v" path="res://assets/Decorations/flag_red.png" id="38_aknq4"]
+[ext_resource type="PackedScene" uid="uid://b6iip6mpqq1ym" path="res://components/env/horizontal crate.tscn" id="38_dipn8"]
 [ext_resource type="Texture2D" uid="uid://cr82vwp18jqx5" path="res://assets/Decorations/bag_2.png" id="39_3i1qw"]
 [ext_resource type="Texture2D" uid="uid://c1huwcymffple" path="res://assets/Decorations/potions_2.png" id="40_3kk5m"]
 [ext_resource type="Texture2D" uid="uid://c2qutytscjuma" path="res://assets/Decorations/Torch animation/torch_small_blue_1.png" id="41_kof7c"]
@@ -56,8 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
-[ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_atovp"]
-[ext_resource type="PackedScene" uid="uid://ch1dt7lrlfufb" path="res://components/env/block.tscn" id="58_n01e6"]
+[ext_resource type="PackedScene" uid="uid://bxtit0eg2g0uo" path="res://components/env/vertical crate.tscn" id="57_nvhx5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -304,12 +303,6 @@ position = Vector2(287, 598)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_3f5fe")
 
-[node name="Crate3" type="Sprite2D" parent="Room 1"]
-z_index = 1
-position = Vector2(742, 592)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("24_xic87")
-
 [node name="CurtainBlue2" type="Sprite2D" parent="Room 1"]
 z_index = 5
 position = Vector2(880, 489)
@@ -370,6 +363,9 @@ z_index = 1
 position = Vector2(443, -110)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_3kk5m")
+
+[node name="horizontal crate 1" parent="Room 1" instance=ExtResource("38_dipn8")]
+position = Vector2(752, 592)
 
 [node name="Bag3" type="Sprite2D" parent="Room 1"]
 z_index = 1
@@ -932,7 +928,5 @@ scale = Vector2(1.165, 1)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Fire" parent="." instance=ExtResource("57_atovp")]
-position = Vector2(502, 582)
-
-[node name="block" parent="." instance=ExtResource("58_n01e6")]
+[node name="horizontal crate" parent="." instance=ExtResource("57_nvhx5")]
+position = Vector2(504, 545)
