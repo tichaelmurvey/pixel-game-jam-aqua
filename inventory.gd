@@ -10,6 +10,8 @@ var inventory = {
 	"air": 5
 }
 
+var saved_inventory = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

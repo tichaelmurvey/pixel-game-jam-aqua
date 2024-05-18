@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-
+@export var death_panel : Control
+@export var win_screen : Control
 var MAX_SPEED = 1500
 var MAX_RUN_SPEED = 250
 var SPEED = 100
@@ -14,7 +15,8 @@ var priorVelocity = Vector2(0, 0)
 var protectedAngles = []
 var dead = false
 var drift_mode = false
-var facing_left = false
+var facing_left = 1
+@onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
 	"wings": preload("res://components/powerups/flight.tscn"),
@@ -40,7 +42,11 @@ signal touched_floor
 func _ready():
 	#connect to power signal
 	PlayerInfo.power_updated.connect(change_powers)
-
+	#go to spawn point
+	if PlayerInfo.spawn_point:
+		position = PlayerInfo.spawn_point
+	if Inventory.saved_inventory:
+		Inventory.inventory = Inventory.saved_inventory
 
 func _physics_process(delta):
 	#handle drift mode
@@ -59,28 +65,41 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump()
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		#play walking animation
+		if is_on_floor():
+			sprite.animation = "Run"
 		velocity.x = move_toward(velocity.x, direction * MAX_RUN_SPEED, ACCELERATION)
 		if direction < 0:
-			facing_left = true
+			facing_left = -1
+			scale.x = scale.y * -1
 			#flip the sprite
-			if not $Sprite.flip_h:
-				$Sprite.flip_h = true
+			# if not $Sprite.flip_h:
+			# 	$Sprite.flip_h = true
 		else:
-			facing_left = false
+			facing_left = 1
+			scale.x = scale.y * 1
 			#flip the sprite
-			if $Sprite.flip_h:
-				$Sprite.flip_h = false
+			# if $Sprite.flip_h:
+			# 	$Sprite.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
-	
+		#play idle animation
+		if is_on_floor() and sprite.animation  != "Death":
+			sprite.animation = "Idle"
+		# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump()
+	#check if falling faster than the death speed
+	if velocity.y > DEATH_COLLISION*0.9:
+		$falling.show()
+	else:
+		$falling.hide()
 	priorVelocity = velocity
 
 	move_and_slide()
@@ -95,13 +114,14 @@ func _physics_process(delta):
 
 
 func jump():
+	sprite.animation = "Jump"
 	# Jump with the jump velocity.
 	velocity.y = JUMP_VELOCITY
 
 func handle_collision(collision, origin_collider):
 	#check if the collision is with a deadly object
 	if "deadly" in collision.get_collider() and collision.get_collider().deadly:
-		death()
+		death(" Touched Something Horrible")
 	#check if collision is with floor
 
 	#check if type of collider is tilemap
@@ -114,8 +134,6 @@ func handle_collision(collision, origin_collider):
 		var angle = collision.get_angle()
 		# check speed of collision in angle direction
 		var collision_speed = priorVelocity.project(Vector2(sin(angle), cos(angle))).length()
-		if collision_speed != 0:
-			print('collision speed is ', collision_speed)
 		if collision_speed > DEATH_COLLISION:
 			#check if the angle is in the protected angles
 			print("angle", rad_to_deg(angle))
@@ -124,23 +142,42 @@ func handle_collision(collision, origin_collider):
 				#say oof
 				print('oof')
 			else:
-				death()
+				death("Have Perhished by Falling")
 		
 		
 
-func death():
+func death(type = "Have Perished"):
 	# Handle the death of the player.
 	# restart the game
+	print("death")
 	if !dead:
-		dead = true
-		#reset inventory
-		Inventory.reset()
-		print("parent", get_parent())
-		print("tree", get_tree())
-		get_tree().reload_current_scene()
-		#pause the physics process
-	
+		death_panel.get_node("Label").text += type
+		print("dying")
+		sprite.animation = "Death"
+		#increase animation speed
+		sprite.speed_scale = 2
+		#create timer
+		var timer = Timer.new()
+		var message_timer = Timer.new()
+		timer.one_shot = true
+		message_timer.one_shot = true
+		#add timer to scene
+		add_child(timer)
+		add_child(message_timer)
+		#connect timeout signal to function
+		timer.timeout.connect(_final_death)
+		message_timer.timeout.connect(func(): death_panel.show())
+		#start timer
+		timer.start(3)
+		message_timer.start(1)
+		dead = true	
 
+func _final_death():
+	print("final death")
+	Inventory.reset()
+	print("parent", get_parent())
+	print("tree", get_tree())
+	get_tree().reload_current_scene()
 
 func _change_size(scaleFactor):
 	# scale to the scale factor
@@ -175,3 +212,7 @@ func change_powers():
 					var power_scene = power_scenes[power.name].instantiate()
 					add_child(power_scene)
 		
+
+
+func _on_trophy_area_entered(area):
+	win_screen.show()

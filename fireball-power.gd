@@ -12,5 +12,8 @@ func _input(event):
 	if event.is_action_pressed("use_effect"):
 		var fireball = fireball_scene.instantiate()
 		get_tree().get_root().add_child(fireball)
-		fireball.global_position = agent.global_position + Vector2(+20, 0)
-		fireball.velocity = Vector2(1, 0)
+		fireball.global_position = agent.global_position + Vector2(20*agent.facing_left, 0)
+		fireball.velocity = Vector2(agent.facing_left, 0)
+
+func remove():
+	queue_free()

@@ -19,3 +19,6 @@ func _input(event):
 	if event.is_action_released("use_effect"):
 		drizzling = false
 		drizzle.queue_free()
+
+func remove():
+	queue_free()

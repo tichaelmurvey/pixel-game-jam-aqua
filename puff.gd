@@ -14,4 +14,4 @@ func _process(delta):
 func _on_body_entered(body:Node2D):
 	#if rigidbody, apply impulse
 	if body is RigidBody2D:
-		body.apply_impulse(Vector2(1000, 0))
+		body.apply_impulse(Vector2(1000*PlayerInfo.player.facing_left, 0))
