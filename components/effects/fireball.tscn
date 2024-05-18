@@ -1,7 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqlbux7grtvvc"]
+[gd_scene load_steps=9 format=3 uid="uid://bqlbux7grtvvc"]
 
 [ext_resource type="Script" path="res://fireball.gd" id="1_7yjal"]
 [ext_resource type="Texture2D" uid="uid://c0ac7bbetw64p" path="res://assets/symbols/fire.svg" id="2_6moig"]
+[ext_resource type="Texture2D" uid="uid://nrjrbgumq61r" path="res://assets/Effects animations/Fireball/Fireball 1.png" id="2_he7js"]
+[ext_resource type="Texture2D" uid="uid://cg82fusx0vw1g" path="res://assets/Effects animations/Fireball/Fireball 2.png" id="3_p48q1"]
+[ext_resource type="Texture2D" uid="uid://baib4yj64vuh" path="res://assets/Effects animations/Fireball/Fireball 3.png" id="4_o2c4i"]
+[ext_resource type="Texture2D" uid="uid://b5ptv4k6vowi8" path="res://assets/Effects animations/Fireball/Fireball 4.png" id="5_w25lc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bki77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_he7js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p48q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o2c4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w25lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odklm"]
 
@@ -13,7 +37,14 @@ collision_mask = 3
 script = ExtResource("1_7yjal")
 metadata/_edit_group_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.534483, 0.5)
+sprite_frames = SubResource("SpriteFrames_bki77")
+autoplay = "default"
+frame_progress = 0.887715
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("2_6moig")
 
