@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=64 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
@@ -21,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://eb3vlsbkurqm" path="res://assets/Decorations/Light animation/light-03.png" id="21_ylikq"]
 [ext_resource type="Texture2D" uid="uid://dcvf2xqx55a3q" path="res://assets/Decorations/Light animation/light-04.png" id="22_rfp28"]
 [ext_resource type="Texture2D" uid="uid://b12g1qpciuv2d" path="res://assets/Decorations/books.png" id="23_3f5fe"]
-[ext_resource type="Texture2D" uid="uid://d2vdipsehvxvs" path="res://assets/Decorations/crate_3.png" id="24_xic87"]
 [ext_resource type="Texture2D" uid="uid://lvn7vkimt1ym" path="res://assets/Decorations/curtain_blue_2.png" id="25_t3q3v"]
 [ext_resource type="Texture2D" uid="uid://dft6aposs14rv" path="res://assets/Decorations/flag_blue.png" id="26_htc1l"]
 [ext_resource type="Texture2D" uid="uid://d4nu0qdqwi2sm" path="res://assets/Decorations/door.png" id="27_gm1cv"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ckxodsk52ry" path="res://assets/Background/4.png" id="36_a3dge"]
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="37_a7vpk"]
 [ext_resource type="Texture2D" uid="uid://by8yawn8x868v" path="res://assets/Decorations/flag_red.png" id="38_aknq4"]
+[ext_resource type="PackedScene" uid="uid://b6iip6mpqq1ym" path="res://components/env/horizontal crate.tscn" id="38_dipn8"]
 [ext_resource type="Texture2D" uid="uid://cr82vwp18jqx5" path="res://assets/Decorations/bag_2.png" id="39_3i1qw"]
 [ext_resource type="Texture2D" uid="uid://c1huwcymffple" path="res://assets/Decorations/potions_2.png" id="40_3kk5m"]
 [ext_resource type="Texture2D" uid="uid://c2qutytscjuma" path="res://assets/Decorations/Torch animation/torch_small_blue_1.png" id="41_kof7c"]
@@ -51,12 +52,12 @@
 [ext_resource type="Texture2D" uid="uid://7hj166ea2fe6" path="res://assets/Decorations/Torch animation/torch-B-01.png" id="51_j63po"]
 [ext_resource type="Texture2D" uid="uid://b4yym01tnsbfy" path="res://assets/Decorations/Torch animation/torch-B-02.png" id="52_nkdau"]
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
-[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/spike.tscn" id="54_pawd6"]
+[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/env/spike.tscn" id="54_pawd6"]
 [ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://components/Dispensors/earth dispensor.tscn" id="55_rr148"]
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
-[ext_resource type="PackedScene" uid="uid://ch1dt7lrlfufb" path="res://components/env/block.tscn" id="58_n01e6"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -224,7 +225,7 @@ player = NodePath("../player")
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
 
 [node name="player" parent="." instance=ExtResource("2_kdfr0")]
-position = Vector2(816, 541)
+position = Vector2(427, 541)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -303,12 +304,6 @@ position = Vector2(287, 598)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_3f5fe")
 
-[node name="Crate3" type="Sprite2D" parent="Room 1"]
-z_index = 1
-position = Vector2(742, 592)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("24_xic87")
-
 [node name="CurtainBlue2" type="Sprite2D" parent="Room 1"]
 z_index = 5
 position = Vector2(880, 489)
@@ -370,6 +365,9 @@ position = Vector2(443, -110)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_3kk5m")
 
+[node name="horizontal crate 1" parent="Room 1" instance=ExtResource("38_dipn8")]
+position = Vector2(752, 592)
+
 [node name="Bag3" type="Sprite2D" parent="Room 1"]
 z_index = 1
 position = Vector2(242.75, 176)
@@ -398,7 +396,6 @@ scale = Vector2(2, 2)
 
 [node name="air dispensor 1" parent="Room 1" instance=ExtResource("56_rrcjo")]
 position = Vector2(667, 582)
-scale = Vector2(2, 2)
 
 [node name="Room 2" type="Node2D" parent="."]
 
@@ -879,19 +876,56 @@ position = Vector2(821, 883)
 
 [node name="air dispensor 2" parent="Room 4" instance=ExtResource("56_rrcjo")]
 position = Vector2(-304, 1382)
-scale = Vector2(2, 2)
+
+[node name="spike80" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(262, 2817)
+scale = Vector2(1.165, 1)
+
+
+[node name="spike82" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(-85, 2817)
+scale = Vector2(1.165, 1)
+
+[node name="spike81" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(83, 2817)
+scale = Vector2(1.165, 1)
+
+[node name="spike83" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(180, 2623)
+rotation = 3.14159
+scale = Vector2(1.165, 1)
+
+[node name="spike84" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(1, 2623)
+rotation = 3.14159
+scale = Vector2(1.165, 1)
+
+[node name="spike85" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(-893, 2816)
+scale = Vector2(1.165, 1)
+
+[node name="spike86" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(-958, 2816)
+scale = Vector2(1.165, 1)
+
+[node name="spike87" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(-1023, 2816)
+scale = Vector2(1.165, 1)
+
+[node name="spike88" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(529, 1727)
+rotation = 3.14159
+scale = Vector2(1.165, 1)
+
+[node name="spike89" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(688, 1631)
+rotation = 3.14159
+scale = Vector2(1.165, 1)
+
+[node name="spike90" parent="Room 4" instance=ExtResource("54_pawd6")]
+position = Vector2(832, 1535)
+rotation = 3.14159
+scale = Vector2(1.165, 1)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
-
-[node name="block" parent="." instance=ExtResource("58_n01e6")]
-position = Vector2(475, 516)
-
-[node name="block2" parent="." instance=ExtResource("58_n01e6")]
-position = Vector2(506, 462)
-
-[node name="block3" parent="." instance=ExtResource("58_n01e6")]
-position = Vector2(457, 461)
-
-[node name="block4" parent="." instance=ExtResource("58_n01e6")]
-position = Vector2(504, 549)

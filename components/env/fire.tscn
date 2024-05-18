@@ -1,23 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://lme46xljnplr"]
+[gd_scene load_steps=14 format=3 uid="uid://lme46xljnplr"]
 
 [ext_resource type="Script" path="res://Fire.gd" id="1_vcroq"]
 [ext_resource type="Texture2D" uid="uid://cwxur877pcosj" path="res://assets/Objects/Fire animation/fire 2.png" id="2_64i38"]
+[ext_resource type="Texture2D" uid="uid://vbgyu1lx4gra" path="res://assets/Effects animations/Red Effect Bullet Impact Explosion 32x32.png" id="3_re8dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikhfr"]
-size = Vector2(35, 28)
+size = Vector2(18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ano"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(192, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlyed"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(224, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfkgl"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(256, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss35m"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(288, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsg4a"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(352, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnxua"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(384, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05bj2"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(416, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axts7"]
+atlas = ExtResource("3_re8dn")
+region = Rect2(448, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxyxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ano")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlyed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfkgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss35m")
+}],
+"loop": false,
+"name": &"Going out",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsg4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnxua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05bj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axts7")
+}],
+"loop": true,
+"name": &"burning",
+"speed": 7.0
+}]
 
 [node name="Fire" type="Area2D"]
 z_index = 5
 position = Vector2(502, 592)
+scale = Vector2(1.7, 1.7)
 collision_mask = 2
 script = ExtResource("1_vcroq")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_64i38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 2)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ikhfr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mxyxq")
+animation = &"burning"
+autoplay = "burning"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

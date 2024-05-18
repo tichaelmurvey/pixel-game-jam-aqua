@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxtit0eg2g0uo"]
+
+[ext_resource type="Texture2D" uid="uid://drnybxdt8wesv" path="res://assets/Objects/crate_2.png" id="1_xhiur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wgwk"]
+size = Vector2(37.2222, 53.8889)
+
+[node name="vertical crate" type="RigidBody2D"]
+z_index = 4
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, -3)
+scale = Vector2(2.2, 2.5)
+texture = ExtResource("1_xhiur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -3.5)
+scale = Vector2(2.2, 2.5)
+shape = SubResource("RectangleShape2D_6wgwk")
