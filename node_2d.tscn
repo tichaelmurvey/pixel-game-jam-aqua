@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=64 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -56,7 +56,6 @@
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
-[ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_atovp"]
 [ext_resource type="PackedScene" uid="uid://ch1dt7lrlfufb" path="res://components/env/block.tscn" id="58_n01e6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
@@ -216,7 +215,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(486, 432)
 offset = Vector2(80, -40)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("5_n1tba")
 player = NodePath("../player")
 
@@ -867,6 +866,14 @@ scale = Vector2(0.955, 1)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Fire" parent="." instance=ExtResource("57_atovp")]
-
 [node name="block" parent="." instance=ExtResource("58_n01e6")]
+position = Vector2(475, 516)
+
+[node name="block2" parent="." instance=ExtResource("58_n01e6")]
+position = Vector2(506, 462)
+
+[node name="block3" parent="." instance=ExtResource("58_n01e6")]
+position = Vector2(457, 461)
+
+[node name="block4" parent="." instance=ExtResource("58_n01e6")]
+position = Vector2(504, 549)

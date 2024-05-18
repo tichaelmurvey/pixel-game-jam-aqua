@@ -5,25 +5,25 @@ var power_combo_table = {
 		"fire": "fireball", #done
 		"water": "spout", #done
 		"earth": "block", #done
-		"air": "cloud"
+		"air": "puff" #done
 	},
 	"water": {
-		"fire": "explode",
+		"fire": "explode", #done
 		"water": "big", #done
-		"earth": "heavy", 
-		"air": "intangible"
+		"earth": "statue", #done
+		"air": "intangible" #done
 	},
 	"earth": {
-		"fire": "bright",
-		"water": "small",
-		"earth": "stone",
+		"fire": "bright", #done
+		"water": "small",  #done
+		"earth": "heavy", #done
 		"air": "wings" #done
 	},
 	"air": {
-		"fire": "rocket",
-		"water": "ice",
+		"fire": "rocket",  #done
+		"water": "ice", #done
 		"earth": "boots", #done
-		"air": "cloud"
+		"air": "cloud" #done
 	}
 }
 
@@ -70,7 +70,7 @@ var powers = [
 		"active": false
 	},
 	{
-		"name": "stone",
+		"name": "statue",
 		"active": false
 	},
 	{
@@ -100,6 +100,7 @@ var powers = [
 signal power_updated
 
 var player = null
+var player_height = 0
 # Called when the node enters the scene tree for the first time.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -107,9 +108,7 @@ func _process(delta):
 		var root = get_tree().get_root()
 		print(root.get_children())
 		player = root.get_node("game/player")
-		print("player found")
-		print(player)
-
+		player_height = player.get_height()
 
 func add_power(element1, element2):
 	var new_power = power_combo_table[element1][element2]
