@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="2_cucik"]
 
 [node name="cloud" type="Node2D"]
+z_index = 5
 position = Vector2(-2, 25)
 script = ExtResource("1_7ib2j")
 metadata/_edit_group_ = true

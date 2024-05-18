@@ -11,12 +11,12 @@ height = 53.7202
 script = ExtResource("1_mk0ea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(31, 42)
+position = Vector2(16, 16)
 scale = Vector2(0.44, 0.38)
 texture = ExtResource("2_572mw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(35, 43)
+position = Vector2(20, 17)
 rotation = -0.897216
 shape = SubResource("CapsuleShape2D_ddfk5")
 

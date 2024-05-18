@@ -15,7 +15,9 @@ func _input(event):
 		drizzling = true
 		drizzle = drizzle_scene.instantiate()
 		add_child(drizzle)
-		drizzle.velocity = Vector2(1, 0)
 	if event.is_action_released("use_effect"):
 		drizzling = false
 		drizzle.queue_free()
+
+func remove():
+	queue_free()
