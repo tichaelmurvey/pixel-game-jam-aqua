@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=68 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -58,11 +58,16 @@
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
+[ext_resource type="PackedScene" uid="uid://bx7qoy6rwrerv" path="res://components/env/trophy.tscn" id="59_s1n26"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjth"]
 font = ExtResource("6_a6ijt")
 font_size = 60
 font_color = Color(0.313726, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3e08t"]
+font = ExtResource("6_a6ijt")
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3kb44"]
 animations = [{
@@ -261,9 +266,25 @@ label_settings = SubResource("LabelSettings_lvjth")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="player" parent="." node_paths=PackedStringArray("death_panel") instance=ExtResource("2_kdfr0")]
+[node name="winScreen" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/winScreen"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 343.0
+offset_right = 476.0
+offset_bottom = 366.0
+text = "You are winner"
+label_settings = SubResource("LabelSettings_3e08t")
+
+[node name="player" parent="." node_paths=PackedStringArray("death_panel", "win_screen") instance=ExtResource("2_kdfr0")]
 position = Vector2(427, 541)
 death_panel = NodePath("../CanvasLayer/deathPanel")
+win_screen = NodePath("../CanvasLayer/winScreen")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -966,3 +987,6 @@ scale = Vector2(1.165, 1)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="trophy" parent="." instance=ExtResource("59_s1n26")]
+position = Vector2(534, 526)

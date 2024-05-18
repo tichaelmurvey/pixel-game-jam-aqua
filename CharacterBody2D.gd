@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var death_panel : Control
+@export var win_screen : Control
 var MAX_SPEED = 1500
 var MAX_RUN_SPEED = 250
 var SPEED = 100
@@ -205,3 +206,7 @@ func change_powers():
 					var power_scene = power_scenes[power.name].instantiate()
 					add_child(power_scene)
 		
+
+
+func _on_trophy_area_entered(area):
+	win_screen.show()

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx7qoy6rwrerv"]
+
+[ext_resource type="Texture2D" uid="uid://35lfil0galx3" path="res://assets/UI/trophy.jpg" id="1_w5312"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1j42"]
+size = Vector2(76, 118)
+
+[node name="trophy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+scale = Vector2(0.146, 0.146)
+texture = ExtResource("1_w5312")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a1j42")
