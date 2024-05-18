@@ -2,9 +2,9 @@ extends Node
 
 var power_combo_table = {
 	"fire": {
-		"fire": "fireball",
-		"water": "spout",
-		"earth": "block",
+		"fire": "fireball", #done
+		"water": "spout", #done
+		"earth": "block", #done
 		"air": "cloud"
 	},
 	"water": {

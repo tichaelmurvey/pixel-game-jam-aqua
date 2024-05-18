@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://by5i2edpnrs83"]
 
 [ext_resource type="Script" path="res://explosion.gd" id="1_7h0kf"]
-[ext_resource type="Texture2D" uid="uid://dxecfyowt3o1a" path="res://assets/Objects/WaterFountain.png" id="2_jpgue"]
+[ext_resource type="Texture2D" uid="uid://dmv2kkom7eu0y" path="res://assets/Effects animations/Explosion/explosion 3.png" id="2_jbmcs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2uxtr"]
 radius = 66.0984
@@ -11,10 +11,11 @@ z_index = 5
 position = Vector2(524, 429)
 collision_mask = 2
 script = ExtResource("1_7h0kf")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jpgue")
+position = Vector2(-1, -1.00001)
+scale = Vector2(4.0303, 4.0303)
+texture = ExtResource("2_jbmcs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2uxtr")

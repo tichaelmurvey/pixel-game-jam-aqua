@@ -1,7 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=37 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
+[ext_resource type="Script" path="res://block_power.gd" id="3_b0o8i"]
+[ext_resource type="Texture2D" uid="uid://cdfo4keev2ytu" path="res://assets/Objects/Earth animation/earth 3.png" id="4_4m0mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(12.5, 26.6667)
@@ -246,10 +248,9 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(430, 486)
+position = Vector2(416, 486)
 collision_layer = 2
 script = ExtResource("1_5rrfp")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
@@ -262,3 +263,13 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
 animation = &"Idle"
 autoplay = "Idle"
+
+[node name="block" type="Node2D" parent="."]
+position = Vector2(16, 28)
+script = ExtResource("3_b0o8i")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="block"]
+rotation = -0.655766
+scale = Vector2(0.265625, 0.265625)
+texture = ExtResource("4_4m0mu")

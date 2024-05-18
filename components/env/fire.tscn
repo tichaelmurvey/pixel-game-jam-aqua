@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://lme46xljnplr"]
+
+[ext_resource type="Script" path="res://Fire.gd" id="1_vcroq"]
+[ext_resource type="Texture2D" uid="uid://cwxur877pcosj" path="res://assets/Objects/Fire animation/fire 2.png" id="2_64i38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikhfr"]
+size = Vector2(35, 28)
+
+[node name="Fire" type="Area2D"]
+z_index = 5
+position = Vector2(502, 592)
+collision_mask = 2
+script = ExtResource("1_vcroq")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_64i38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_ikhfr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3ts3jhgtmlnl"]
+
+[ext_resource type="Script" path="res://dispensor.gd" id="1_nxlvc"]
+[ext_resource type="Texture2D" uid="uid://b8gsm2k144vv6" path="res://assets/Decorations/barrel.png" id="2_sscxs"]
+[ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="3_fnqc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgcd"]
+size = Vector2(71.25, 39)
+
+[node name="dispensor" type="Area2D"]
+z_index = 6
+position = Vector2(485, 586)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_nxlvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_npgcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sscxs")
+
+[node name="hint" type="TextureRect" parent="."]
+visible = false
+offset_left = -46.0
+offset_top = -111.0
+offset_right = 51.0
+texture = ExtResource("3_fnqc2")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="hint"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 74.0
+text = "Press F
+to collect
+element"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
