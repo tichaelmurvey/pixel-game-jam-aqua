@@ -25,3 +25,6 @@ func _input(event):
 		Inventory.saved_inventory = Inventory.inventory.duplicate(true)
 		Inventory.saved_used_sources = Inventory.used_sources.duplicate(true)
 		print("saved inventory: ", Inventory.saved_inventory)
+		$Lamp.show()
+		$hint.hide()
+		$Jewel.play("default")

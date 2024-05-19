@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cp20p73aq5nkn"]
+[gd_scene load_steps=27 format=3 uid="uid://bx7qoy6rwrerv"]
 
 [ext_resource type="Texture2D" uid="uid://35lfil0galx3" path="res://assets/UI/trophy.jpg" id="1_w5312"]
 [ext_resource type="Texture2D" uid="uid://c8g670jef0y2e" path="res://assets/Objects/Door opening animation/Idle.png" id="2_83pgu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qqovsb3lpcu2"]
+[gd_scene load_steps=12 format=3 uid="uid://0kwulhbu8bg1"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_jviqd"]
 [ext_resource type="Texture2D" uid="uid://b51rwae2tdq5n" path="res://assets/Objects/lamp.png" id="2_vrmfj"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cuypanar6kwty" path="res://assets/Objects/Gem animation/diamond-04.png" id="6_ytdvr"]
 [ext_resource type="Texture2D" uid="uid://c2r3i061oyuhj" path="res://assets/Objects/Gem animation/diamond-05.png" id="7_bghit"]
 [ext_resource type="Texture2D" uid="uid://dha6o5cdrrer1" path="res://assets/Effects animations/2d_lights_and_shadows_neutral_point_light.webp" id="8_pysid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m4ql"]
+size = Vector2(31, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jamkd"]
 animations = [{
@@ -33,27 +36,14 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m4ql"]
-size = Vector2(31, 75)
-
 [node name="checkpoint" type="Area2D"]
 z_index = 5
 collision_mask = 2
 script = ExtResource("1_jviqd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("2_vrmfj")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
-position = Vector2(1, 18)
-sprite_frames = SubResource("SpriteFrames_jamkd")
-frame_progress = 0.435264
-
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-6, -7)
-texture = ExtResource("8_pysid")
-texture_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
@@ -76,6 +66,19 @@ offset_bottom = 74.0
 text = "Press F to save progress"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Jewel" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.3, 23.4)
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_jamkd")
+
+[node name="Lamp" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-7.8, -9.1)
+scale = Vector2(1.3, 1.3)
+color = Color(0.811765, 0.807843, 0, 1)
+texture = ExtResource("8_pysid")
+texture_scale = 0.2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
