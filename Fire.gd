@@ -13,5 +13,5 @@ func _process(delta):
 
 func _on_body_entered(body:Node2D):
 	if body == PlayerInfo.player:
-		body.death("Have Perished in Flames")
+		body.death("Have Perished in Flames", "Death2")
 

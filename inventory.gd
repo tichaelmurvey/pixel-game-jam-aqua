@@ -10,6 +10,9 @@ var inventory = {
 	"air": 5
 }
 
+var used_sources = []
+var saved_used_sources = null
+
 var saved_inventory = null
 
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +41,8 @@ func get_element_count(element):
 	return inventory[element]
 
 func reset():
-	for element in elements:
-		inventory[element] = 0
-	inventory_changed.emit()
+	if saved_inventory:
+		print("loading inventory", saved_inventory)
+		inventory = saved_inventory.duplicate(true)
+	if saved_used_sources:
+		used_sources = saved_used_sources.duplicate(true)

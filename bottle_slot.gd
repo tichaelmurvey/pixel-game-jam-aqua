@@ -1,4 +1,4 @@
-extends TextureRect
+extends AspectRatioContainer
 
 var element = null
 var locked = false
@@ -7,7 +7,7 @@ func _get_drag_data(_pos):
 	var data = element
 
 	var drag_texture = TextureRect.new()
-	drag_texture.texture = texture
+	drag_texture.texture = $bottleslot.texture
 	drag_texture.custom_minimum_size = Vector2(64, 64)
 
 	var preview = Control.new()
@@ -31,16 +31,16 @@ func _drop_data(position, data):
 func update_element(data = null):
 	#remove old element
 	if element != null:
-		texture = null
+		$bottleslot.texture = null
 		Inventory.add_element(element)
 
 	#add new element
 	if data != null:
 		element = data
-		texture = load("res://assets/symbols/" + element + ".svg")
+		$bottleslot.texture = load("res://assets/symbols/" + element + ".svg")
 		$name.text = element
 		Inventory.remove_element(element)
 	else:
 		element = null
 		$name.text = ""
-		texture = null
+		$bottleslot.texture = null

@@ -1,7 +1,8 @@
 extends TextureRect
 @export var element = 'banana'
 @export var count = 5
-
+@export var hint = "This is a hint"
+@export var hint_box = Label
 func _ready():
 	set_element(element)
 	Inventory.inventory_changed.connect(update_count)
@@ -32,3 +33,10 @@ func set_element(_element):
 func update_count():
 	count = Inventory.get_element_count(element)
 	$count.text = str(count)
+
+func _on_mouse_entered():
+	hint_box.text =  hint
+
+
+func _on_mouse_exited():
+	hint_box.text = "Hint: Use Shift to activate some powers"
