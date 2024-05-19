@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpk3r5uuk6wd0"]
 
 [ext_resource type="Script" path="res://intangible.gd" id="1_x03qc"]
-[ext_resource type="Texture2D" uid="uid://evxpu3dcqqii" path="res://assets/symbols/air.svg" id="2_sbujc"]
+[ext_resource type="Texture2D" uid="uid://dxjkhrjncfji1" path="res://assets/Objects/Air animation/air 3.png" id="2_8u3jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvt6q"]
 size = Vector2(20, 32)
@@ -12,11 +12,16 @@ script = ExtResource("1_x03qc")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_sbujc")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xvt6q")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.226563, 0.226563)
+texture = ExtResource("2_8u3jc")
+
+[node name="WarningTimer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]

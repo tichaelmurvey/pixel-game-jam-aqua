@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://na2fte52arl7"]
+[gd_scene load_steps=9 format=3 uid="uid://na2fte52arl7"]
 
 [ext_resource type="Script" path="res://craftingMenu.gd" id="1_lvucr"]
 [ext_resource type="PackedScene" uid="uid://ckjlfeis4v0m1" path="res://element_source.tscn" id="3_1vmjx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cm6yc024a4s7i" path="res://assets/symbols/water.svg" id="6_83vep"]
 [ext_resource type="PackedScene" uid="uid://dtbboy0l7rtom" path="res://crafting_bottle.tscn" id="7_1dcqv"]
 [ext_resource type="Texture2D" uid="uid://cd6uqxhfvdw26" path="res://assets/symbols/earth.svg" id="7_47eda"]
+[ext_resource type="PackedScene" uid="uid://csliml6r4y8pk" path="res://hint.tscn" id="8_4gotv"]
 [ext_resource type="Texture2D" uid="uid://c0ac7bbetw64p" path="res://assets/symbols/fire.svg" id="8_q705e"]
 
 [node name="craftingMenu" type="Control"]
@@ -18,7 +19,7 @@ script = ExtResource("1_lvucr")
 
 [node name="Crafting" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 928.0
+offset_left = 934.0
 offset_right = 1154.0
 offset_bottom = 650.0
 mouse_filter = 2
@@ -27,51 +28,95 @@ color = Color(0.309804, 0.0941176, 0.0392157, 1)
 [node name="element_box" type="TextureRect" parent="Crafting"]
 z_index = 1
 layout_mode = 0
-offset_left = 8.0
-offset_top = -5.0
-offset_right = 209.0
-offset_bottom = 203.0
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 220.0
+offset_bottom = 196.0
 mouse_filter = 2
 texture = ExtResource("5_cgmq1")
 
-[node name="element2" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
+[node name="element2" parent="Crafting/element_box" node_paths=PackedStringArray("hint_box") instance=ExtResource("3_1vmjx")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 104.0
 offset_top = 105.0
 offset_right = 176.0
 offset_bottom = 177.0
+grow_horizontal = 1
+grow_vertical = 1
 texture = ExtResource("6_83vep")
 element = "water"
+hint = "Associated with change, the body, and the soul"
+hint_box = NodePath("../../../hint")
 
-[node name="element3" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
+[node name="element3" parent="Crafting/element_box" node_paths=PackedStringArray("hint_box") instance=ExtResource("3_1vmjx")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 31.0
 offset_top = 105.0
 offset_right = 103.0
 offset_bottom = 177.0
+grow_horizontal = 1
+grow_vertical = 1
 texture = ExtResource("7_47eda")
 element = "earth"
+hint = "Associated with matter, strength and the skin"
+hint_box = NodePath("../../../hint")
 
-[node name="element4" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
+[node name="element4" parent="Crafting/element_box" node_paths=PackedStringArray("hint_box") instance=ExtResource("3_1vmjx")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 104.0
 offset_top = 39.0
 offset_right = 176.0
 offset_bottom = 111.0
+grow_horizontal = 1
+grow_vertical = 1
 texture = ExtResource("8_q705e")
 element = "fire"
+hint = "Associated with energy, creation and the hands"
+hint_box = NodePath("../../../hint")
 
-[node name="element" parent="Crafting/element_box" instance=ExtResource("3_1vmjx")]
+[node name="element" parent="Crafting/element_box" node_paths=PackedStringArray("hint_box") instance=ExtResource("3_1vmjx")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 31.0
 offset_top = 39.0
 offset_right = 103.0
 offset_bottom = 111.0
+grow_horizontal = 1
+grow_vertical = 1
+hint = "Associated with travel, heights, and jumping"
+hint_box = NodePath("../../../hint")
 
 [node name="craftingBottle" parent="Crafting" instance=ExtResource("7_1dcqv")]
+layout_mode = 1
+offset_left = -9.0
+offset_top = 218.0
+offset_right = 217.0
+offset_bottom = 507.0
 
 [node name="craftingBottle2" parent="Crafting" instance=ExtResource("7_1dcqv")]
-offset_left = -3.0
-offset_top = 413.0
-offset_right = 223.0
-offset_bottom = 702.0
+layout_mode = 1
+offset_left = -9.0
+offset_top = 419.0
+offset_right = 215.0
+offset_bottom = 706.0
+
+[node name="hint" parent="." instance=ExtResource("8_4gotv")]
+visible = true
+layout_mode = 0
+offset_left = 960.0
+offset_top = 179.0
+offset_right = 1127.0
+offset_bottom = 232.0
+text = "Hint:
+Use Shift to activate a power"

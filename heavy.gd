@@ -8,9 +8,11 @@ func _ready():
 	#make agent heavy
 	agent.gravity *= 2
 	agent.JUMP_VELOCITY *= 0.5
+	agent.armor = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func remove():
 	agent.gravity /= 2
 	agent.JUMP_VELOCITY *= 2
+	agent.armor = false
 	queue_free()

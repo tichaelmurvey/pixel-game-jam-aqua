@@ -16,6 +16,8 @@ var protectedAngles = []
 var dead = false
 var drift_mode = false
 var facing_left = 1
+var direction = 0
+var armor = false
 @onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
@@ -45,8 +47,6 @@ func _ready():
 	#go to spawn point
 	if PlayerInfo.spawn_point:
 		position = PlayerInfo.spawn_point
-	if Inventory.saved_inventory:
-		Inventory.inventory = Inventory.saved_inventory
 
 func _physics_process(delta):
 	if dead:
@@ -56,10 +56,8 @@ func _physics_process(delta):
 		var x_direction = Input.get_axis("move_left", "move_right")
 		var y_direction = Input.get_axis("move_up", "move_down")
 		if x_direction:
-			print("x direction", x_direction)
 			position.x += x_direction * SPEED * delta
 		if y_direction:
-			print("y direction", y_direction)
 			position.y += y_direction * SPEED * delta
 		return
 
@@ -71,7 +69,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		#play walking animation
 		if is_on_floor():
@@ -121,7 +119,7 @@ func jump():
 
 func handle_collision(collision, origin_collider):
 	#check if the collision is with a deadly object
-	if "deadly" in collision.get_collider() and collision.get_collider().deadly:
+	if "deadly" in collision.get_collider() and collision.get_collider().deadly and armor == false:
 		death(" Touched Something Horrible")
 	#check if collision is with floor
 
@@ -147,7 +145,7 @@ func handle_collision(collision, origin_collider):
 		
 		
 
-func death(type = "Have Perished"):
+func death(type = "Have Perished", death_animation = "Death"):
 	# Handle the death of the player.
 	# restart the game
 	print("death")
@@ -156,9 +154,13 @@ func death(type = "Have Perished"):
 		velocity = Vector2(0, 0)
 		death_panel.get_node("Label").text += type
 		print("dying")
-		sprite.animation = "Death"
+		sprite.animation = death_animation
 		#increase animation speed
-		sprite.speed_scale = 2
+		#sprite.speed_scale = 2
+		#remove all powers
+		for power in power_scenes:
+			if get_node(power):
+				get_node(power).remove()
 		#create timer
 		var timer = Timer.new()
 		var message_timer = Timer.new()
@@ -219,3 +221,17 @@ func change_powers():
 
 func _on_trophy_area_entered(area):
 	win_screen.show()
+
+
+func play_sound(sound):
+	#play the sound
+	if sound == "boot" and $boot_sfx.playing == false:
+		$boot_sfx.play()
+	if sound == "ice_boot" and $ice_boot_sfx.playing == false:
+		$ice_boot_sfx.play()
+	if sound == "wings" and $wings_sfx.playing == false:
+		$wings_sfx.play()
+
+func set_animation(animation):
+	#set the animation
+	sprite.animation = animation

@@ -1,10 +1,15 @@
-extends Area2D
+extends Area2D	
 
 @export var element = "earth"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
 	$hint.hide()
+	#check if i have been used
+	for source in Inventory.used_sources:
+		if source == position:
+			queue_free()
+			break
+
 var accessible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,4 +28,5 @@ func _on_body_exited(body):
 func _input(event):
 	if event.is_action_pressed("pick_up") and accessible:
 		Inventory.add_element(element)
+		Inventory.used_sources.append(position)
 		queue_free()

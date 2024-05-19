@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://csliml6r4y8pk"]
+
+[ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="1_vetgs"]
+[ext_resource type="Texture2D" uid="uid://d3bs6kh1bwqnh" path="res://assets/UI/Scroll preset (medium).png" id="2_0xjju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ybjld"]
+font = ExtResource("1_vetgs")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="hint" type="Label"]
+visible = false
+z_index = 4
+offset_left = 99.0
+offset_top = -24.0
+offset_right = 181.0
+offset_bottom = 53.0
+label_settings = SubResource("LabelSettings_ybjld")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 2
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0xjju")
+region_rect = Rect2(8.283, 10.5682, 78.5641, 73.341)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
