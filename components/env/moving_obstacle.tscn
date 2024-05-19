@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dot2k3kfp77el"]
+
+[ext_resource type="Script" path="res://PathFollow2D.gd" id="1_gdqlc"]
+[ext_resource type="Texture2D" uid="uid://nsg4k33f8mx0" path="res://assets/Objects/Box.png" id="2_cm3r4"]
+[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/env/spike.tscn" id="3_q41m8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1t63"]
+size = Vector2(52, 73)
+
+[node name="Moving obstacle" type="PathFollow2D"]
+z_index = 1
+rotates = false
+script = ExtResource("1_gdqlc")
+speed = 150.0
+
+[node name="platform" type="CharacterBody2D" parent="."]
+
+[node name="spike" parent="platform" instance=ExtResource("3_q41m8")]
+position = Vector2(40.0948, -28.0007)
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+
+[node name="spike2" parent="platform" instance=ExtResource("3_q41m8")]
+position = Vector2(-11.9052, -28.0007)
+rotation = 4.71239
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+position = Vector2(15.0948, -28.5004)
+scale = Vector2(2.54545, 4.56254)
+texture = ExtResource("2_cm3r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(14.0948, -28.5007)
+shape = SubResource("RectangleShape2D_h1t63")
+
+[node name="_Timer_34774" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_19972" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
