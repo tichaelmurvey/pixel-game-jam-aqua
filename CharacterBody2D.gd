@@ -159,6 +159,10 @@ func death(type = "Have Perished"):
 		sprite.animation = "Death"
 		#increase animation speed
 		sprite.speed_scale = 2
+		#remove all powers
+		for power in power_scenes:
+			if get_node(power):
+				get_node(power).remove()
 		#create timer
 		var timer = Timer.new()
 		var message_timer = Timer.new()
