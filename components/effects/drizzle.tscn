@@ -1,17 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvy65thdg7ve0"]
-
 [ext_resource type="Script" path="res://drizzle.gd" id="1_mk0ea"]
-[ext_resource type="Texture2D" uid="uid://bgxnybyuv55nu" path="res://assets/Objects/drizzle.png" id="2_572mw"]
 [ext_resource type="AudioStream" uid="uid://bedqu26jos02q" path="res://assets/Sounds/Effects/drizzle.mp3" id="3_7qxfr"]
-
+[gd_scene load_steps=11 format=3 uid="uid://bvy65thdg7ve0"]
+[ext_resource type="Texture2D" uid="uid://bgxnybyuv55nu" path="res://assets/Objects/drizzle.png" id="2_572mw"]
+[ext_resource type="Texture2D" uid="uid://ci8uxqwwuaoe1" path="res://assets/Effects animations/Water splash/Geyser/005.png" id="3_8auxe"]
+[ext_resource type="Texture2D" uid="uid://cfgh545pell4j" path="res://assets/Effects animations/Water splash/Geyser/006.png" id="4_p6rx6"]
+[ext_resource type="Texture2D" uid="uid://sclf20jcecas" path="res://assets/Effects animations/Water splash/Geyser/007.png" id="5_eviur"]
+[ext_resource type="Texture2D" uid="uid://csnlobf6jo0gm" path="res://assets/Effects animations/Water splash/Geyser/008.png" id="6_untlw"]
+[ext_resource type="Texture2D" uid="uid://bu8wq6rnqdn3j" path="res://assets/Effects animations/Water splash/Geyser/009.png" id="7_5vfxx"]
+[ext_resource type="Texture2D" uid="uid://ceptw4x03i0sh" path="res://assets/Effects animations/Water splash/Geyser/010.png" id="8_woc46"]
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddfk5"]
 radius = 6.2453
 height = 53.7202
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rdxo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8auxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6rx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eviur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_untlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5vfxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_woc46")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="drizzle" type="Area2D"]
 script = ExtResource("1_mk0ea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(15, 14)
 scale = Vector2(0.44, 0.38)
 texture = ExtResource("2_572mw")
@@ -24,5 +55,13 @@ shape = SubResource("CapsuleShape2D_ddfk5")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7qxfr")
 autoplay = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(22, 16)
+rotation = 2.22704
+scale = Vector2(0.5, 0.8)
+sprite_frames = SubResource("SpriteFrames_8rdxo")
+autoplay = "default"
+frame_progress = 0.763836
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

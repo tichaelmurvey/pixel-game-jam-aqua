@@ -1,6 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://drylqbn6ly8nf"]
+[gd_scene load_steps=13 format=3 uid="uid://drylqbn6ly8nf"]
 
+[ext_resource type="Texture2D" uid="uid://c61vcuglxfrr0" path="res://assets/Effects animations/Free Smoke Fx  Pixel 07.png" id="1_im2dc"]
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="1_ribsm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7hm4"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(128, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umi5a"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(192, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ityk"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(256, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejpmc"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(0, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ooqr"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(64, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2sgn"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(128, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sl34"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(192, 1024, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3klhn"]
+atlas = ExtResource("1_im2dc")
+region = Rect2(256, 1024, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5355l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7hm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umi5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ityk")
+}],
+"loop": true,
+"name": &"2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejpmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ooqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2sgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sl34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3klhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sl34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2sgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ooqr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib22u"]
 size = Vector2(142, 19)
@@ -11,7 +90,17 @@ position = Vector2(-2, 54)
 rotation = 3.14159
 metadata/_edit_group_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -34.535)
+scale = Vector2(2.5, 2)
+sprite_frames = SubResource("SpriteFrames_5355l")
+animation = &"2"
+autoplay = "default"
+frame_progress = 0.891425
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_ribsm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
