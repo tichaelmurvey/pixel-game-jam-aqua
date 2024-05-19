@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=43 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
@@ -60,6 +60,14 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwu0a"]
 atlas = ExtResource("2_330ma")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjaxo"]
+atlas = ExtResource("2_330ma")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agmuc"]
+atlas = ExtResource("2_330ma")
+region = Rect2(32, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8yt5g"]
 atlas = ExtResource("2_330ma")
@@ -201,6 +209,28 @@ animations = [{
 "speed": 2.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjaxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agmuc")
+}],
+"loop": true,
+"name": &"Intangible",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjaxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agmuc")
+}],
+"loop": true,
+"name": &"Intangible_Fast",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.1,
 "texture": SubResource("AtlasTexture_8yt5g")
 }, {
@@ -290,7 +320,7 @@ shape = SubResource("RectangleShape2D_dwu3h")
 position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
-animation = &"Death"
+animation = &"Intangible_Fast"
 autoplay = "Idle"
 
 [node name="falling" type="Sprite2D" parent="."]

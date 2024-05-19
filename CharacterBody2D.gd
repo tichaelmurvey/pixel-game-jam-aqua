@@ -57,10 +57,8 @@ func _physics_process(delta):
 		var x_direction = Input.get_axis("move_left", "move_right")
 		var y_direction = Input.get_axis("move_up", "move_down")
 		if x_direction:
-			print("x direction", x_direction)
 			position.x += x_direction * SPEED * delta
 		if y_direction:
-			print("y direction", y_direction)
 			position.y += y_direction * SPEED * delta
 		return
 
@@ -234,3 +232,7 @@ func play_sound(sound):
 		$ice_boot_sfx.play()
 	if sound == "wings" and $wings_sfx.playing == false:
 		$wings_sfx.play()
+
+func set_animation(animation):
+	#set the animation
+	sprite.animation = animation
