@@ -1,11 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://0kwulhbu8bg1"]
+[gd_scene load_steps=12 format=3 uid="uid://qqovsb3lpcu2"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_jviqd"]
-[ext_resource type="Texture2D" uid="uid://dyx4s5y07reh0" path="res://assets/Decorations/chair_1.png" id="2_epme5"]
+[ext_resource type="Texture2D" uid="uid://b51rwae2tdq5n" path="res://assets/Objects/lamp.png" id="2_vrmfj"]
 [ext_resource type="Texture2D" uid="uid://d4ewu6p60jnon" path="res://assets/Decorations/chatbox.png" id="3_3gau7"]
+[ext_resource type="Texture2D" uid="uid://dlukia0fqbvkr" path="res://assets/Objects/Gem animation/diamond-01.png" id="3_rui6s"]
+[ext_resource type="Texture2D" uid="uid://bvc46dtrwryrt" path="res://assets/Objects/Gem animation/diamond-02.png" id="4_thlvs"]
+[ext_resource type="Texture2D" uid="uid://duto6db4b3p6i" path="res://assets/Objects/Gem animation/diamond-03.png" id="5_x2yic"]
+[ext_resource type="Texture2D" uid="uid://cuypanar6kwty" path="res://assets/Objects/Gem animation/diamond-04.png" id="6_ytdvr"]
+[ext_resource type="Texture2D" uid="uid://c2r3i061oyuhj" path="res://assets/Objects/Gem animation/diamond-05.png" id="7_bghit"]
+[ext_resource type="Texture2D" uid="uid://dha6o5cdrrer1" path="res://assets/Effects animations/2d_lights_and_shadows_neutral_point_light.webp" id="8_pysid"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jamkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rui6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_thlvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x2yic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ytdvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bghit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m4ql"]
-size = Vector2(22, 31)
+size = Vector2(31, 75)
 
 [node name="checkpoint" type="Area2D"]
 z_index = 5
@@ -13,18 +42,29 @@ collision_mask = 2
 script = ExtResource("1_jviqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_epme5")
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_vrmfj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(1, 18)
+sprite_frames = SubResource("SpriteFrames_jamkd")
+frame_progress = 0.435264
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(-6, -7)
+texture = ExtResource("8_pysid")
+texture_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_5m4ql")
 
 [node name="hint" type="TextureRect" parent="."]
 z_index = 10
 offset_left = -49.0
-offset_top = -125.0
+offset_top = -143.0
 offset_right = 48.0
-offset_bottom = -14.0
+offset_bottom = -32.0
 texture = ExtResource("3_3gau7")
 expand_mode = 1
 
