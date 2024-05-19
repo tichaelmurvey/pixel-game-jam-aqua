@@ -78,12 +78,12 @@
 [ext_resource type="Texture2D" uid="uid://0v1fylb6xt55" path="res://assets/Decorations/Torch animation/torch_big_blue_6.png" id="52_gkdai"]
 [ext_resource type="Texture2D" uid="uid://b4yym01tnsbfy" path="res://assets/Decorations/Torch animation/torch-B-02.png" id="52_nkdau"]
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
-[ext_resource type="PackedScene" uid="uid://btengum6ygchn" path="res://components/env/spike.tscn" id="54_pawd6"]
+[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/env/spike.tscn" id="54_pawd6"]
 [ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://components/Dispensors/earth dispensor.tscn" id="55_rr148"]
 [ext_resource type="PackedScene" path="res://components/env/vertical crate.tscn" id="56_bf83j"]
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
-[ext_resource type="PackedScene" uid="uid://bxfw1yvmnewge" path="res://components/env/moving_platform.tscn" id="57_4etwx"]
+[ext_resource type="PackedScene" uid="uid://dvvyn6bei83dt" path="res://components/env/moving_platform.tscn" id="57_4etwx"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
 [ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_cxuoy"]
 [ext_resource type="PackedScene" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
@@ -548,7 +548,7 @@ text = "You are winner"
 label_settings = SubResource("LabelSettings_3e08t")
 
 [node name="player" parent="." node_paths=PackedStringArray("death_panel", "win_screen") instance=ExtResource("2_kdfr0")]
-position = Vector2(-3847, 578)
+position = Vector2(-1712, 573)
 death_panel = NodePath("../CanvasLayer/deathPanel")
 win_screen = NodePath("../CanvasLayer/winScreen")
 
@@ -622,6 +622,11 @@ metadata/_edit_lock_ = true
 position = Vector2(501, 548)
 scale = Vector2(3, 3)
 texture = ExtResource("16_wnb7p")
+metadata/_edit_lock_ = true
+
+[node name="6" type="Sprite2D" parent="Background"]
+position = Vector2(-577, 2009)
+texture = ExtResource("36_a3dge")
 metadata/_edit_lock_ = true
 
 [node name="BigClouds" type="Sprite2D" parent="Background"]
@@ -770,7 +775,7 @@ scale = Vector2(2, 2)
 position = Vector2(667, 582)
 
 [node name="checkpoint 2" parent="Room 1" instance=ExtResource("64_p3uei")]
-position = Vector2(-214, -784)
+position = Vector2(-214, -804)
 
 [node name="Room 2" type="Node2D" parent="."]
 
@@ -1056,7 +1061,7 @@ position = Vector2(1226, 122.003)
 rotation = -3.14159
 
 [node name="checkpoint 1" parent="Room 3 upper" instance=ExtResource("64_p3uei")]
-position = Vector2(-2034, -1585.01)
+position = Vector2(-2034, -1565.01)
 rotation = -3.14159
 
 [node name="Decorations" type="Node2D" parent="Room 3 upper"]
@@ -1331,10 +1336,10 @@ position = Vector2(-2738, 581)
 position = Vector2(-2775, 581)
 
 [node name="checkpoint 2" parent="Room 3 lower" instance=ExtResource("64_p3uei")]
-position = Vector2(-1600, 592)
+position = Vector2(-1600, 572)
 
 [node name="trophy" parent="Room 3 lower" instance=ExtResource("65_863la")]
-position = Vector2(-4173, 614)
+position = Vector2(-4173, 621)
 
 [node name="Decorations" type="Node2D" parent="Room 3 lower"]
 
@@ -1649,7 +1654,7 @@ scale = Vector2(1.165, 1)
 position = Vector2(-790, 3596)
 
 [node name="checkpoint 3" parent="Room 4" instance=ExtResource("64_p3uei")]
-position = Vector2(1257, 1872)
+position = Vector2(1257, 1852)
 
 [node name="Decorations" type="Node2D" parent="Room 4"]
 
@@ -1873,5 +1878,4 @@ stream = ExtResource("63_66f1m")
 volume_db = -80.0
 autoplay = true
 
-[node name="checkpoint" parent="." instance=ExtResource("64_p3uei")]
-position = Vector2(506, 586)
+[connection signal="body_entered" from="Room 3 lower/trophy" to="player" method="_on_trophy_area_entered"]
