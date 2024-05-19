@@ -10,18 +10,20 @@
 
 [node name="craftingBottle" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 173.0
-offset_right = 227.0
-offset_bottom = 462.0
+anchor_right = 0.19
+anchor_bottom = 0.358
+offset_right = -218.88
+offset_bottom = -231.984
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Bottle" type="TextureRect" parent="." node_paths=PackedStringArray("slot1", "slot2")]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 10.0
-offset_right = 179.0
-offset_bottom = 189.0
+offset_left = 45.0
+offset_top = 39.0
+offset_right = 181.0
+offset_bottom = 188.0
 texture = ExtResource("1_bw1iy")
 script = ExtResource("2_f26sk")
 slot1 = NodePath("bottleslot")
@@ -29,31 +31,50 @@ slot2 = NodePath("bottleslot2")
 
 [node name="bottleslot" parent="Bottle" instance=ExtResource("3_o4epv")]
 layout_mode = 0
+anchors_preset = 0
 offset_left = 37.0
-offset_top = 50.0
-offset_right = 101.0
-offset_bottom = 116.0
+offset_top = 43.0
+offset_right = 102.0
+offset_bottom = 96.0
 
 [node name="bottleslot2" parent="Bottle" instance=ExtResource("3_o4epv")]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 108.0
-offset_right = 101.0
-offset_bottom = 175.0
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 98.0
+offset_right = 105.0
+offset_bottom = 149.0
+
+[node name="ColorRect" type="ColorRect" parent="Bottle"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 49.0
+offset_right = 90.0
+offset_bottom = 92.0
+mouse_filter = 2
+color = Color(0.439216, 0.219608, 0.756863, 0.258824)
+
+[node name="ColorRect2" type="ColorRect" parent="Bottle"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 100.0
+offset_right = 90.0
+offset_bottom = 143.0
+mouse_filter = 2
+color = Color(0.439216, 0.219608, 0.756863, 0.258824)
 
 [node name="alchemize 1" type="Button" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 13.0
-offset_top = 185.0
-offset_right = 107.0
-offset_bottom = 229.0
+offset_left = 17.0
+offset_top = 189.0
+offset_right = 111.0
+offset_bottom = 233.0
 theme = ExtResource("4_2jsv7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Alchemize"
 flat = true
 icon_alignment = 1
-metadata/_edit_group_ = true
 
 [node name="Background" type="TextureRect" parent="alchemize 1"]
 z_index = -1
@@ -79,12 +100,11 @@ text = "Aqua Regia"
 icon = ExtResource("6_lgqir")
 flat = true
 expand_icon = true
-metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="aqua regia 1"]
 visible = false
 layout_mode = 0
-offset_right = 187.0
+offset_right = 242.833
 offset_bottom = 94.0
 mouse_filter = 2
 texture = ExtResource("7_fbxmr")
@@ -93,10 +113,10 @@ expand_mode = 3
 [node name="Background" type="TextureRect" parent="aqua regia 1"]
 z_index = -1
 layout_mode = 0
-offset_left = -36.0
-offset_top = -10.0
-offset_right = 142.0
-offset_bottom = 54.0
+offset_left = -39.0
+offset_top = -8.0
+offset_right = 139.0
+offset_bottom = 56.0
 mouse_filter = 2
 texture = ExtResource("5_1chhm")
 

@@ -17,6 +17,7 @@ var dead = false
 var drift_mode = false
 var facing_left = 1
 var direction = 0
+var armor = false
 @onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
@@ -118,7 +119,7 @@ func jump():
 
 func handle_collision(collision, origin_collider):
 	#check if the collision is with a deadly object
-	if "deadly" in collision.get_collider() and collision.get_collider().deadly:
+	if "deadly" in collision.get_collider() and collision.get_collider().deadly and armor == false:
 		death(" Touched Something Horrible")
 	#check if collision is with floor
 

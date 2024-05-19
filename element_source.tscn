@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckjlfeis4v0m1"]
+[gd_scene load_steps=7 format=3 uid="uid://ckjlfeis4v0m1"]
 
 [ext_resource type="Texture2D" uid="uid://evxpu3dcqqii" path="res://assets/symbols/air.svg" id="1_v2kcq"]
 [ext_resource type="Script" path="res://element_source.gd" id="2_ytdjr"]
 [ext_resource type="FontFile" uid="uid://del855tqm0asu" path="res://assets/Fonts/Enchanted Land.otf" id="3_yvu7k"]
+[ext_resource type="PackedScene" uid="uid://csliml6r4y8pk" path="res://hint.tscn" id="4_3u2vo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bfen2"]
 font = ExtResource("3_yvu7k")
@@ -15,14 +16,14 @@ font_size = 20
 font_color = Color(0, 0, 0, 1)
 
 [node name="element" type="TextureRect"]
-offset_left = 53.0
-offset_top = 64.0
-offset_right = 125.0
-offset_bottom = 136.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_v2kcq")
 script = ExtResource("2_ytdjr")
 element = "air"
-count = null
 
 [node name="count" type="Label" parent="."]
 layout_mode = 0
@@ -43,3 +44,9 @@ offset_bottom = 76.0
 text = "2"
 label_settings = SubResource("LabelSettings_ybjld")
 horizontal_alignment = 1
+
+[node name="hint" parent="." instance=ExtResource("4_3u2vo")]
+layout_mode = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
