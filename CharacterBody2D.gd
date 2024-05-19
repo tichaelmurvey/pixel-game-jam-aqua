@@ -46,8 +46,6 @@ func _ready():
 	#go to spawn point
 	if PlayerInfo.spawn_point:
 		position = PlayerInfo.spawn_point
-	if Inventory.saved_inventory:
-		Inventory.inventory = Inventory.saved_inventory
 
 func _physics_process(delta):
 	if dead:

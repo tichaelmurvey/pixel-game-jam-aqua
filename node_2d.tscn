@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=96 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
 [ext_resource type="PackedScene" uid="uid://0nkmn07jrjac" path="res://components/env/deathblock.tscn" id="62_41wdq"]
 [ext_resource type="AudioStream" uid="uid://cwxtri2tbkuei" path="res://assets/Sounds/Music/ES_Duel in the Ruins - Cercles Nouvelles.mp3" id="63_66f1m"]
+[ext_resource type="PackedScene" uid="uid://0kwulhbu8bg1" path="res://components/env/checkpoint.tscn" id="64_p3uei"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjth"]
 font = ExtResource("6_a6ijt")
@@ -1271,3 +1272,6 @@ visible = false
 stream = ExtResource("63_66f1m")
 volume_db = -80.0
 autoplay = true
+
+[node name="checkpoint" parent="." instance=ExtResource("64_p3uei")]
+position = Vector2(506, 586)
