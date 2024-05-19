@@ -12,6 +12,7 @@ func _ready():
 	#deferred function
 	#set collision shape to parent
 	pass_up_collision_shapes.call_deferred()
+	agent.play_sound("wings")
 	
 
 func pass_up_collision_shapes():
@@ -35,6 +36,7 @@ func remove():
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_SPACE) and agent.is_on_floor() == false and flight_time < MAX_FLIGHT_TIME:
 		print("fly")
+		agent.play_sound("wings")
 		agent.velocity.y -= FLIGHT_VELOCITY*delta
 		agent.velocity.x = move_toward(agent.velocity.x, 0, 10000*delta)
 		print(agent.velocity.y)
@@ -42,3 +44,4 @@ func _physics_process(delta):
 	#reset flight time if on the ground
 	elif agent.is_on_floor():
 		flight_time = 0.0
+

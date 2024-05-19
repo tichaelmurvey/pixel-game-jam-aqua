@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=95 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_cxuoy"]
 [ext_resource type="PackedScene" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
 [ext_resource type="PackedScene" uid="uid://0nkmn07jrjac" path="res://components/env/deathblock.tscn" id="62_41wdq"]
+[ext_resource type="AudioStream" uid="uid://cwxtri2tbkuei" path="res://assets/Sounds/Music/ES_Duel in the Ruins - Cercles Nouvelles.mp3" id="63_66f1m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvjth"]
 font = ExtResource("6_a6ijt")
@@ -425,7 +426,7 @@ text = "You are winner"
 label_settings = SubResource("LabelSettings_3e08t")
 
 [node name="player" parent="." node_paths=PackedStringArray("death_panel", "win_screen") instance=ExtResource("2_kdfr0")]
-position = Vector2(347, 412)
+position = Vector2(275, 424)
 death_panel = NodePath("../CanvasLayer/deathPanel")
 win_screen = NodePath("../CanvasLayer/winScreen")
 
@@ -1265,3 +1266,8 @@ position = Vector2(-790, 3596)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("63_66f1m")
+volume_db = -20.0
+autoplay = true

@@ -1,8 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=41 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
 [ext_resource type="Texture2D" uid="uid://bgcsumxgvuqm8" path="res://assets/Player/falling.png" id="3_kp73t"]
+[ext_resource type="AudioStream" uid="uid://ue27nlhm0ult" path="res://assets/Sounds/Effects/boots walk.mp3" id="4_5mjeq"]
+[ext_resource type="AudioStream" uid="uid://c7ncgnsesyqum" path="res://assets/Sounds/Effects/wings.mp3" id="5_wxjug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(10.6667, 28)
@@ -168,7 +170,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -183,9 +185,9 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
-"name": &"Death 2",
-"speed": 5.0
+"loop": false,
+"name": &"Death2",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,11 +287,22 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_dwu3h")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
-animation = &"Death 2"
+animation = &"Death"
 autoplay = "Idle"
 
 [node name="falling" type="Sprite2D" parent="."]
 position = Vector2(-3, -63)
 texture = ExtResource("3_kp73t")
+
+[node name="boot_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5mjeq")
+
+[node name="ice_boot_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5mjeq")
+pitch_scale = 2.5
+
+[node name="wings_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wxjug")

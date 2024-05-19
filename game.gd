@@ -9,5 +9,9 @@ var inventory = {
 #public variable for control
 @export var craftingMenu = Control
 
+func _ready():
+	#play music
+	$MusicPlayer.play()
+
 func _process(delta):
 	craftingMenu.inventory = inventory

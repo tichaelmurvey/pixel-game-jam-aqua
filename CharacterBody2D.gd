@@ -16,6 +16,7 @@ var protectedAngles = []
 var dead = false
 var drift_mode = false
 var facing_left = 1
+var direction = 0
 @onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
@@ -71,7 +72,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		#play walking animation
 		if is_on_floor():
@@ -147,7 +148,7 @@ func handle_collision(collision, origin_collider):
 		
 		
 
-func death(type = "Have Perished"):
+func death(type = "Have Perished", death_animation = "Death"):
 	# Handle the death of the player.
 	# restart the game
 	print("death")
@@ -156,9 +157,9 @@ func death(type = "Have Perished"):
 		velocity = Vector2(0, 0)
 		death_panel.get_node("Label").text += type
 		print("dying")
-		sprite.animation = "Death"
+		sprite.animation = death_animation
 		#increase animation speed
-		sprite.speed_scale = 2
+		#sprite.speed_scale = 2
 		#remove all powers
 		for power in power_scenes:
 			if get_node(power):
@@ -223,3 +224,13 @@ func change_powers():
 
 func _on_trophy_area_entered(area):
 	win_screen.show()
+
+
+func play_sound(sound):
+	#play the sound
+	if sound == "boot" and $boot_sfx.playing == false:
+		$boot_sfx.play()
+	if sound == "ice_boot" and $ice_boot_sfx.playing == false:
+		$ice_boot_sfx.play()
+	if sound == "wings" and $wings_sfx.playing == false:
+		$wings_sfx.play()
