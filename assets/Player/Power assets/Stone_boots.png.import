@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7cdaqrprlqo5"
-path="res://.godot/imported/Stone boots.png-5ef944bb66ac5d37a882209f69f8ad5f.ctex"
+path="res://.godot/imported/Stone_boots.png-686f716f682c74cb118ae934e90a68f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Power assets/Stone boots.png"
-dest_files=["res://.godot/imported/Stone boots.png-5ef944bb66ac5d37a882209f69f8ad5f.ctex"]
+source_file="res://assets/Player/Power assets/Stone_boots.png"
+dest_files=["res://.godot/imported/Stone_boots.png-686f716f682c74cb118ae934e90a68f2.ctex"]
 
 [params]
 

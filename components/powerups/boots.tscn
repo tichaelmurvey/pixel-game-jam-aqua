@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1kt0lfklhlqq"]
 
 [ext_resource type="Script" path="res://boots.gd" id="1_cm801"]
-[ext_resource type="Texture2D" uid="uid://c7cdaqrprlqo5" path="res://assets/Player/Power assets/Stone boots.png" id="2_qogjw"]
+[ext_resource type="Texture2D" uid="uid://c7cdaqrprlqo5" path="res://assets/Player/Power assets/Stone_boots.png" id="2_qogjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2862"]
 size = Vector2(31, 24)
