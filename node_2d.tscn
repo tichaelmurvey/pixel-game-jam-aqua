@@ -777,6 +777,12 @@ position = Vector2(667, 582)
 [node name="checkpoint 2" parent="Room 1" instance=ExtResource("64_p3uei")]
 position = Vector2(-214, -804)
 
+[node name="checkpoint 3" parent="Room 1" instance=ExtResource("64_p3uei")]
+position = Vector2(-2435, -1732)
+
+[node name="checkpoint 4" parent="Room 1" instance=ExtResource("64_p3uei")]
+position = Vector2(-3767, -644)
+
 [node name="Room 2" type="Node2D" parent="."]
 
 [node name="spike" parent="Room 2" instance=ExtResource("54_pawd6")]
@@ -1869,6 +1875,9 @@ position = Vector2(159, 803)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mjqbc")
 autoplay = "default"
+
+[node name="checkpoint 4" parent="Room 4" instance=ExtResource("64_p3uei")]
+position = Vector2(-996, 2460)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
