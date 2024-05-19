@@ -15,13 +15,3 @@ func remove():
 	#reset agent variables
 	agent.protectedAngles.remove_at(agent.protectedAngles.find(0))
 	queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	for i in get_children():
-		if i is CollisionShape2D:
-			print(agent)
-			i.reparent(agent)
-			#scale
-			i.scale = scale
-			#position

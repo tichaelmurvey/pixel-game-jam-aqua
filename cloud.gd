@@ -21,22 +21,22 @@ func remove():
 
 var previous_frame_floor = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# func _physics_process(delta):
-# 	if Input.is_action_just_pressed("jump") and previous_frame_floor == false and cloud_ready == true:
-# 		print("cloud jump")
-# 		#create cloud
-# 		var cloud_instance = cloud.instantiate()
-# 		clouds.append(cloud_instance)
-# 		if clouds.size() > max_clouds:
-# 			var cloud_to_remove = clouds.pop_front()
-# 			cloud_to_remove.queue_free()
-# 		#position at player feet
-# 		cloud_instance.position = agent.position + Vector2(0, agent.get_height())
-# 		get_tree().get_root().get_node("game").add_child(cloud_instance)
-# 		agent.jump()
-# 		cloud_ready = false
-# 		hide()
-# 	previous_frame_floor = agent.is_on_floor()
+func _physics_process(delta):
+	if Input.is_action_just_pressed("jump") and previous_frame_floor == false and cloud_ready == true:
+		print("cloud jump")
+		#create cloud
+		var cloud_instance = cloud.instantiate()
+		clouds.append(cloud_instance)
+		if clouds.size() > max_clouds:
+			var cloud_to_remove = clouds.pop_front()
+			cloud_to_remove.queue_free()
+		#position at player feet
+		cloud_instance.position = agent.position + Vector2(0, agent.get_height())
+		get_tree().get_root().get_node("game").add_child(cloud_instance)
+		agent.jump()
+		cloud_ready = false
+		hide()
+	previous_frame_floor = agent.is_on_floor()
 
 
 func make_cloud_ready():

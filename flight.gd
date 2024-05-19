@@ -1,10 +1,9 @@
 extends Node2D
 
 var agent = null
-var FLIGHT_VELOCITY = 1200
+var FLIGHT_VELOCITY = 2000
 var MAX_FLIGHT_TIME = 0.5
 var wings = []
-@export var enabled = false
 var flight_time = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():

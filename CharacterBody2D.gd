@@ -49,6 +49,8 @@ func _ready():
 		Inventory.inventory = Inventory.saved_inventory
 
 func _physics_process(delta):
+	if dead:
+		return
 	#handle drift mode
 	if drift_mode:
 		var x_direction = Input.get_axis("move_left", "move_right")
@@ -101,7 +103,6 @@ func _physics_process(delta):
 	else:
 		$falling.hide()
 	priorVelocity = velocity
-
 	move_and_slide()
 
 	# check for collision speed
@@ -151,6 +152,8 @@ func death(type = "Have Perished"):
 	# restart the game
 	print("death")
 	if !dead:
+		#stop player movement and prevent further movement
+		velocity = Vector2(0, 0)
 		death_panel.get_node("Label").text += type
 		print("dying")
 		sprite.animation = "Death"

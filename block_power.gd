@@ -20,4 +20,6 @@ func _input(event):
 			block_to_remove.queue_free()
 
 func remove():
+	for block in blocks:
+		block.queue_free()
 	queue_free()

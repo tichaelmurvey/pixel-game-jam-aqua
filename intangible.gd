@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 var agent
 
@@ -20,6 +20,10 @@ func remove():
 
 
 func _on_timer_timeout():
+	#get overlapping bodies
+	var bodies = get_overlapping_bodies()
+	if bodies.size() > 0:
+		agent.death(" Materialized Inside a Wall")
 	#make tangible
 	agent.set_collision_layer_value(2, true)
 	agent.set_collision_mask_value(1, true)
