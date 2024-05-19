@@ -68,6 +68,7 @@ frame_progress = 0.435861
 
 [node name="hint" type="TextureRect" parent="."]
 visible = false
+z_index = 2
 offset_left = -49.0
 offset_top = -167.0
 offset_right = 48.0

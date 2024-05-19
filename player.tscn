@@ -1,10 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=39 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
-
 [ext_resource type="Texture2D" uid="uid://bgcsumxgvuqm8" path="res://assets/Player/falling.png" id="3_kp73t"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(10.6667, 28)
@@ -40,6 +38,18 @@ region = Rect2(192, 224, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6o15"]
 atlas = ExtResource("2_330ma")
 region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t51m"]
+atlas = ExtResource("2_330ma")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulxop"]
+atlas = ExtResource("2_330ma")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgj0j"]
+atlas = ExtResource("2_330ma")
+region = Rect2(64, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvj4v"]
 atlas = ExtResource("2_330ma")
@@ -162,6 +172,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0t51m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulxop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgj0j")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Death 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nvj4v")
 }, {
 "duration": 1.0,
@@ -172,10 +199,10 @@ animations = [{
 "speed": 2.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_8yt5g")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_nlk2w")
 }, {
 "duration": 1.0,
@@ -198,7 +225,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jump",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,9 +287,9 @@ shape = SubResource("RectangleShape2D_dwu3h")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
-animation = &"Death"
+animation = &"Jump"
 autoplay = "Idle"
-
+frame_progress = 0.413039
 
 [node name="falling" type="Sprite2D" parent="."]
 position = Vector2(-3, -63)
