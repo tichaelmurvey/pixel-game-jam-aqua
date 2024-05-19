@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1u4ogtfm2lns"]
+[gd_scene load_steps=3 format=3 uid="uid://d1u4ogtfm2lns"]
 
 [ext_resource type="Script" path="res://bright.gd" id="1_hr2em"]
+[ext_resource type="Texture2D" uid="uid://bop3121038oi" path="res://assets/Decorations/Light animation/2d_lights_and_shadows_neutral_point_light.webp" id="2_ifr7d"]
 
 [node name="bright" type="Node2D"]
 script = ExtResource("1_hr2em")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="light" type="PointLight2D" parent="."]
+texture = ExtResource("2_ifr7d")

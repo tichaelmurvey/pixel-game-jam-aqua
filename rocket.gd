@@ -23,6 +23,10 @@ func _physics_process(delta):
 			agent.velocity.y -= FLIGHT_VELOCITY*delta
 		print(agent.velocity.y)
 		flight_time += delta
+		$Sprite2D.play("default")
+		$Sprite2D2.play("default")
 	#reset flight time if on the ground
 	elif agent.is_on_floor():
 		flight_time = 0.0
+		$Sprite2D.stop()
+		$Sprite2D2.stop()

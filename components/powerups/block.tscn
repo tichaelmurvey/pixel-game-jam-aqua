@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdfo4keev2ytu" path="res://assets/Objects/Earth animation/earth 3.png" id="2_uj3hj"]
 
 [node name="block" type="Node2D"]
-position = Vector2(16, 28)
+position = Vector2(8, 0)
 script = ExtResource("1_o4u50")
 metadata/_edit_group_ = true
 

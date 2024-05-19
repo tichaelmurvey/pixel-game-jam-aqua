@@ -13,6 +13,7 @@ func _input(event):
 		puff = puff_scene.instantiate()
 		puffing = true
 		add_child(puff)
+		agent.velocity.x -= 500*agent.facing_left
 		$Timer.start()
 
 
