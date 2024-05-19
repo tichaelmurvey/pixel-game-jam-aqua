@@ -1,9 +1,12 @@
-[gd_scene load_steps=43 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=46 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
+[ext_resource type="Texture2D" uid="uid://benmbpivckey4" path="res://assets/Player/Petrification animations/Petrification 1.png" id="3_8ib2m"]
 [ext_resource type="Texture2D" uid="uid://bgcsumxgvuqm8" path="res://assets/Player/falling.png" id="3_kp73t"]
 [ext_resource type="AudioStream" uid="uid://ue27nlhm0ult" path="res://assets/Sounds/Effects/boots walk.mp3" id="4_5mjeq"]
+[ext_resource type="Texture2D" uid="uid://gwflaiq6uia0" path="res://assets/Player/Petrification animations/Petrification 2.png" id="4_kq5bn"]
+[ext_resource type="Texture2D" uid="uid://c65q47oyt785x" path="res://assets/Player/Petrification animations/Petrification 3.png" id="5_72r71"]
 [ext_resource type="AudioStream" uid="uid://c7ncgnsesyqum" path="res://assets/Sounds/Effects/wings.mp3" id="5_wxjug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
@@ -261,6 +264,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_8ib2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kq5bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_72r71")
+}],
+"loop": false,
+"name": &"Petrification",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_w0bn3")
 }, {
 "duration": 1.0,
@@ -320,8 +337,10 @@ shape = SubResource("RectangleShape2D_dwu3h")
 position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
-animation = &"Intangible_Fast"
+animation = &"Petrification"
 autoplay = "Idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="falling" type="Sprite2D" parent="."]
 position = Vector2(-3, -63)

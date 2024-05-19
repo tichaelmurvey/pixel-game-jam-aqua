@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0kwulhbu8bg1"]
+[gd_scene load_steps=12 format=3 uid="uid://qqovsb3lpcu2"]
 
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_jviqd"]
 [ext_resource type="Texture2D" uid="uid://b51rwae2tdq5n" path="res://assets/Objects/lamp.png" id="2_vrmfj"]
