@@ -19,6 +19,7 @@ func remove():
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_SPACE) and agent.is_on_floor() == false and flight_time < MAX_FLIGHT_TIME:
 		print("fly")
+		agent.play_sound("rocket")
 		if agent.velocity.y > -MAX_FLIGHT_VELOCITY:
 			agent.velocity.y -= FLIGHT_VELOCITY*delta
 		print(agent.velocity.y)

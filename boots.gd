@@ -7,7 +7,7 @@ func _ready():
 	agent = get_parent()
 	#add down as protected angle
 	agent.protectedAngles.append(0)
-	agent.armor = true
+	# agent.armor = true
 	#get height of agent
 	var agentHeight = agent.get_height()
 	position.y = agentHeight
@@ -16,7 +16,7 @@ func _ready():
 func remove():
 	#reset agent variables
 	agent.protectedAngles.remove_at(agent.protectedAngles.find(0))
-	agent.armor = false
+	# agent.armor = false
 	queue_free()
 
 func _process(delta):
@@ -24,4 +24,4 @@ func _process(delta):
 	var direction = agent.direction
 	#if direction is not 0, and sound is not already playing
 	if direction != 0 and agent.is_on_floor():
-		agent.play_sound("boot")
+		agent.play_sound("boot", true)

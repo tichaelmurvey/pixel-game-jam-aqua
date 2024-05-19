@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvy65thdg7ve0"]
+[gd_scene load_steps=5 format=3 uid="uid://bvy65thdg7ve0"]
 
 [ext_resource type="Script" path="res://drizzle.gd" id="1_mk0ea"]
 [ext_resource type="Texture2D" uid="uid://bgxnybyuv55nu" path="res://assets/Objects/drizzle.png" id="2_572mw"]
+[ext_resource type="AudioStream" uid="uid://bedqu26jos02q" path="res://assets/Sounds/Effects/drizzle.mp3" id="3_7qxfr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddfk5"]
 radius = 6.2453
@@ -19,5 +20,9 @@ texture = ExtResource("2_572mw")
 position = Vector2(19, 15)
 rotation = -0.897216
 shape = SubResource("CapsuleShape2D_ddfk5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7qxfr")
+autoplay = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

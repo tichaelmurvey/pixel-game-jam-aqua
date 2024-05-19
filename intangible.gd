@@ -8,6 +8,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("use_effect") and agent.drift_mode == false:
+		agent.play_sound("intangible")
 		$Timer.start()
 		$WarningTimer.start()
 		#make intangible

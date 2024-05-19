@@ -10,6 +10,7 @@ func _ready():
 #on item keypress
 func _input(event):
 	if event.is_action_pressed("use_effect"):
+		agent.play_sound("fireball")
 		var fireball = fireball_scene.instantiate()
 		get_tree().get_root().add_child(fireball)
 		fireball.global_position = agent.global_position + Vector2(20*agent.facing_left, 0)

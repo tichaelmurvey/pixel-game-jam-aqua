@@ -18,6 +18,7 @@ var drift_mode = false
 var facing_left = 1
 var direction = 0
 var armor = false
+var big = false
 @onready var sprite = $Sprite
 var power_scenes = {
 	"boots": preload("res://components/powerups/boots.tscn"),
@@ -48,7 +49,6 @@ func _ready():
 	#go to spawn point
 	if PlayerInfo.spawn_point:
 		position = PlayerInfo.spawn_point
-
 func _physics_process(delta):
 	if dead:
 		return
@@ -111,8 +111,12 @@ func _physics_process(delta):
 	#reset speed to max speed if it is greater than max speed
 	if velocity.length() > MAX_SPEED:
 		velocity = velocity.normalized() * MAX_SPEED
+	if is_on_floor():
+		previous_frame_floor = true
+	else:
+		previous_frame_floor = false
 
-
+var previous_frame_floor = true
 func jump():
 	sprite.animation = "Jump"
 	# Jump with the jump velocity.
@@ -129,6 +133,9 @@ func handle_collision(collision, origin_collider):
 		#check if the angle of the collision is between 90 and -90
 		if collision.get_angle() < PI/2 and collision.get_angle() > -PI/2:
 			touched_floor.emit()
+		if previous_frame_floor == false and big == true:
+			bump_camera()
+
 	#log velocity
 	if priorVelocity.y != 0 or priorVelocity.x != 0:
 		var angle = collision.get_angle()
@@ -145,6 +152,21 @@ func handle_collision(collision, origin_collider):
 				death("Have Perhished by Falling")
 		
 		
+func bump_camera():
+	#bump the camera
+	var camera = $Camera2D
+	camera.position.y += 3
+	var timer = Timer.new()
+	timer.one_shot = true
+	add_child(timer)
+	timer.connect("timeout", reset_position)
+	timer.start(0.1)
+
+func reset_position():
+	print("reset position")
+	#reset the camera position
+	$Camera2D.position.y -= 3
+
 
 func death(type = "Have Perished", death_animation = "Death"):
 	# Handle the death of the player.
@@ -231,14 +253,14 @@ func _on_trophy_area_entered(area):
 	win_screen.show()
 
 
-func play_sound(sound):
+func play_sound(sound_name, repeating=false):
 	#play the sound
-	if sound == "boot" and $boot_sfx.playing == false:
-		$boot_sfx.play()
-	if sound == "ice_boot" and $ice_boot_sfx.playing == false:
-		$ice_boot_sfx.play()
-	if sound == "wings" and $wings_sfx.playing == false:
-		$wings_sfx.play()
+	var sound = get_node(sound_name + "_sfx")
+	if sound:
+		if repeating and sound.is_playing():
+			return
+		sound.play()
+	
 
 func set_animation(animation):
 	#set the animation

@@ -96,6 +96,8 @@ var powers = [
 
 ]
 
+var saved_powers = null
+
 #power update signal
 signal power_updated
 var spawn_point = null

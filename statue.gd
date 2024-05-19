@@ -6,6 +6,7 @@ var agent
 func _ready():
 	agent = get_parent()
 	$Timer.start()
+	agent.play_sound("statue")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func remove():

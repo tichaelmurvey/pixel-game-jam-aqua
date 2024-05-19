@@ -1,10 +1,22 @@
-[gd_scene load_steps=43 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=55 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
 [ext_resource type="Texture2D" uid="uid://bgcsumxgvuqm8" path="res://assets/Player/falling.png" id="3_kp73t"]
 [ext_resource type="AudioStream" uid="uid://ue27nlhm0ult" path="res://assets/Sounds/Effects/boots walk.mp3" id="4_5mjeq"]
 [ext_resource type="AudioStream" uid="uid://c7ncgnsesyqum" path="res://assets/Sounds/Effects/wings.mp3" id="5_wxjug"]
+[ext_resource type="AudioStream" uid="uid://vuto3t5q6l5d" path="res://assets/Sounds/Effects/air blow.mp3" id="6_vlhi8"]
+[ext_resource type="AudioStream" uid="uid://c3urkr0ctv504" path="res://assets/Sounds/Effects/block.mp3" id="7_jr2v7"]
+[ext_resource type="AudioStream" uid="uid://bbier8s68rpfk" path="res://assets/Sounds/Effects/death.mp3" id="8_2clk6"]
+[ext_resource type="AudioStream" uid="uid://bedqu26jos02q" path="res://assets/Sounds/Effects/drizzle.mp3" id="9_qcist"]
+[ext_resource type="AudioStream" uid="uid://45b1e1qywgec" path="res://assets/Sounds/Effects/fireball.mp3" id="11_ac313"]
+[ext_resource type="AudioStream" uid="uid://iknfvdesgmlv" path="res://assets/Sounds/Effects/glow.mp3" id="12_p8lch"]
+[ext_resource type="AudioStream" uid="uid://xpqvvdvf7sa0" path="res://assets/Sounds/Effects/grow.mp3" id="13_nv68w"]
+[ext_resource type="AudioStream" uid="uid://cl4j3ji4r80vl" path="res://assets/Sounds/Effects/intangible.mp3" id="14_3pgos"]
+[ext_resource type="AudioStream" uid="uid://bs4616bae5pdm" path="res://assets/Sounds/Effects/Petrification.mp3" id="15_lm57k"]
+[ext_resource type="AudioStream" uid="uid://7dididnplhpj" path="res://assets/Sounds/Effects/rocket.mp3" id="16_by802"]
+[ext_resource type="AudioStream" uid="uid://8jv572rumfum" path="res://assets/Sounds/Effects/shrink.mp3" id="17_2ddxv"]
+[ext_resource type="AudioStream" uid="uid://xudlfcf54wj2" path="res://assets/Sounds/Effects/victory.mp3" id="18_64fbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(9.33335, 26.6667)
@@ -336,3 +348,39 @@ pitch_scale = 2.5
 
 [node name="wings_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_wxjug")
+
+[node name="puff_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vlhi8")
+
+[node name="block_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jr2v7")
+
+[node name="death_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2clk6")
+
+[node name="drizzle_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qcist")
+
+[node name="fireball_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ac313")
+
+[node name="glow_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_p8lch")
+
+[node name="grow_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_nv68w")
+
+[node name="intangible_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_3pgos")
+
+[node name="statue_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_lm57k")
+
+[node name="rocket_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_by802")
+
+[node name="shrink_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_2ddxv")
+
+[node name="victory_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_64fbw")

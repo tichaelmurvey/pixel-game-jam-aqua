@@ -9,6 +9,7 @@ func _ready():
 	agent.gravity *= 2
 	agent.JUMP_VELOCITY *= 0.5
 	agent.armor = true
+	agent.play_sound("statue")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func remove():

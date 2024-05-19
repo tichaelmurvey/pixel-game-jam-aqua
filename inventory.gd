@@ -4,10 +4,10 @@ var elements = ["earth", "fire", "water", "air"]
 signal inventory_changed
 
 var inventory = {
-	"earth": 5,
-	"fire": 5,
-	"water": 5,
-	"air": 5
+	"earth": 0,
+	"fire": 0,
+	"water": 0,
+	"air": 0
 }
 
 var used_sources = []

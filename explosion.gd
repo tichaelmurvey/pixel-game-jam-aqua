@@ -6,6 +6,7 @@ func _ready():
 	print("explosion created")
 	#start timer
 	$Timer.start()
+	$explosion_sfx.play()
 
 func _on_timer_timeout():
 	#delete self

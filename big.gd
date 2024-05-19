@@ -10,7 +10,12 @@ func _ready():
 	agent.scale *= 2
 	#update y position
 	agent.position.y -= 50
+	agent.JUMP_VELOCITY *= 1.2
+	agent.big = true
+	agent.play_sound("grow")
 
 func remove():
 	agent.scale /= 2
+	agent.JUMP_VELOCITY /= 1.2
+	agent.big = false
 	queue_free()

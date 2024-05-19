@@ -490,13 +490,6 @@ layer_1/tile_data = PackedInt32Array(2883572, 131077, 12, 2162693, 131078, 2, 20
 script = ExtResource("2_0ywu4")
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(486, 432)
-offset = Vector2(80, -25)
-zoom = Vector2(1.2, 1.2)
-script = ExtResource("5_n1tba")
-player = NodePath("../player")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="craftingMenu2" parent="CanvasLayer" instance=ExtResource("10_q7fmt")]
@@ -548,9 +541,15 @@ text = "You are winner"
 label_settings = SubResource("LabelSettings_3e08t")
 
 [node name="player" parent="." node_paths=PackedStringArray("death_panel", "win_screen") instance=ExtResource("2_kdfr0")]
-position = Vector2(-1712, 573)
+position = Vector2(411, 500)
 death_panel = NodePath("../CanvasLayer/deathPanel")
 win_screen = NodePath("../CanvasLayer/winScreen")
+
+[node name="Camera2D" type="Camera2D" parent="player" node_paths=PackedStringArray("player")]
+offset = Vector2(80, -25)
+zoom = Vector2(1.2, 1.2)
+script = ExtResource("5_n1tba")
+player = NodePath("..")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -1875,7 +1874,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("63_66f1m")
-volume_db = -80.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="body_entered" from="Room 3 lower/trophy" to="player" method="_on_trophy_area_entered"]

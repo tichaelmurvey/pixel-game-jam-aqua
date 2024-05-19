@@ -9,6 +9,7 @@ func _ready():
 	agent.scale /= 2
 	#update y position
 	# agent.position.y += 50
+	agent.play_sound("shrink")
 
 func remove():
 	agent.scale *= 2

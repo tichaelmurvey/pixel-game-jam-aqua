@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://by5i2edpnrs83"]
+[gd_scene load_steps=9 format=3 uid="uid://by5i2edpnrs83"]
 
 [ext_resource type="Script" path="res://explosion.gd" id="1_7h0kf"]
 [ext_resource type="Texture2D" uid="uid://chcfic6agyklh" path="res://assets/Effects animations/Explosion/explosion 1.png" id="3_2fhnf"]
 [ext_resource type="Texture2D" uid="uid://65dfs50gat5u" path="res://assets/Effects animations/Explosion/explosion 2.png" id="4_jwark"]
 [ext_resource type="Texture2D" uid="uid://dmv2kkom7eu0y" path="res://assets/Effects animations/Explosion/explosion 3.png" id="5_wfea2"]
+[ext_resource type="AudioStream" uid="uid://cxpkqlmuh4m65" path="res://assets/Sounds/Effects/explosion 1.mp3" id="6_2ie6m"]
 [ext_resource type="Texture2D" uid="uid://be7lu6ktjl6q4" path="res://assets/Effects animations/Explosion/explosion 4.png" id="6_foyou"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2uxtr"]
@@ -48,6 +49,9 @@ frame_progress = 0.177084
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2ie6m")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -10,6 +10,7 @@ func _ready():
 #on item keypress
 func _input(event):
 	if event.is_action_pressed("use_effect"):
+		agent.play_sound("block")
 		var block = block_scene.instantiate()
 		blocks.append(block)
 		get_tree().get_root().add_child(block)

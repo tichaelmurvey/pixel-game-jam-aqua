@@ -24,6 +24,7 @@ var previous_frame_floor = true
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and previous_frame_floor == false and cloud_ready == true:
 		print("cloud jump")
+		agent.play_sound("cloud")
 		#create cloud
 		var cloud_instance = cloud.instantiate()
 		clouds.append(cloud_instance)

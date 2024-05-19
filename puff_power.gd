@@ -10,6 +10,7 @@ func _ready():
 #on item keypress
 func _input(event):
 	if event.is_action_pressed("use_effect") and puffing == false:
+		agent.play_sound("puff")
 		puff = puff_scene.instantiate()
 		puffing = true
 		add_child(puff)
