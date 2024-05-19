@@ -10,7 +10,7 @@ size = Vector2(20, 32)
 script = ExtResource("1_x03qc")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -21,7 +21,7 @@ scale = Vector2(0.226563, 0.226563)
 texture = ExtResource("2_8u3jc")
 
 [node name="WarningTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 4.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]

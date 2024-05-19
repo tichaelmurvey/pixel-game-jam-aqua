@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://ikrq3qejb804"]
 
 [ext_resource type="Script" path="res://block_power.gd" id="1_o4u50"]
-[ext_resource type="Texture2D" uid="uid://cdfo4keev2ytu" path="res://assets/Objects/Earth animation/earth 3.png" id="2_uj3hj"]
+[ext_resource type="Texture2D" uid="uid://b3t2bxgig5k8" path="res://assets/Objects/rock_1.png" id="2_228yv"]
 
 [node name="block" type="Node2D"]
-position = Vector2(8, 0)
+position = Vector2(8.245, 5)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_o4u50")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -0.655766
-scale = Vector2(0.265625, 0.265625)
-texture = ExtResource("2_uj3hj")
+rotation = -3.95841
+texture = ExtResource("2_228yv")
