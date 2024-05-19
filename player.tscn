@@ -337,10 +337,8 @@ shape = SubResource("RectangleShape2D_dwu3h")
 position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_v6f2y")
-animation = &"Petrification"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 2
-frame_progress = 1.0
 
 [node name="falling" type="Sprite2D" parent="."]
 position = Vector2(-3, -63)

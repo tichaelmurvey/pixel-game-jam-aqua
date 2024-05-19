@@ -1,13 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cya1rrnofdvsu"]
+[gd_scene load_steps=9 format=3 uid="uid://cya1rrnofdvsu"]
 
 [ext_resource type="Script" path="res://spout.gd" id="1_s8kdv"]
 [ext_resource type="Texture2D" uid="uid://bu0mbspwm2isx" path="res://assets/Objects/Water animation/water 3.png" id="2_37p8i"]
+[ext_resource type="Texture2D" uid="uid://cjl5gkepsi3oc" path="res://assets/Effects animations/Water splash/001.png" id="3_8r61l"]
+[ext_resource type="Texture2D" uid="uid://bhmg4sjbbimjt" path="res://assets/Effects animations/Water splash/002.png" id="4_j7i80"]
+[ext_resource type="Texture2D" uid="uid://dcpeyj5sofud6" path="res://assets/Effects animations/Water splash/003.png" id="5_xvets"]
+[ext_resource type="Texture2D" uid="uid://d3bcwhp50w3ow" path="res://assets/Effects animations/Water splash/004.png" id="6_0lvn4"]
+[ext_resource type="Texture2D" uid="uid://cd2c6nm2kpr57" path="res://assets/Effects animations/Water splash/005.png" id="7_2f7aa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lme3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8r61l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j7i80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xvets")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0lvn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2f7aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="spout" type="Node2D"]
 script = ExtResource("1_s8kdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1, 4)
 rotation = 0.857302
 scale = Vector2(0.234375, 0.234375)
 texture = ExtResource("2_37p8i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+rotation = 0.436332
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lme3d")
+autoplay = "default"
+frame_progress = 0.470656

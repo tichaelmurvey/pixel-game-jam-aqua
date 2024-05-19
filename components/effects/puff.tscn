@@ -1,7 +1,114 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0syjw5dkx6ac"]
+[gd_scene load_steps=20 format=3 uid="uid://c0syjw5dkx6ac"]
 
 [ext_resource type="Script" path="res://puff.gd" id="1_a0h6r"]
 [ext_resource type="Texture2D" uid="uid://bjj15xx0wd8og" path="res://assets/Background/Small Cloud 1.png" id="2_6smid"]
+[ext_resource type="Texture2D" uid="uid://c61vcuglxfrr0" path="res://assets/Effects animations/Free Smoke Fx  Pixel 07.png" id="2_p1brg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s17u3"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(0, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tpxm"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(64, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcnbk"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(128, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bof3y"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(192, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5rnp"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(256, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boiqc"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(320, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6c6c"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(384, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xck78"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(448, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1600"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(512, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0toe"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(576, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c702f"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(640, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngtms"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(704, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wttw"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(768, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gco5y"]
+atlas = ExtResource("2_p1brg")
+region = Rect2(832, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u3q4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s17u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tpxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcnbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bof3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5rnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boiqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6c6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xck78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1600")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0toe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c702f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngtms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wttw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gco5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjqh8"]
 radius = 7.0
@@ -12,12 +119,20 @@ position = Vector2(25, 4)
 script = ExtResource("1_a0h6r")
 metadata/_edit_group_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_3u3q4")
+autoplay = "default"
+frame_progress = 0.396407
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yjqh8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(5.52084, 1.79054)
 scale = Vector2(0.607545, 0.607545)
 texture = ExtResource("2_6smid")
