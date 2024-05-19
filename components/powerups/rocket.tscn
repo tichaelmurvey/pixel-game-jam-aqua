@@ -1,19 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://dec75ajgeklwk"]
+[gd_scene load_steps=7 format=3 uid="uid://dec75ajgeklwk"]
 
 [ext_resource type="Script" path="res://rocket.gd" id="1_1822s"]
-[ext_resource type="Texture2D" uid="uid://dnaxmkbekdpap" path="res://assets/Objects/Fire animation/fire 3.png" id="2_b63w5"]
+[ext_resource type="Texture2D" uid="uid://vbgyu1lx4gra" path="res://assets/Effects animations/Red Effect Bullet Impact Explosion 32x32.png" id="2_0p0xv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm7sx"]
+atlas = ExtResource("2_0p0xv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0i0f"]
+atlas = ExtResource("2_0p0xv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjso"]
+atlas = ExtResource("2_0p0xv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsi56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm7sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0i0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqjso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="rocket" type="Node2D"]
 script = ExtResource("1_1822s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6, 26)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8.82718, 30.8851)
 rotation = 3.13563
-scale = Vector2(0.255453, 0.255453)
-texture = ExtResource("2_b63w5")
+scale = Vector2(0.558967, 0.558967)
+sprite_frames = SubResource("SpriteFrames_fsi56")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(4, 26)
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(8.92165, 30.8633)
 rotation = 3.13563
-scale = Vector2(0.255453, 0.255453)
-texture = ExtResource("2_b63w5")
+scale = Vector2(0.561238, 0.561238)
+sprite_frames = SubResource("SpriteFrames_fsi56")
+frame_progress = 0.0309403
+flip_h = true

@@ -13,4 +13,4 @@ func remove():
 
 
 func _on_timer_timeout():
-	agent.death(" Become Stone")
+	agent.death(" Became Stone")

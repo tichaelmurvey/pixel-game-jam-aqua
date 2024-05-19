@@ -7,6 +7,7 @@ func _ready():
 	agent = get_parent()
 	#add down as protected angle
 	agent.protectedAngles.append(0)
+	agent.armor = true
 	#get height of agent
 	var agentHeight = agent.get_height()
 	position.y = agentHeight
@@ -15,6 +16,7 @@ func _ready():
 func remove():
 	#reset agent variables
 	agent.protectedAngles.remove_at(agent.protectedAngles.find(0))
+	agent.armor = false
 	queue_free()
 
 func _process(delta):

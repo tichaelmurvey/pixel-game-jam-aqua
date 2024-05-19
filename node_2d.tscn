@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://bn22lue3utaew"]
+[gd_scene load_steps=128 format=3 uid="uid://bn22lue3utaew"]
 
 [ext_resource type="Script" path="res://TileMap.gd" id="2_0ywu4"]
 [ext_resource type="TileSet" uid="uid://cnj7w321v8smu" path="res://castle.tres" id="2_cd0p1"]
@@ -80,21 +80,18 @@
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
 [ext_resource type="PackedScene" uid="uid://btengum6ygchn" path="res://components/env/spike.tscn" id="54_pawd6"]
 [ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://components/Dispensors/earth dispensor.tscn" id="55_rr148"]
-[ext_resource type="PackedScene" uid="uid://bxtit0eg2g0uo" path="res://components/env/vertical crate.tscn" id="56_bf83j"]
+[ext_resource type="PackedScene" path="res://components/env/vertical crate.tscn" id="56_bf83j"]
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
 [ext_resource type="PackedScene" uid="uid://bxfw1yvmnewge" path="res://components/env/moving_platform.tscn" id="57_4etwx"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
 [ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_cxuoy"]
 [ext_resource type="PackedScene" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
+[ext_resource type="PackedScene" uid="uid://y1flt4mr06gl" path="res://components/env/small crate.tscn" id="59_abh6c"]
 [ext_resource type="PackedScene" uid="uid://0nkmn07jrjac" path="res://components/env/deathblock.tscn" id="62_41wdq"]
 [ext_resource type="AudioStream" uid="uid://cwxtri2tbkuei" path="res://assets/Sounds/Music/ES_Duel in the Ruins - Cercles Nouvelles.mp3" id="63_66f1m"]
 [ext_resource type="PackedScene" uid="uid://0kwulhbu8bg1" path="res://components/env/checkpoint.tscn" id="64_p3uei"]
-[ext_resource type="PackedScene" uid="uid://dot2k3kfp77el" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
-[ext_resource type="PackedScene" uid="uid://y1flt4mr06gl" path="res://components/env/small crate.tscn" id="59_abh6c"]
-[ext_resource type="PackedScene" path="res://components/env/deathblock.tscn" id="62_41wdq"]
-[ext_resource type="PackedScene" path="res://components/env/checkpoint.tscn" id="62_wp1x7"]
-[ext_resource type="PackedScene" path="res://components/env/trophy.tscn" id="65_863la"]
+[ext_resource type="PackedScene" uid="uid://bx7qoy6rwrerv" path="res://components/env/trophy.tscn" id="65_863la"]
 [ext_resource type="Texture2D" uid="uid://gsje5cmxc7j5" path="res://assets/Decorations/potion_4.png" id="72_jhfve"]
 [ext_resource type="Texture2D" uid="uid://dr7bp1xjhw5fi" path="res://assets/Decorations/potion_3.png" id="73_i5i6y"]
 [ext_resource type="Texture2D" uid="uid://q3q11sauromy" path="res://assets/Decorations/potions_1.png" id="74_o2pg3"]
@@ -772,7 +769,7 @@ scale = Vector2(2, 2)
 [node name="air dispensor 1" parent="Room 1" instance=ExtResource("56_rrcjo")]
 position = Vector2(667, 582)
 
-[node name="checkpoint 2" parent="Room 1" instance=ExtResource("62_wp1x7")]
+[node name="checkpoint 2" parent="Room 1" instance=ExtResource("64_p3uei")]
 position = Vector2(-214, -784)
 
 [node name="Room 2" type="Node2D" parent="."]
@@ -1058,7 +1055,7 @@ rotation = -3.14159
 position = Vector2(1226, 122.003)
 rotation = -3.14159
 
-[node name="checkpoint 1" parent="Room 3 upper" instance=ExtResource("62_wp1x7")]
+[node name="checkpoint 1" parent="Room 3 upper" instance=ExtResource("64_p3uei")]
 position = Vector2(-2034, -1585.01)
 rotation = -3.14159
 
@@ -1333,7 +1330,7 @@ position = Vector2(-2738, 581)
 [node name="Fire17" parent="Room 3 lower" instance=ExtResource("57_cxuoy")]
 position = Vector2(-2775, 581)
 
-[node name="checkpoint 2" parent="Room 3 lower" instance=ExtResource("62_wp1x7")]
+[node name="checkpoint 2" parent="Room 3 lower" instance=ExtResource("64_p3uei")]
 position = Vector2(-1600, 592)
 
 [node name="trophy" parent="Room 3 lower" instance=ExtResource("65_863la")]
@@ -1651,7 +1648,7 @@ scale = Vector2(1.165, 1)
 [node name="deathblock" parent="Room 4/Obstacles" instance=ExtResource("62_41wdq")]
 position = Vector2(-790, 3596)
 
-[node name="checkpoint 3" parent="Room 4" instance=ExtResource("62_wp1x7")]
+[node name="checkpoint 3" parent="Room 4" instance=ExtResource("64_p3uei")]
 position = Vector2(1257, 1872)
 
 [node name="Decorations" type="Node2D" parent="Room 4"]

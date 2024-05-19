@@ -35,6 +35,7 @@ var power_scenes = {
 	"puff": preload("res://components/powerups/puff.tscn"),
 	"ice": preload("res://components/powerups/ice.tscn"),
 	"rocket": preload("res://components/powerups/rocket.tscn"),
+	"statue": preload("res://components/powerups/statue.tscn"),
 }
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -157,10 +158,6 @@ func death(type = "Have Perished", death_animation = "Death"):
 		sprite.animation = death_animation
 		#increase animation speed
 		#sprite.speed_scale = 2
-		#remove all powers
-		for power in power_scenes:
-			if get_node(power):
-				get_node(power).remove()
 		#create timer
 		var timer = Timer.new()
 		var message_timer = Timer.new()
@@ -179,6 +176,17 @@ func death(type = "Have Perished", death_animation = "Death"):
 
 func _final_death():
 	print("final death")
+	#remove all powers
+	var powers = PlayerInfo.powers
+	#iterate over powers
+	for power in powers:
+		#if power is not active, check if there is a child node that matches its name and remove it
+		power.active = false
+		#get power node and remove it
+		var power_node = get_node(power.name)
+		if power_node:
+			print("disabling power", power.name)
+			power_node.remove()
 	Inventory.reset()
 	print("parent", get_parent())
 	print("tree", get_tree())

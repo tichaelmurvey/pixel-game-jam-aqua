@@ -13,7 +13,7 @@ var inventory = {
 var used_sources = []
 var saved_used_sources = null
 
-var saved_inventory = null
+var saved_inventory = inventory.duplicate(true)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
