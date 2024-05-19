@@ -1,78 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://r11x5xq67bw"]
+[gd_scene load_steps=3 format=3 uid="uid://r11x5xq67bw"]
 
 [ext_resource type="Script" path="res://cloud.gd" id="1_7ib2j"]
-[ext_resource type="Texture2D" uid="uid://c61vcuglxfrr0" path="res://assets/Effects animations/Free Smoke Fx  Pixel 07.png" id="2_2mu48"]
 [ext_resource type="Texture2D" uid="uid://bcxlgjuilun1y" path="res://assets/Background/Small Cloud 3.png" id="2_cucik"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejpmc"]
-atlas = ExtResource("2_2mu48")
-region = Rect2(0, 1024, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ooqr"]
-atlas = ExtResource("2_2mu48")
-region = Rect2(64, 1024, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2sgn"]
-atlas = ExtResource("2_2mu48")
-region = Rect2(128, 1024, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8sl34"]
-atlas = ExtResource("2_2mu48")
-region = Rect2(192, 1024, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3klhn"]
-atlas = ExtResource("2_2mu48")
-region = Rect2(256, 1024, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_oksvr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejpmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ooqr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s2sgn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8sl34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3klhn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8sl34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s2sgn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ooqr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
 
 [node name="cloud" type="Node2D"]
 position = Vector2(-2, 25)
 script = ExtResource("1_7ib2j")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(0, 20.05)
-rotation = 3.14159
-scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_oksvr")
-autoplay = "default"
-frame = 2
-frame_progress = 0.485482
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 self_modulate = Color(0.568627, 0.94902, 1, 1)
 rotation = 3.14159
 scale = Vector2(0.261309, 0.288438)

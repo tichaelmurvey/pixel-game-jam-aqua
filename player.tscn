@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=58 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]

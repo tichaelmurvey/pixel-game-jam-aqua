@@ -1,19 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1kt0lfklhlqq"]
 
 [ext_resource type="Script" path="res://boots.gd" id="1_cm801"]
-[ext_resource type="Texture2D" uid="uid://c7cdaqrprlqo5" path="res://assets/Player/Power assets/Stone boots.png" id="2_qogjw"]
+[ext_resource type="Texture2D" uid="uid://c4oj3ymspia8g" path="res://assets/Objects/boots.png" id="2_ntq2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2862"]
 size = Vector2(31, 24)
 
 [node name="boots" type="Node2D"]
-position = Vector2(-5, 20)
 script = ExtResource("1_cm801")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_qogjw")
+texture = ExtResource("2_ntq2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)

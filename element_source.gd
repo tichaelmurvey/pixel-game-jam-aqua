@@ -31,7 +31,7 @@ func set_element(_element):
 	update_count()
 
 func update_count():
-	count = Inventory.get_element_count(element)
+	count = Inventory.get_available_count(element)
 	$count.text = str(count)
 
 func _on_mouse_entered():

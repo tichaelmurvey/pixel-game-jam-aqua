@@ -1,93 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpqre2luuld10"]
+[gd_scene load_steps=3 format=3 uid="uid://bpqre2luuld10"]
 
 [ext_resource type="Script" path="res://puff_power.gd" id="1_03ygm"]
 [ext_resource type="Texture2D" uid="uid://dxjkhrjncfji1" path="res://assets/Objects/Air animation/air 3.png" id="2_bhayw"]
-[ext_resource type="Texture2D" uid="uid://c61vcuglxfrr0" path="res://assets/Effects animations/Free Smoke Fx  Pixel 07.png" id="3_nh6se"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lsvs"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(0, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vn5h1"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(64, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8udl0"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(128, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m03g0"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(192, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wb5v"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(256, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_561v6"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(320, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aovtj"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(384, 1216, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qs6qj"]
-atlas = ExtResource("3_nh6se")
-region = Rect2(448, 1216, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_45rpo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lsvs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vn5h1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8udl0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m03g0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4wb5v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_561v6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aovtj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qs6qj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
 
 [node name="puff" type="Node2D"]
 script = ExtResource("1_03ygm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(11, 5)
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_bhayw")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(16, 5)
-rotation = 1.5708
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_45rpo")
-autoplay = "default"
-frame_progress = 0.482173
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

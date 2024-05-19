@@ -32,14 +32,14 @@ func update_element(data = null):
 	#remove old element
 	if element != null:
 		$bottleslot.texture = null
-		Inventory.add_element(element)
+		Inventory.add_available(element)
 
 	#add new element
 	if data != null:
 		element = data
 		$bottleslot.texture = load("res://assets/symbols/" + element + ".svg")
 		$name.text = element
-		Inventory.remove_element(element)
+		Inventory.remove_available(element)
 	else:
 		element = null
 		$name.text = ""
