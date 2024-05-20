@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @export var death_panel : Control
-@export var win_screen : Control
 var MAX_SPEED = 1500
 var MAX_RUN_SPEED = 250
 var SPEED = 100
@@ -91,7 +90,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
 		#play idle animation
-		if is_on_floor() and sprite.animation  != "Death":
+		if is_on_floor() and sprite.animation == "Death" or sprite.animation == "Run" or sprite.animation == "Jump":
 			sprite.animation = "Idle"
 		# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -173,11 +172,13 @@ func death(type = "Have Perished", death_animation = "Death"):
 	# restart the game
 	print("death")
 	if !dead:
+		play_sound("death")
 		#stop player movement and prevent further movement
 		velocity = Vector2(0, 0)
 		death_panel.get_node("Label").text += type
 		print("dying")
 		sprite.animation = death_animation
+		sprite.play()
 		#increase animation speed
 		#sprite.speed_scale = 2
 		#create timer
@@ -246,11 +247,7 @@ func change_powers():
 					#instantiate the power scene
 					var power_scene = power_scenes[power.name].instantiate()
 					add_child(power_scene)
-		
-
-
-func _on_trophy_area_entered(area):
-	win_screen.show()
+	
 
 
 func play_sound(sound_name, repeating=false):

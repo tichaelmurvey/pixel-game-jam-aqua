@@ -4,16 +4,16 @@ var elements = ["earth", "fire", "water", "air"]
 signal inventory_changed
 signal inventory_reset
 var inventory = {
-	"earth": 0,
+	"earth": 2,
 	"fire": 0,
-	"water": 0,
+	"water": 1,
 	"air": 0
 }
 
 var available = {
-	"earth": 0,
+	"earth": 2,
 	"fire": 0,
-	"water": 0,
+	"water": 1,
 	"air": 0
 }
 

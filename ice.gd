@@ -20,4 +20,4 @@ func _process(delta):
 	var direction = agent.direction
 	#if direction is not 0, and sound is not already playing
 	if direction != 0 and agent.is_on_floor():
-		agent.play_sound("ice_boot")
+		agent.play_sound("ice", true)

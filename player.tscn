@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=59 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://7dididnplhpj" path="res://assets/Sounds/Effects/rocket.mp3" id="16_by802"]
 [ext_resource type="AudioStream" uid="uid://8jv572rumfum" path="res://assets/Sounds/Effects/shrink.mp3" id="17_2ddxv"]
 [ext_resource type="AudioStream" uid="uid://xudlfcf54wj2" path="res://assets/Sounds/Effects/victory.mp3" id="18_64fbw"]
+[ext_resource type="AudioStream" uid="uid://cmkeqypxwfu7e" path="res://assets/Sounds/Effects/Ice skating.mp3" id="21_ppl2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(9.33335, 26.6667)
@@ -286,7 +287,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Petrification",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -401,3 +402,6 @@ stream = ExtResource("17_2ddxv")
 
 [node name="victory_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_64fbw")
+
+[node name="ice_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ppl2l")

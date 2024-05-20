@@ -7,6 +7,8 @@ func _ready():
 	agent = get_parent()
 	$Timer.start()
 	agent.play_sound("statue")
+	agent.sprite.animation = "Petrification"
+	agent.sprite.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func remove():
