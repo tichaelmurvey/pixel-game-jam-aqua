@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvy65thdg7ve0"]
+[gd_scene load_steps=12 format=3 uid="uid://bvy65thdg7ve0"]
 
 [ext_resource type="Script" path="res://drizzle.gd" id="1_mk0ea"]
 [ext_resource type="Texture2D" uid="uid://bgxnybyuv55nu" path="res://assets/Objects/drizzle.png" id="2_572mw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csnlobf6jo0gm" path="res://assets/Effects animations/Water splash/Geyser/008.png" id="6_untlw"]
 [ext_resource type="Texture2D" uid="uid://bu8wq6rnqdn3j" path="res://assets/Effects animations/Water splash/Geyser/009.png" id="7_5vfxx"]
 [ext_resource type="Texture2D" uid="uid://ceptw4x03i0sh" path="res://assets/Effects animations/Water splash/Geyser/010.png" id="8_woc46"]
+[ext_resource type="AudioStream" uid="uid://bedqu26jos02q" path="res://assets/Sounds/Effects/drizzle.mp3" id="9_fwrhm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddfk5"]
 radius = 6.2453
@@ -61,5 +62,8 @@ scale = Vector2(0.5, 0.8)
 sprite_frames = SubResource("SpriteFrames_8rdxo")
 autoplay = "default"
 frame_progress = 0.763836
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_fwrhm")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

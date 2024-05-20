@@ -56,9 +56,9 @@ func _physics_process(delta):
 		var x_direction = Input.get_axis("move_left", "move_right")
 		var y_direction = Input.get_axis("move_up", "move_down")
 		if x_direction:
-			position.x += x_direction * SPEED * delta
+			position.x += x_direction * SPEED * delta * 0.3
 		if y_direction:
-			position.y += y_direction * SPEED * delta
+			position.y += y_direction * SPEED * delta * 0.3
 		return
 
 	# Add the gravity.
