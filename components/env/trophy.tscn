@@ -273,6 +273,7 @@ text = "Press F to exit"
 
 [node name="win_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_cxss4")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

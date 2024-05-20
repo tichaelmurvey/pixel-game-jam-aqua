@@ -79,17 +79,17 @@
 [ext_resource type="Texture2D" uid="uid://0v1fylb6xt55" path="res://assets/Decorations/Torch animation/torch_big_blue_6.png" id="52_gkdai"]
 [ext_resource type="Texture2D" uid="uid://b4yym01tnsbfy" path="res://assets/Decorations/Torch animation/torch-B-02.png" id="52_nkdau"]
 [ext_resource type="Texture2D" uid="uid://cpip7tnao3fj6" path="res://assets/Decorations/Torch animation/torch-B-03.png" id="53_50hnf"]
-[ext_resource type="PackedScene" uid="uid://btengum6ygchn" path="res://components/env/spike.tscn" id="54_pawd6"]
+[ext_resource type="PackedScene" uid="uid://d2ys0okdflprm" path="res://components/env/spike.tscn" id="54_pawd6"]
 [ext_resource type="PackedScene" uid="uid://bgj5vvpllwvw7" path="res://components/Dispensors/earth dispensor.tscn" id="55_rr148"]
-[ext_resource type="PackedScene" path="res://components/env/vertical crate.tscn" id="56_bf83j"]
+[ext_resource type="PackedScene" uid="uid://bxtit0eg2g0uo" path="res://components/env/vertical crate.tscn" id="56_bf83j"]
 [ext_resource type="PackedScene" uid="uid://b04kawr4fftu1" path="res://components/Dispensors/air dispensor.tscn" id="56_rrcjo"]
 [ext_resource type="PackedScene" uid="uid://bn1mtfxt06h45" path="res://components/Dispensors/water dispensor.tscn" id="56_u4wj3"]
-[ext_resource type="PackedScene" uid="uid://bxfw1yvmnewge" path="res://components/env/moving_platform.tscn" id="57_4etwx"]
+[ext_resource type="PackedScene" uid="uid://dvvyn6bei83dt" path="res://components/env/moving_platform.tscn" id="57_4etwx"]
 [ext_resource type="PackedScene" uid="uid://3wriuykdidee" path="res://components/Dispensors/fire dispensor.tscn" id="57_8rv8o"]
 [ext_resource type="PackedScene" uid="uid://lme46xljnplr" path="res://components/env/fire.tscn" id="57_cxuoy"]
-[ext_resource type="PackedScene" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
+[ext_resource type="PackedScene" uid="uid://dot2k3kfp77el" path="res://components/env/moving_obstacle.tscn" id="57_unt0g"]
 [ext_resource type="PackedScene" uid="uid://y1flt4mr06gl" path="res://components/env/small crate.tscn" id="59_abh6c"]
-[ext_resource type="PackedScene" uid="uid://0nkmn07jrjac" path="res://components/env/deathblock.tscn" id="62_41wdq"]
+[ext_resource type="PackedScene" path="res://components/env/deathblock.tscn" id="62_41wdq"]
 [ext_resource type="AudioStream" uid="uid://cwxtri2tbkuei" path="res://assets/Sounds/Music/ES_Duel in the Ruins - Cercles Nouvelles.mp3" id="63_66f1m"]
 [ext_resource type="PackedScene" uid="uid://qqovsb3lpcu2" path="res://components/env/checkpoint.tscn" id="64_p3uei"]
 [ext_resource type="PackedScene" uid="uid://cp20p73aq5nkn" path="res://components/env/trophy.tscn" id="65_863la"]
@@ -557,7 +557,7 @@ theme = SubResource("Theme_uwlc6")
 text = "Play Again?"
 
 [node name="player" parent="." node_paths=PackedStringArray("death_panel") instance=ExtResource("2_kdfr0")]
-position = Vector2(369, 576)
+position = Vector2(436, 575)
 death_panel = NodePath("../CanvasLayer/deathPanel")
 metadata/_edit_group_ = true
 

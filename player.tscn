@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://mtlbj4fmit64"]
+[gd_scene load_steps=59 format=3 uid="uid://mtlbj4fmit64"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5rrfp"]
 [ext_resource type="Texture2D" uid="uid://b8q8ed31o3v0b" path="res://assets/Player/AnimationSheet_Character.png" id="2_330ma"]
@@ -21,7 +21,6 @@
 [ext_resource type="AudioStream" uid="uid://8jv572rumfum" path="res://assets/Sounds/Effects/shrink.mp3" id="17_2ddxv"]
 [ext_resource type="AudioStream" uid="uid://xudlfcf54wj2" path="res://assets/Sounds/Effects/victory.mp3" id="18_64fbw"]
 [ext_resource type="AudioStream" uid="uid://cmkeqypxwfu7e" path="res://assets/Sounds/Effects/Ice skating.mp3" id="21_ppl2l"]
-[ext_resource type="PackedScene" uid="uid://d1kt0lfklhlqq" path="res://components/powerups/boots.tscn" id="22_0vjvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwu3h"]
 size = Vector2(9.33335, 26.6667)
@@ -403,8 +402,7 @@ stream = ExtResource("17_2ddxv")
 
 [node name="victory_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_64fbw")
+volume_db = -80.0
 
 [node name="ice_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_ppl2l")
-
-[node name="boots" parent="." instance=ExtResource("22_0vjvp")]
