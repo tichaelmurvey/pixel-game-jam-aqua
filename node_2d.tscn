@@ -557,7 +557,7 @@ theme = SubResource("Theme_uwlc6")
 text = "Play Again?"
 
 [node name="player" parent="." node_paths=PackedStringArray("death_panel") instance=ExtResource("2_kdfr0")]
-position = Vector2(-3822, 564)
+position = Vector2(369, 576)
 death_panel = NodePath("../CanvasLayer/deathPanel")
 metadata/_edit_group_ = true
 
